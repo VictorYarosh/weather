@@ -1,20 +1,20 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import SunIcon from "../images/sunny.png";
 
-const Cards = styled.div`
+const CardLeft = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   background-color: blueviolet;
   width: 100%;
   height: 100%;
-  padding: 60px 0;
+  padding: 60px 40px;
 
   div {
     width: 450px;
     height: 575px;
     border-radius: 50px;
     background-color: purple;
-    margin-right: 40px;
   }
 `;
 
@@ -53,7 +53,6 @@ const BurgerContent = styled.div`
   background-color: purple;
   overflow: auto;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
   max-width: 100px;
   max-height: 30%;
 
@@ -67,11 +66,44 @@ const BurgerContent = styled.div`
   }
 `;
 
-const SunIconStyled = styled.a`
+const WeatherIcon = styled.div`
+  display: flex;
+  justify-content: center;
+  padding: 80px 20px;
+
   img {
-    width: 80px;
-    height: 80px;
-    background-color: purple;
+    width: 100px;
+    height: 100px;
+    position: relative;
+    margin-right: 30px;
+  }
+`;
+
+const Title = styled.div`
+  color: white;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 27px;
+  position: relative;
+
+  span {
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 27px;
+  }
+`;
+
+const Temperature = styled.div`
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  p {
+    color: white;
+    font-size: 100px;
+    font-weight: 400;
+    line-height: 40px;
   }
 `;
 
@@ -81,21 +113,30 @@ const CardsWeather: React.FC<Props> = () => {
   const [clickedButton, setClickedButton] = useState("");
 
   return (
-    <Cards>
-      <Dropdown>
-        <input type={"checkbox"} />
-        <ul>
-          <li></li>
-          <li></li>
-          <li></li>
-        </ul>
-        <BurgerContent>
-          <a>Home</a>
-          <a>About</a>
-          <a>Contacts</a>
-        </BurgerContent>
-      </Dropdown>
-    </Cards>
+    <>
+      <CardLeft>
+        <Dropdown>
+          <input type={"checkbox"} />
+          <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+          <BurgerContent>
+            <a>Home</a>
+            <a>About</a>
+            <a>Contacts</a>
+          </BurgerContent>
+        </Dropdown>
+        <WeatherIcon>
+          <img src={SunIcon} />
+          <Title>
+            <p>Valle de Angeles, HN</p>
+            <span>Monday 01/17/2022</span>
+          </Title>
+        </WeatherIcon>
+      </CardLeft>
+    </>
   );
 };
 
