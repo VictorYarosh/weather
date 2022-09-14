@@ -1,13 +1,14 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import CardsWeather from "./components/CardsWeather";
-import LastScreen from "./components/LastScreen";
+import CardWeatherAll from "./components/CardWeatherAll";
 import Navbar from "./components/Navbar";
 import styled from "styled-components";
 
 const BodyTitle = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
+  padding: 40px 0;
 `;
 
 function App() {
@@ -16,7 +17,7 @@ function App() {
       <Navbar />
       <BodyTitle>
         <CardsWeather />
-        <LastScreen />
+        <CardWeatherAll />
       </BodyTitle>
 
       <Switch>
@@ -24,7 +25,7 @@ function App() {
           <CardsWeather />
         </Route>
         <Route path="/about">
-          <LastScreen />
+          <CardWeatherAll />
         </Route>
       </Switch>
     </Router>

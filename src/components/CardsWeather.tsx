@@ -1,35 +1,30 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import SunIcon from "../images/sunny.png";
+import IconEye from "../images/eye.png";
+import IconWater from "../images/Vector.png";
+import IconTemperature from "../images/temperature.png";
+import IconWindy from "../images/windy.png";
 
 const CardLeft = styled.div`
-  display: flex;
-  justify-content: flex-end;
-  background-color: blueviolet;
-  width: 100%;
-  height: 100%;
-  padding: 60px 40px;
-
-  div {
-    width: 450px;
-    height: 575px;
-    border-radius: 50px;
-    background-color: purple;
-  }
+  width: 450px;
+  height: 575px;
+  margin: 80px 0;
+  border-radius: 50px;
+  background-color: purple;
 `;
 
 const Dropdown = styled.div`
-  position: absolute;
   display: flex;
-  align-items: flex-start;
-  justify-content: end;
+  justify-content: flex-end;
+
   input {
     display: none;
     margin: 50px -30px;
   }
   ul {
     color: #fff;
-    padding: 30px 40px;
+    padding: 5px 35px;
     cursor: pointer;
 
     li {
@@ -69,7 +64,6 @@ const BurgerContent = styled.div`
 const WeatherIcon = styled.div`
   display: flex;
   justify-content: center;
-  padding: 80px 20px;
 
   img {
     width: 100px;
@@ -84,7 +78,11 @@ const Title = styled.div`
   font-weight: 400;
   font-size: 24px;
   line-height: 27px;
-  position: relative;
+  margin: 20px 0;
+
+  p {
+    margin: 0;
+  }
 
   span {
     font-weight: 400;
@@ -94,16 +92,66 @@ const Title = styled.div`
 `;
 
 const Temperature = styled.div`
-  position: relative;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-
+  color: white;
+  padding: 45px 0 0;
+  position: relative;
   p {
-    color: white;
-    font-size: 100px;
+    margin: auto;
+    font-size: 120px;
     font-weight: 400;
-    line-height: 40px;
+    line-height: 10px;
+
+    p {
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 20px;
+    }
+  }
+  span {
+    margin: 30px 0;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 27px;
+  }
+`;
+
+const FooterCard = styled.div`
+  display: flex;
+  justify-content: space-around;
+  color: white;
+  padding: 60px 0;
+
+  div {
+    :after {
+      border-right: 2px solid white;
+      bottom: 0;
+      content: "";
+      position: relative;
+      top: -34px;
+      left: -24px;
+    }
+    span {
+      display: flex;
+      justify-content: space-around;
+
+      img {
+        padding: 13px 15px;
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+
+  div:not(:last-child):after {
+    border-right: 2px solid white;
+    bottom: 0;
+    content: "";
+    position: relative;
+    top: -83px;
+    left: 200px;
   }
 `;
 
@@ -135,6 +183,36 @@ const CardsWeather: React.FC<Props> = () => {
             <span>Monday 01/17/2022</span>
           </Title>
         </WeatherIcon>
+        <Temperature>
+          <p>
+            15
+            <p>°C</p>
+          </p>
+
+          <span>Mostly cloudy</span>
+        </Temperature>
+        <FooterCard>
+          <div>
+            <span>
+              <img src={IconEye} />
+              <p>Visibility 10km</p>
+            </span>
+            <span>
+              <img src={IconWater} />
+              <p>Humidity 10km</p>
+            </span>
+          </div>
+          <div>
+            <span>
+              <img src={IconTemperature} />
+              <p>Feels like 10km</p>
+            </span>
+            <span>
+              <img src={IconWindy} />
+              <p>Wind 10km</p>
+            </span>
+          </div>
+        </FooterCard>
       </CardLeft>
     </>
   );

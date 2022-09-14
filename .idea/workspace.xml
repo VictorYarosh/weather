@@ -5,18 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8b208a94-562d-4620-91ad-b7bf5ebda61e" name="Changes" comment="add steled in cards">
-      <change afterPath="$PROJECT_DIR$/src/images/sun3.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/sunny.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/Vector.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/eye.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/temperature.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/windy.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/.cache/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/.cache/default-development/0.pack" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/default-development/0.pack" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/default-development/1.pack" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/default-development/1.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/.cache/default-development/10.pack" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/default-development/10.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/.cache/default-development/11.pack" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/default-development/11.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/.cache/default-development/12.pack" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/default-development/12.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/.cache/default-development/13.pack" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/default-development/13.pack" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/default-development/14.pack" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/default-development/14.pack" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/default-development/15.pack" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/default-development/15.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/.cache/default-development/2.pack" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/default-development/2.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/.cache/default-development/3.pack" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/default-development/3.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/.cache/default-development/4.pack" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/default-development/4.pack" afterDir="false" />
@@ -30,11 +29,7 @@
       <change beforePath="$PROJECT_DIR$/node_modules/.cache/tsconfig.tsbuildinfo" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/tsconfig.tsbuildinfo" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/CardsWeather.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CardsWeather.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/LastScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LastScreen.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/point-3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/point.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/sum.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/sun-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/LastScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CardWeatherAll.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,7 +102,7 @@
       <workItem from="1662635636209" duration="37496000" />
       <workItem from="1662968829177" duration="1259000" />
       <workItem from="1662970226673" duration="13642000" />
-      <workItem from="1663053081836" duration="10388000" />
+      <workItem from="1663053081836" duration="27623000" />
     </task>
     <servers />
   </component>
