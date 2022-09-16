@@ -6,6 +6,11 @@ import IconWater from "../images/Vector.png";
 import IconTemperature from "../images/temperature.png";
 import IconWindy from "../images/windy.png";
 
+const api = {
+  key: "5a8e5d1891f84d46b84ee08bf4a4f03b",
+  base: "https://api.openweathermap.org/data/3.0/",
+};
+
 const Card = styled.div`
   width: 450px;
   height: 575px;
@@ -113,11 +118,29 @@ const Temperature = styled.div`
       line-height: 20px;
     }
   }
-  span {
-    margin: 30px 0;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 27px;
+  div {
+    input {
+      margin: 50px 0 0;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 27px;
+    }
+    p {
+      padding-top: 20px;
+      text-align: center;
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 22px;
+    }
+    button {
+      border-radius: 20%;
+      border: 1px solid red;
+      height: 32px;
+      color: white;
+      background-color: purple;
+      box-shadow: blueviolet;
+      cursor: pointer;
+    }
   }
 `;
 
@@ -176,63 +199,70 @@ const FooterCard = styled.div`
 type Props = {};
 
 const CardsWeather: React.FC<Props> = () => {
-  const [clickedButton, setClickedButton] = useState("");
+  const [search, setSearch] = useState("");
+
+  const searchPressed = () => {};
 
   return (
-    <>
-      <Card>
-        <Dropdown>
-          <input type={"checkbox"} />
-          <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-          </ul>
-          <BurgerContent>
-            <a>Home</a>
-            <a>About</a>
-            <a>Contacts</a>
-          </BurgerContent>
-        </Dropdown>
-        <WeatherIcon>
-          <img src={SunIcon} />
-          <Title>
-            <p>Valle de Angeles, HN</p>
-            <span>Monday 01/17/2022</span>
-          </Title>
-        </WeatherIcon>
-        <Temperature>
-          <p>
-            15
-            <p>°C</p>
-          </p>
-
-          <span>Mostly cloudy</span>
-        </Temperature>
-        <FooterCard>
-          <div>
-            <span>
-              <img src={IconEye} />
-              <p>Visibility 10km</p>
-            </span>
-            <span>
-              <img src={IconWater} />
-              <p>Humidity 10km</p>
-            </span>
-          </div>
-          <div>
-            <span>
-              <img src={IconTemperature} />
-              <p>Feels like 10km</p>
-            </span>
-            <span>
-              <img src={IconWindy} />
-              <p>Wind 10km</p>
-            </span>
-          </div>
-        </FooterCard>
-      </Card>
-    </>
+    <Card>
+      <Dropdown>
+        <input type={"checkbox"} />
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+        <BurgerContent>
+          <a>Home</a>
+          <a>About</a>
+          <a>Contacts</a>
+        </BurgerContent>
+      </Dropdown>
+      <WeatherIcon>
+        <img src={SunIcon} />
+        <Title>
+          <p>Valle de Angeles, HN</p>
+          <span>Monday 01/17/2022</span>
+        </Title>
+      </WeatherIcon>
+      <Temperature>
+        <p>
+          15
+          <p>°C</p>
+        </p>
+        <div>
+          <input
+            type={"text"}
+            placeholder={"Search city..."}
+            onChange={(e) => setSearch(e.target.value)}
+          />
+          <button onClick={searchPressed}>Search</button>
+          <p>Kiev,Ukraine</p>
+        </div>
+      </Temperature>
+      <FooterCard>
+        <div>
+          <span>
+            <img src={IconEye} />
+            <p>Visibility 10km</p>
+          </span>
+          <span>
+            <img src={IconWater} />
+            <p>Humidity 10km</p>
+          </span>
+        </div>
+        <div>
+          <span>
+            <img src={IconTemperature} />
+            <p>Feels like 10km</p>
+          </span>
+          <span>
+            <img src={IconWindy} />
+            <p>Wind 10km</p>
+          </span>
+        </div>
+      </FooterCard>
+    </Card>
   );
 };
 

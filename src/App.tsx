@@ -14,11 +14,9 @@ const BodyTitle = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-  //}
+  }
 `;
 
-const linkAPI =
-  "https://api.openweathermap.org/data/3.0/onecall?lat={lat}&lon={lon}&exclude={part}&appid={5a8e5d1891f84d46b84ee08bf4a4f03b}";
 
 function App() {
   return (
@@ -30,9 +28,7 @@ function App() {
       </BodyTitle>
 
       <Switch>
-        <Route exact path="/">
-          <CardsWeather />
-        </Route>
+        <Route exact path="/"></Route>
         <Route path="/about">
           <CardWeatherAll />
         </Route>
