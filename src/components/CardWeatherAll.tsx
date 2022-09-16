@@ -7,6 +7,10 @@ const CardRight = styled.div`
   margin: 80px 0;
   border-radius: 50px;
   background-color: purple;
+
+  @media (max-width: 425px) {
+    width: 80%;
+  }
 `;
 
 type Props = {};

@@ -6,12 +6,16 @@ import IconWater from "../images/Vector.png";
 import IconTemperature from "../images/temperature.png";
 import IconWindy from "../images/windy.png";
 
-const CardLeft = styled.div`
+const Card = styled.div`
   width: 450px;
   height: 575px;
   margin: 80px 0;
   border-radius: 50px;
   background-color: purple;
+
+  @media (max-width: 425px) {
+    width: 80%;
+  }
 `;
 
 const Dropdown = styled.div`
@@ -76,7 +80,6 @@ const WeatherIcon = styled.div`
 const Title = styled.div`
   color: white;
   font-weight: 400;
-  font-size: 24px;
   line-height: 27px;
   margin: 20px 0;
 
@@ -120,7 +123,7 @@ const Temperature = styled.div`
 
 const FooterCard = styled.div`
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   color: white;
   padding: 60px 0;
 
@@ -131,16 +134,24 @@ const FooterCard = styled.div`
       content: "";
       position: relative;
       top: -34px;
-      left: -24px;
+      left: -4px;
     }
     span {
       display: flex;
-      justify-content: space-around;
 
       img {
         padding: 13px 15px;
         width: 24px;
         height: 24px;
+
+        @media (max-width: 425px) {
+          width: 20px;
+          height: 20px;
+        }
+      }
+
+      @media (max-width: 425px) {
+        font-size: 12px;
       }
     }
   }
@@ -152,6 +163,13 @@ const FooterCard = styled.div`
     position: relative;
     top: -83px;
     left: 200px;
+
+    @media (max-width: 425px) {
+      left: 154px;
+    }
+    @media (max-width: 375px) {
+      left: 140px;
+    }
   }
 `;
 
@@ -162,7 +180,7 @@ const CardsWeather: React.FC<Props> = () => {
 
   return (
     <>
-      <CardLeft>
+      <Card>
         <Dropdown>
           <input type={"checkbox"} />
           <ul>
@@ -213,7 +231,7 @@ const CardsWeather: React.FC<Props> = () => {
             </span>
           </div>
         </FooterCard>
-      </CardLeft>
+      </Card>
     </>
   );
 };

@@ -1,30 +1,56 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
-import LogoSrc from '../images/logo.svg';
+import React, { useState } from "react";
+import styled from "styled-components";
+import LogoSrc from "../images/logo.svg";
 
 const NavBar = styled.nav`
   background-color: purple;
   display: flex;
   justify-content: space-between;
-  height: 90px;
+  height: auto;
   width: 100%;
   box-shadow: 1px 1px 5px purple;
+
+  @media (max-width: 425px) {
+    padding: 0 10px;
+  }
 `;
 
 const Links = styled.a`
   text-decoration: none;
   color: white;
   display: flex;
-  justify-content: flex-end;
+  padding: 20px;
+
+  img {
+    padding: 10px 10px;
+  }
+
+  @media (max-width: 425px) {
+    margin: 0;
+    font-size: 15px;
+  }
+  @media (max-width: 425px) {
+    padding: 0;
+  }
+`;
+
+const LogoTxt = styled.a`
   margin: 20px 60px;
   font-weight: 400;
   font-size: 20px;
   line-height: 36px;
-  text-align: end;
+
+  @media (max-width: 425px) {
+    margin: 0;
+    line-height: 33px;
+  }
 `;
 
-const LogoTxt = styled.a`
-  padding-left: 40px;
+const LinksPage = styled.div`
+  padding: 20px 20px;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 36px;
 `;
 
 type Props = {};
@@ -39,15 +65,12 @@ const Navbar: React.FC<Props> = () => {
   return (
     <NavBar>
       <Links>
-        <a>
-          <img src={LogoSrc} />
-          <LogoTxt>Weather by VicBox</LogoTxt>
-        </a>
+        <img src={LogoSrc} />
+        <LogoTxt>Weather by VicBox</LogoTxt>
       </Links>
-
       <Links>
-        <LogoTxt>GitHub</LogoTxt>
-        <LogoTxt>About</LogoTxt>
+        <LinksPage>GitHub</LinksPage>
+        <LinksPage>About</LinksPage>
       </Links>
     </NavBar>
   );
