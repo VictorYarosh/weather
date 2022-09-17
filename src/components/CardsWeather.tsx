@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import SunIcon from "../images/sunny.png";
 import IconEye from "../images/eye.png";
@@ -7,8 +7,8 @@ import IconTemperature from "../images/temperature.png";
 import IconWindy from "../images/windy.png";
 
 const api = {
-  key: "5a8e5d1891f84d46b84ee08bf4a4f03b",
-  base: "https://api.openweathermap.org/data/3.0/",
+  key: "717d96b0ffbd98f7df5938fac7f277c6",
+  base: "https://api.openweathermap.org/data/2.5/",
 };
 
 const Card = styled.div`
@@ -199,10 +199,25 @@ const FooterCard = styled.div`
 type Props = {};
 
 const CardsWeather: React.FC<Props> = () => {
-  const [search, setSearch] = useState("");
+  const [weather, setWeather] = useState([]);
+  const [isLoading, setisLoading] = useState(true);
 
-  const searchPressed = () => {};
+  const searchPressed = () => {
+    setisLoading(true);
+    fetch(`${api.base}weather?q={setisLoading}&units=metric&APPID=${api.key}`)
+      .then((response) => response.json())
+      .then((data) => {
+        setWeather(data.weather);
+        setisLoading(false);
+      });
+  };
+  useEffect(() => {
+    searchPressed();
+  }, []);
 
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
   return (
     <Card>
       <Dropdown>
@@ -227,18 +242,9 @@ const CardsWeather: React.FC<Props> = () => {
       </WeatherIcon>
       <Temperature>
         <p>
-          15
+          {weather}
           <p>°C</p>
         </p>
-        <div>
-          <input
-            type={"text"}
-            placeholder={"Search city..."}
-            onChange={(e) => setSearch(e.target.value)}
-          />
-          <button onClick={searchPressed}>Search</button>
-          <p>Kiev,Ukraine</p>
-        </div>
       </Temperature>
       <FooterCard>
         <div>
