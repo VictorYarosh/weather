@@ -6,11 +6,6 @@ import IconWater from "../images/Vector.png";
 import IconTemperature from "../images/temperature.png";
 import IconWindy from "../images/windy.png";
 
-const api = {
-  key: "717d96b0ffbd98f7df5938fac7f277c6",
-  base: "https://api.openweathermap.org/data/2.5/",
-};
-
 const Card = styled.div`
   width: 450px;
   height: 575px;
@@ -196,6 +191,11 @@ const FooterCard = styled.div`
   }
 `;
 
+const api = {
+  key: "717d96b0ffbd98f7df5938fac7f277c6",
+  base: "https://api.openweathermap.org/data/2.5/",
+};
+
 type Props = {};
 
 const CardsWeather: React.FC<Props> = () => {
@@ -204,10 +204,12 @@ const CardsWeather: React.FC<Props> = () => {
 
   const searchPressed = () => {
     setisLoading(true);
-    fetch(`${api.base}weather?q={setisLoading}&units=metric&APPID=${api.key}`)
+    fetch(`${api.base}weather?q=${weather}&units=metric&APPID=${api.key}`)
       .then((response) => response.json())
       .then((data) => {
-        setWeather(data.weather);
+        console.log(data.weather);
+        setWeather(weather);
+
         setisLoading(false);
       });
   };
@@ -218,6 +220,7 @@ const CardsWeather: React.FC<Props> = () => {
   if (isLoading) {
     return <div>Loading...</div>;
   }
+
   return (
     <Card>
       <Dropdown>
