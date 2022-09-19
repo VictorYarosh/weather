@@ -9,6 +9,7 @@ const BodyTitle = styled.div`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  
 
   @media (max-width: 768px) {
     display: flex;
@@ -16,7 +17,6 @@ const BodyTitle = styled.div`
     align-items: center;
   }
 `;
-
 
 function App() {
   return (

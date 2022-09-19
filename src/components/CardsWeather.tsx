@@ -99,20 +99,14 @@ const Temperature = styled.div`
   flex-direction: column;
   align-items: center;
   color: white;
-  padding: 45px 0 0;
   position: relative;
-  p {
-    margin: auto;
-    font-size: 120px;
-    font-weight: 400;
-    line-height: 10px;
 
-    p {
-      font-size: 18px;
-      font-weight: 400;
-      line-height: 20px;
-    }
+  p {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 20px;
   }
+
   div {
     input {
       margin: 50px 0 0;
@@ -120,21 +114,12 @@ const Temperature = styled.div`
       font-size: 18px;
       line-height: 27px;
     }
-    p {
-      padding-top: 20px;
-      text-align: center;
+    div {
+      display: flex;
+      justify-content: center;
+      padding: 20px 0;
+      font-size: 24px;
       font-weight: 400;
-      font-size: 15px;
-      line-height: 22px;
-    }
-    button {
-      border-radius: 20%;
-      border: 1px solid red;
-      height: 32px;
-      color: white;
-      background-color: purple;
-      box-shadow: blueviolet;
-      cursor: pointer;
     }
   }
 `;
@@ -143,7 +128,6 @@ const FooterCard = styled.div`
   display: flex;
   justify-content: space-evenly;
   color: white;
-  padding: 60px 0;
 
   div {
     :after {
@@ -199,23 +183,58 @@ const api = {
 type Props = {};
 
 const CardsWeather: React.FC<Props> = () => {
-  const [weather, setWeather] = useState([]);
+  const dateBuilder = (d: Date) => {
+    let months = [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December",
+    ];
+    let days = [
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+    ];
+
+    let day = days[d.getDay()];
+    let date = d.getDate();
+    let month = months[d.getMonth()];
+    let year = d.getFullYear();
+
+    return `${day} ${date} ${month} ${year}`;
+  };
+
+  const [query, setQuery] = useState("");
+  const [weather, setWeather] = useState({
+    main: undefined,
+    name: undefined,
+    sys: undefined,
+  });
   const [isLoading, setisLoading] = useState(true);
 
-  const searchPressed = () => {
-    setisLoading(true);
-    fetch(`${api.base}weather?q=${weather}&units=metric&APPID=${api.key}`)
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data.weather);
-        setWeather(weather);
-
-        setisLoading(false);
-      });
+  const search = (evt: { key: string }) => {
+    if (evt.key === "Enter") {
+      setisLoading(true);
+      fetch(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`)
+        .then((res) => res.json())
+        .then((result) => {
+          setQuery("");
+          setWeather(result);
+        });
+    }
   };
-  useEffect(() => {
-    searchPressed();
-  }, []);
 
   if (isLoading) {
     return <div>Loading...</div>;
@@ -239,16 +258,30 @@ const CardsWeather: React.FC<Props> = () => {
       <WeatherIcon>
         <img src={SunIcon} />
         <Title>
-          <p>Valle de Angeles, HN</p>
-          <span>Monday 01/17/2022</span>
+          <p>Weather</p>
+          <div>{dateBuilder(new Date())}</div>
         </Title>
       </WeatherIcon>
+
       <Temperature>
-        <p>
-          {weather}
-          <p>°C</p>
-        </p>
+        <p>°C</p>
+
+        <span>Sunny</span>
+        <div>
+          <input
+            type="text"
+            placeholder="Search..."
+            onChange={(e) => setQuery(e.target.value)}
+            value={query}
+            onKeyPress={search}
+          />
+        </div>
+
+        <div>
+          {weather.name}, {weather.sys.country}
+        </div>
       </Temperature>
+
       <FooterCard>
         <div>
           <span>
