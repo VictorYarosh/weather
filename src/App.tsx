@@ -9,7 +9,8 @@ const BodyTitle = styled.div`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  
+
+  background-image: linear-gradient(to bottom right, #946dae, #6d5ad6);
 
   @media (max-width: 768px) {
     display: flex;
