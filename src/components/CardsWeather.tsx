@@ -96,7 +96,7 @@ const Title = styled.div`
     margin: 0;
     font-size: 25px;
     font-weight: 600;
-    
+
     @media (max-width: 425px) {
       font-size: 20px;
     }
@@ -119,7 +119,6 @@ const Temperature = styled.div`
   align-items: center;
   color: white;
   position: relative;
-
 
   p {
     line-height: 10px;
@@ -185,22 +184,17 @@ const FooterCard = styled.div`
     @media (max-width: 425px) {
       left: 135px;
     }
-   
   }
 `;
-
-
 
 const api = {
   key: "717d96b0ffbd98f7df5938fac7f277c6",
   base: "https://api.openweathermap.org/data/2.5/",
 };
 
-
-
 function CardsWeather() {
   const dateBuilder = (d: Date) => {
-    let months = [
+    const months = [
       "January",
       "February",
       "March",
@@ -214,7 +208,7 @@ function CardsWeather() {
       "November",
       "December",
     ];
-    let days = [
+    const days = [
       "Sunday",
       "Monday",
       "Tuesday",
@@ -224,39 +218,37 @@ function CardsWeather() {
       "Saturday",
     ];
 
-    let day = days[d.getDay()];
-    let date = d.getDate();
-    let month = months[d.getMonth()];
-    let year = d.getFullYear();
+    const day = days[d.getDay()];
+    const date = d.getDate();
+    const month = months[d.getMonth()];
+    const year = d.getFullYear();
 
     return `${day} ${date} ${month} ${year}`;
   };
 
   const [data, setData] = useState({
-    main: {temp: NaN, feels_like : NaN, humidity : NaN},
-    wind: {speed: NaN, deg : NaN},
-    visibility : NaN,
-    name : null,
-    sys : {country : null},
-    weather : {main : null, description : null}
+    main: { temp: NaN, feels_like: NaN, humidity: NaN },
+    wind: { speed: NaN, deg: NaN },
+    visibility: NaN,
+    name: null,
+    sys: { country: null },
+    weather: [{ main: null, description: null }],
   });
-  const [isLoading, setLoading] = useState(false)
 
+  const [isLoading, setLoading] = useState(false);
 
   useEffect(() => {
-
     setLoading(true);
     fetch(`${api.base}weather?q=Kyiv,ua&units=metric&APPID=${api.key}`)
-        .then((res) => res.json())
-        .then((data) => {
-          setData(data);
-          setLoading(false);
-        })
-  },[])
+      .then((res) => res.json())
+      .then((data) => {
+        setData(data);
+        setLoading(false);
+      });
+  }, []);
 
-  if (isLoading) return <p>Lodiang...</p>
-  if(!data) return <p>No profile data</p>
-
+  if (isLoading) return <p>Lodiang...</p>;
+  if (!data) return <p>No profile data</p>;
 
   return (
     <Card>
@@ -284,8 +276,14 @@ function CardsWeather() {
       <Temperature>
         <>
           <p>{Math.trunc(data.main.temp)}°C</p>
-          <span>{data.name}, {data.sys.country}</span>
-          <div>{data.weather.main}</div>
+          <span>
+            {data.name}, {data.sys.country}
+          </span>
+          <div>
+            {data.weather.map(({ description }) => (
+              <span>{description}</span>
+            ))}
+          </div>
         </>
       </Temperature>
 
@@ -313,6 +311,6 @@ function CardsWeather() {
       </FooterCard>
     </Card>
   );
-};
+}
 
 export default CardsWeather;

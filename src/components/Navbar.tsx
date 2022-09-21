@@ -19,7 +19,6 @@ const Links = styled.a`
   text-decoration: none;
   color: white;
   display: flex;
-  
 
   img {
     padding: 10px 10px;
@@ -54,13 +53,11 @@ const LinksPage = styled.div`
   }
 `;
 
-type Props = {};
-
 type Task = {
   label: string;
 };
 
-const Navbar: React.FC<Props> = () => {
+const Navbar: React.FC = () => {
   const [tasks, setTasks] = useState<Task[]>([]);
 
   return (
