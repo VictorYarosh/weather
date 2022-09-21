@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8b208a94-562d-4620-91ad-b7bf5ebda61e" name="Changes" comment="add api">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="8b208a94-562d-4620-91ad-b7bf5ebda61e" name="Changes" comment="add api" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -100,7 +97,7 @@
       <workItem from="1663652344457" duration="2610000" />
       <workItem from="1663655466481" duration="4978000" />
       <workItem from="1663667816356" duration="8763000" />
-      <workItem from="1663681764878" duration="3081000" />
+      <workItem from="1663681764878" duration="3345000" />
     </task>
     <task id="LOCAL-00001" summary="add api">
       <created>1663330962030</created>
