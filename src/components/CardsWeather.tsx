@@ -11,10 +11,15 @@ const Card = styled.div`
   height: 575px;
   margin: 80px 0;
   border-radius: 50px;
-  background-color: purple;
+  background-color: #5639a8;
 
   @media (max-width: 425px) {
-    width: 80%;
+    width: 375px;
+    height: 520px;
+  }
+  @media (max-width: 375px) {
+    width: 320px;
+    height: 500px;
   }
 `;
 
@@ -74,6 +79,10 @@ const WeatherIcon = styled.div`
     height: 100px;
     position: relative;
     margin-right: 30px;
+
+    @media (max-width: 425px) {
+      margin-right: 18px;
+    }
   }
 `;
 
@@ -85,12 +94,22 @@ const Title = styled.div`
 
   p {
     margin: 0;
+    font-size: 25px;
+    font-weight: 600;
+    
+    @media (max-width: 425px) {
+      font-size: 20px;
+    }
   }
 
   span {
     font-weight: 400;
     font-size: 15px;
     line-height: 27px;
+  }
+  @media (max-width: 425px) {
+    font-size: 14px;
+    margin: 10px 0px 0px -15px;
   }
 `;
 
@@ -101,26 +120,16 @@ const Temperature = styled.div`
   color: white;
   position: relative;
 
-  p {
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 20px;
-  }
 
-  div {
-    input {
-      margin: 50px 0 0;
-      font-weight: 400;
-      font-size: 18px;
-      line-height: 27px;
-    }
-    div {
-      display: flex;
-      justify-content: center;
-      padding: 20px 0;
-      font-size: 24px;
-      font-weight: 400;
-    }
+  p {
+    line-height: 10px;
+    font-size: 70px;
+    font-weight: 500;
+  }
+  span {
+    padding: 20px 0;
+    font-size: 24px;
+    font-weight: 400;
   }
 `;
 
@@ -136,7 +145,14 @@ const FooterCard = styled.div`
       content: "";
       position: relative;
       top: -34px;
-      left: -4px;
+      left: -43px;
+
+      @media (max-width: 425px) {
+        left: -32px;
+      }
+      @media (max-width: 375px) {
+        left: -14px;
+      }
     }
     span {
       display: flex;
@@ -164,25 +180,25 @@ const FooterCard = styled.div`
     content: "";
     position: relative;
     top: -83px;
-    left: 200px;
+    left: 160px;
 
     @media (max-width: 425px) {
-      left: 154px;
+      left: 135px;
     }
-    @media (max-width: 375px) {
-      left: 140px;
-    }
+   
   }
 `;
+
+
 
 const api = {
   key: "717d96b0ffbd98f7df5938fac7f277c6",
   base: "https://api.openweathermap.org/data/2.5/",
 };
 
-type Props = {};
 
-const CardsWeather: React.FC<Props> = () => {
+
+function CardsWeather() {
   const dateBuilder = (d: Date) => {
     let months = [
       "January",
@@ -216,29 +232,31 @@ const CardsWeather: React.FC<Props> = () => {
     return `${day} ${date} ${month} ${year}`;
   };
 
-  const [query, setQuery] = useState("");
-  const [weather, setWeather] = useState({
-    main: undefined,
-    name: undefined,
-    sys: undefined,
+  const [data, setData] = useState({
+    main: {temp: NaN, feels_like : NaN, humidity : NaN},
+    wind: {speed: NaN, deg : NaN},
+    visibility : NaN,
+    name : null,
+    sys : {country : null},
+    weather : {main : null, description : null}
   });
-  const [isLoading, setisLoading] = useState(true);
+  const [isLoading, setLoading] = useState(false)
 
-  const search = (evt: { key: string }) => {
-    if (evt.key === "Enter") {
-      setisLoading(true);
-      fetch(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`)
+
+  useEffect(() => {
+
+    setLoading(true);
+    fetch(`${api.base}weather?q=Kyiv,ua&units=metric&APPID=${api.key}`)
         .then((res) => res.json())
-        .then((result) => {
-          setQuery("");
-          setWeather(result);
-        });
-    }
-  };
+        .then((data) => {
+          setData(data);
+          setLoading(false);
+        })
+  },[])
 
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
+  if (isLoading) return <p>Lodiang...</p>
+  if(!data) return <p>No profile data</p>
+
 
   return (
     <Card>
@@ -258,49 +276,38 @@ const CardsWeather: React.FC<Props> = () => {
       <WeatherIcon>
         <img src={SunIcon} />
         <Title>
-          <p>Weather</p>
+          <p>Valle de Angeles, HN</p>
           <div>{dateBuilder(new Date())}</div>
         </Title>
       </WeatherIcon>
 
       <Temperature>
-        <p>°C</p>
-
-        <span>Sunny</span>
-        <div>
-          <input
-            type="text"
-            placeholder="Search..."
-            onChange={(e) => setQuery(e.target.value)}
-            value={query}
-            onKeyPress={search}
-          />
-        </div>
-
-        <div>
-          {weather.name}, {weather.sys.country}
-        </div>
+        <>
+          <p>{Math.trunc(data.main.temp)}°C</p>
+          <span>{data.name}, {data.sys.country}</span>
+          <div>{data.weather.main}</div>
+        </>
       </Temperature>
 
       <FooterCard>
         <div>
           <span>
             <img src={IconEye} />
-            <p>Visibility 10km</p>
+            <p>{data.visibility}km</p>
           </span>
           <span>
             <img src={IconWater} />
-            <p>Humidity 10km</p>
+            <p>{data.main.humidity}km</p>
           </span>
         </div>
         <div>
           <span>
             <img src={IconTemperature} />
-            <p>Feels like 10km</p>
+            <p>{Math.trunc(data.main.feels_like)}°C</p>
           </span>
           <span>
             <img src={IconWindy} />
-            <p>Wind 10km</p>
+            <p>{Math.trunc(data.wind.speed)}s</p>
           </span>
         </div>
       </FooterCard>

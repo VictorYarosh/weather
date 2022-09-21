@@ -8,7 +8,7 @@ const NavBar = styled.nav`
   justify-content: space-between;
   height: auto;
   width: 100%;
-  box-shadow: 1px 1px 5px purple;
+  background-image: linear-gradient(to bottom right, #6447b5, #9881da);
 
   @media (max-width: 425px) {
     padding: 0 10px;
@@ -19,7 +19,7 @@ const Links = styled.a`
   text-decoration: none;
   color: white;
   display: flex;
-  padding: 20px;
+  
 
   img {
     padding: 10px 10px;
@@ -28,9 +28,6 @@ const Links = styled.a`
   @media (max-width: 425px) {
     margin: 0;
     font-size: 15px;
-  }
-  @media (max-width: 425px) {
-    padding: 0;
   }
 `;
 
@@ -41,8 +38,8 @@ const LogoTxt = styled.a`
   line-height: 36px;
 
   @media (max-width: 425px) {
-    margin: 0;
-    line-height: 33px;
+    margin: 15px 25px;
+    line-height: 22px;
   }
 `;
 
@@ -51,6 +48,10 @@ const LinksPage = styled.div`
   font-weight: 400;
   font-size: 20px;
   line-height: 36px;
+
+  @media (max-width: 425px) {
+    padding: 10px;
+  }
 `;
 
 type Props = {};
