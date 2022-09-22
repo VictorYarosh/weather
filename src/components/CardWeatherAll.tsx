@@ -18,9 +18,9 @@ const CardRight = styled.div`
   }
 `;
 
-type Props = {};
 
-const CardWeatherAll: React.FC<Props> = () => {
+
+const CardWeatherAll: React.FC = () => {
   return (
     <CardRight>
       <div></div>

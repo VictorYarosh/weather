@@ -22,35 +22,31 @@ const Card = styled.div`
     height: 500px;
   }
 `;
-
 const Dropdown = styled.div`
   display: flex;
   justify-content: flex-end;
-
-  input {
-    display: none;
-    margin: 50px -30px;
-  }
-  ul {
-    color: #fff;
-    padding: 5px 35px;
-    cursor: pointer;
-
-    li {
-      background: none repeat scroll 0 0 #fff;
-      height: 7px;
-      width: 7px;
-      line-height: 0;
-      list-style: none outside none;
-      margin-right: 15px;
-      margin-top: 3px;
-      vertical-align: top;
-      border-radius: 50%;
-      pointer-events: none;
-    }
-  }
 `;
-
+const DropdownInput = styled.input`
+  display: none;
+  margin: 50px -30px;
+`;
+const DropdownList = styled.ul`
+  color: #fff;
+  padding: 5px 35px;
+  cursor: pointer;
+`;
+const DropdownListLi = styled.li`
+  background: none repeat scroll 0 0 #fff;
+  height: 7px;
+  width: 7px;
+  line-height: 0;
+  list-style: none outside none;
+  margin-right: 15px;
+  margin-top: 3px;
+  vertical-align: top;
+  border-radius: 50%;
+  pointer-events: none;
+`;
 const BurgerContent = styled.div`
   display: none;
   position: absolute;
@@ -59,132 +55,114 @@ const BurgerContent = styled.div`
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   max-width: 100px;
   max-height: 30%;
-
-  a {
-    position: relative;
-    color: white;
-    padding: 17px;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-  }
 `;
-
+const BurgerContentText = styled.a`
+  position: relative;
+  color: white;
+  padding: 17px;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+`;
 const WeatherIcon = styled.div`
   display: flex;
   justify-content: center;
+`;
+const WeatherImg = styled.img`
+  width: 100px;
+  height: 100px;
+  position: relative;
+  margin-right: 30px;
 
-  img {
-    width: 100px;
-    height: 100px;
-    position: relative;
-    margin-right: 30px;
-
-    @media (max-width: 425px) {
-      margin-right: 18px;
-    }
+  @media (max-width: 425px) {
+    margin-right: 18px;
   }
 `;
-
-const Title = styled.div`
+const TitleWrapper = styled.div`
   color: white;
   font-weight: 400;
   line-height: 27px;
   margin: 20px 0;
 
-  p {
-    margin: 0;
-    font-size: 25px;
-    font-weight: 600;
-
-    @media (max-width: 425px) {
-      font-size: 20px;
-    }
-  }
-
-  span {
-    font-weight: 400;
-    font-size: 15px;
-    line-height: 27px;
-  }
   @media (max-width: 425px) {
     font-size: 14px;
     margin: 10px 0px 0px -15px;
   }
 `;
+const Title = styled.p`
+  margin: 0;
+  font-size: 25px;
+  font-weight: 600;
 
-const Temperature = styled.div`
+  @media (max-width: 425px) {
+    font-size: 20px;
+  }
+`;
+const TitleSub = styled.span`
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 27px;
+`;
+const TemperatureWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   color: white;
   position: relative;
-
-  p {
-    line-height: 10px;
-    font-size: 70px;
-    font-weight: 500;
-  }
-  span {
-    padding: 20px 0;
-    font-size: 24px;
-    font-weight: 400;
-  }
 `;
-
-const FooterCard = styled.div`
+const Temperature = styled.p`
+  line-height: 10px;
+  font-size: 70px;
+  font-weight: 500;
+`;
+const TemperatureSub = styled.span`
+  padding: 20px 0;
+  font-size: 24px;
+  font-weight: 400;
+`;
+const FooterWrapper = styled.div`
   display: flex;
   justify-content: space-evenly;
   color: white;
+`;
 
-  div {
-    :after {
-      border-right: 2px solid white;
-      bottom: 0;
-      content: "";
-      position: relative;
-      top: -34px;
-      left: -43px;
-
-      @media (max-width: 425px) {
-        left: -32px;
-      }
-      @media (max-width: 375px) {
-        left: -14px;
-      }
-    }
-    span {
-      display: flex;
-
-      img {
-        padding: 13px 15px;
-        width: 24px;
-        height: 24px;
-
-        @media (max-width: 425px) {
-          width: 20px;
-          height: 20px;
-        }
-      }
-
-      @media (max-width: 425px) {
-        font-size: 12px;
-      }
-    }
-  }
-
-  div:not(:last-child):after {
+const Footer = styled.div`
+  not:last-child(:after) {
     border-right: 2px solid white;
     bottom: 0;
     content: "";
     position: relative;
-    top: -83px;
-    left: 160px;
-
-    @media (max-width: 425px) {
-      left: 135px;
-    }
+    top: -34px;
+    left: -43px;
   }
+  not:last-child:before {
+    border-right: 2px solid white;
+    bottom: 0;
+    content: "";
+    position: relative;
+    top: -34px;
+    left: -43px;
+  }
+  
+`;
+const FooterSub = styled.span`
+  display: flex;
+  @media (max-width: 425px) {
+    font-size: 12px;
+  }
+`;
+const FooterImg = styled.img`
+  padding: 13px 15px;
+  width: 24px;
+  height: 24px;
+
+  @media (max-width: 425px) {
+    width: 20px;
+    height: 20px;
+  }
+`;
+const FooterText = styled.p`
+
 `;
 
 const api = {
@@ -253,62 +231,61 @@ function CardsWeather() {
   return (
     <Card>
       <Dropdown>
-        <input type={"checkbox"} />
-        <ul>
-          <li></li>
-          <li></li>
-          <li></li>
-        </ul>
+        <DropdownInput type={"checkbox"} />
+        <DropdownList>
+          <DropdownListLi></DropdownListLi>
+          <DropdownListLi></DropdownListLi>
+          <DropdownListLi></DropdownListLi>
+        </DropdownList>
         <BurgerContent>
-          <a>Home</a>
-          <a>About</a>
-          <a>Contacts</a>
+          <BurgerContentText>Home</BurgerContentText>
+          <BurgerContentText>About</BurgerContentText>
+          <BurgerContentText>Contacts</BurgerContentText>
         </BurgerContent>
       </Dropdown>
       <WeatherIcon>
-        <img src={SunIcon} />
-        <Title>
-          <p>Valle de Angeles, HN</p>
-          <div>{dateBuilder(new Date())}</div>
-        </Title>
+        <WeatherImg src={SunIcon} />
+        <TitleWrapper>
+          <Title>Valle de Angeles, HN</Title>
+          <TitleSub>{dateBuilder(new Date())}</TitleSub>
+        </TitleWrapper>
       </WeatherIcon>
-
-      <Temperature>
+      <TemperatureWrapper>
         <>
-          <p>{Math.trunc(data.main.temp)}°C</p>
-          <span>
+          <Temperature>{Math.trunc(data.main.temp)}°C</Temperature>
+          <TemperatureSub>
             {data.name}, {data.sys.country}
-          </span>
-          <div>
-            {data.weather.map(({ description }) => (
-              <span>{description}</span>
+          </TemperatureSub>
+          <Title>
+            {data.weather.map(({ main }) => (
+              <span>{main}</span>
             ))}
-          </div>
+          </Title>
         </>
-      </Temperature>
+      </TemperatureWrapper>
 
-      <FooterCard>
-        <div>
-          <span>
-            <img src={IconEye} />
-            <p>{data.visibility}km</p>
-          </span>
-          <span>
-            <img src={IconWater} />
-            <p>{data.main.humidity}km</p>
-          </span>
-        </div>
-        <div>
-          <span>
-            <img src={IconTemperature} />
-            <p>{Math.trunc(data.main.feels_like)}°C</p>
-          </span>
-          <span>
-            <img src={IconWindy} />
-            <p>{Math.trunc(data.wind.speed)}s</p>
-          </span>
-        </div>
-      </FooterCard>
+      <FooterWrapper>
+        <Footer>
+          <FooterSub>
+            <FooterImg src={IconEye} />
+            <FooterText>{data.visibility}km</FooterText>
+          </FooterSub>
+          <FooterSub>
+            <FooterImg src={IconWater} />
+            <FooterText>{data.main.humidity}km</FooterText>
+          </FooterSub>
+        </Footer>
+        <Footer>
+          <FooterSub>
+            <FooterImg src={IconTemperature} />
+            <FooterText>{Math.trunc(data.main.feels_like)}°C</FooterText>
+          </FooterSub>
+          <FooterSub>
+            <FooterImg src={IconWindy} />
+            <FooterText>{Math.trunc(data.wind.speed)}s</FooterText>
+          </FooterSub>
+        </Footer>
+      </FooterWrapper>
     </Card>
   );
 }
