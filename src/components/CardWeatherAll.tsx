@@ -18,8 +18,6 @@ const CardRight = styled.div`
   }
 `;
 
-
-
 const CardWeatherAll: React.FC = () => {
   return (
     <CardRight>

@@ -11,7 +11,6 @@ const BodyTitle = styled.div`
   align-items: center;
   height: 100%;
   
-
   @media (max-width: 768px) {
     display: flex;
     flex-direction: column;

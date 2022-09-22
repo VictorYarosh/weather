@@ -7,29 +7,24 @@ const NavBar = styled.nav`
   display: flex;
   justify-content: space-between;
   height: auto;
-  width: 100%;
   background-image: linear-gradient(to bottom right, #6447b5, #9881da);
 
   @media (max-width: 425px) {
     padding: 0 10px;
   }
 `;
-
 const Links = styled.a`
   text-decoration: none;
   color: white;
   display: flex;
-
-  img {
-    padding: 10px 10px;
-  }
-
   @media (max-width: 425px) {
     margin: 0;
     font-size: 15px;
   }
 `;
-
+const LinksImg = styled.img`
+    padding: 10px 10px;
+`;
 const LogoTxt = styled.a`
   margin: 20px 60px;
   font-weight: 400;
@@ -39,9 +34,12 @@ const LogoTxt = styled.a`
   @media (max-width: 425px) {
     margin: 15px 25px;
     line-height: 22px;
+    font-size: 15px
+  }
+  @media (max-width: 425px) {
+    font-size: 13px
   }
 `;
-
 const LinksPage = styled.div`
   padding: 20px 20px;
   font-weight: 400;
@@ -50,6 +48,7 @@ const LinksPage = styled.div`
 
   @media (max-width: 425px) {
     padding: 10px;
+    font-size: 12px;
   }
 `;
 
@@ -63,7 +62,7 @@ const Navbar: React.FC = () => {
   return (
     <NavBar>
       <Links>
-        <img src={LogoSrc} />
+        <LinksImg src={LogoSrc} />
         <LogoTxt>Weather by VicBox</LogoTxt>
       </Links>
       <Links>

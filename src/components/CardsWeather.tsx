@@ -15,11 +15,11 @@ const Card = styled.div`
 
   @media (max-width: 425px) {
     width: 375px;
-    height: 520px;
+    height: 540px;
   }
   @media (max-width: 375px) {
     width: 320px;
-    height: 500px;
+    height: 525px;
   }
 `;
 const Dropdown = styled.div`
@@ -88,6 +88,9 @@ const TitleWrapper = styled.div`
     font-size: 14px;
     margin: 10px 0px 0px -15px;
   }
+  @media (max-width: 375px) {
+    font-size: 10px;
+  }
 `;
 const Title = styled.p`
   margin: 0;
@@ -96,6 +99,7 @@ const Title = styled.p`
 
   @media (max-width: 425px) {
     font-size: 20px;
+    margin-bottom: 20px;
   }
 `;
 const TitleSub = styled.span`
@@ -114,6 +118,10 @@ const Temperature = styled.p`
   line-height: 10px;
   font-size: 70px;
   font-weight: 500;
+
+  @media (max-width: 425px) {
+    font-size: 60px;
+  }
 `;
 const TemperatureSub = styled.span`
   padding: 20px 0;
@@ -125,26 +133,6 @@ const FooterWrapper = styled.div`
   justify-content: space-evenly;
   color: white;
 `;
-
-const Footer = styled.div`
-  not:last-child(:after) {
-    border-right: 2px solid white;
-    bottom: 0;
-    content: "";
-    position: relative;
-    top: -34px;
-    left: -43px;
-  }
-  not:last-child:before {
-    border-right: 2px solid white;
-    bottom: 0;
-    content: "";
-    position: relative;
-    top: -34px;
-    left: -43px;
-  }
-  
-`;
 const FooterSub = styled.span`
   display: flex;
   @media (max-width: 425px) {
@@ -155,14 +143,28 @@ const FooterImg = styled.img`
   padding: 13px 15px;
   width: 24px;
   height: 24px;
-
+  
   @media (max-width: 425px) {
     width: 20px;
     height: 20px;
   }
 `;
 const FooterText = styled.p`
-
+  :before {
+    border-right: 2px solid white;
+    bottom: 0;
+    content: "";
+    position: relative;
+    top: 0px;
+    left: 110px;
+    
+    @media (max-width: 425px) {
+      left: 90px;
+    }
+    @media (max-width: 375px) {
+      left: 80px;
+    }
+  }
 `;
 
 const api = {
@@ -265,7 +267,7 @@ function CardsWeather() {
       </TemperatureWrapper>
 
       <FooterWrapper>
-        <Footer>
+        <div>
           <FooterSub>
             <FooterImg src={IconEye} />
             <FooterText>{data.visibility}km</FooterText>
@@ -274,17 +276,17 @@ function CardsWeather() {
             <FooterImg src={IconWater} />
             <FooterText>{data.main.humidity}km</FooterText>
           </FooterSub>
-        </Footer>
-        <Footer>
+        </div>
+        <div>
           <FooterSub>
             <FooterImg src={IconTemperature} />
-            <FooterText>{Math.trunc(data.main.feels_like)}°C</FooterText>
+            <p>{Math.trunc(data.main.feels_like)}°C</p>
           </FooterSub>
           <FooterSub>
             <FooterImg src={IconWindy} />
-            <FooterText>{Math.trunc(data.wind.speed)}s</FooterText>
+            <p>{Math.trunc(data.wind.speed)}s</p>
           </FooterSub>
-        </Footer>
+        </div>
       </FooterWrapper>
     </Card>
   );
