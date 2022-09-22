@@ -1,8 +1,6 @@
-import React, { useState } from "react";
 import styled from "styled-components";
-import LogoSrc from "../images/logo.svg";
 
-const NavBar = styled.nav`
+export const NavBar = styled.nav`
   background-color: purple;
   display: flex;
   justify-content: space-between;
@@ -13,7 +11,7 @@ const NavBar = styled.nav`
     padding: 0 10px;
   }
 `;
-const Links = styled.a`
+export const Links = styled.a`
   text-decoration: none;
   color: white;
   display: flex;
@@ -22,10 +20,10 @@ const Links = styled.a`
     font-size: 15px;
   }
 `;
-const LinksImg = styled.img`
+export const LinksImg = styled.img`
     padding: 10px 10px;
 `;
-const LogoTxt = styled.a`
+export const LogoTxt = styled.a`
   margin: 20px 60px;
   font-weight: 400;
   font-size: 20px;
@@ -40,7 +38,7 @@ const LogoTxt = styled.a`
     font-size: 13px
   }
 `;
-const LinksPage = styled.div`
+export const LinksPage = styled.div`
   padding: 20px 20px;
   font-weight: 400;
   font-size: 20px;
@@ -52,25 +50,3 @@ const LinksPage = styled.div`
   }
 `;
 
-type Task = {
-  label: string;
-};
-
-const Navbar: React.FC = () => {
-  const [tasks, setTasks] = useState<Task[]>([]);
-
-  return (
-    <NavBar>
-      <Links>
-        <LinksImg src={LogoSrc} />
-        <LogoTxt>Weather by VicBox</LogoTxt>
-      </Links>
-      <Links>
-        <LinksPage>GitHub</LinksPage>
-        <LinksPage>About</LinksPage>
-      </Links>
-    </NavBar>
-  );
-};
-
-export default Navbar;

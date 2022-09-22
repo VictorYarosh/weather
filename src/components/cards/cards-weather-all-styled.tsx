@@ -1,7 +1,6 @@
-import React, { useState } from "react";
 import styled from "styled-components";
 
-const CardRight = styled.div`
+export const CardRight = styled.div`
   width: 450px;
   height: 575px;
   margin: 80px 0;
@@ -17,13 +16,3 @@ const CardRight = styled.div`
     height: 500px;
   }
 `;
-
-const CardWeatherAll: React.FC = () => {
-  return (
-    <CardRight>
-      <div></div>
-    </CardRight>
-  );
-};
-
-export default CardWeatherAll;

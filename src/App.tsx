@@ -1,9 +1,9 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import CardsWeather from "./components/CardsWeather";
-import CardWeatherAll from "./components/CardWeatherAll";
-import Navbar from "./components/Navbar";
 import styled from "styled-components";
+import Navbar from "./components/navbar/Navbar";
+import CardsWeather from "./components/cards/CardsWeather";
+import CardWeatherAll from "./components/cards/CardWeatherAll";
 
 const BodyTitle = styled.div`
   display: flex;
