@@ -21,7 +21,8 @@ import IconWindy from "../../images/windy.png";
 
 
 
-const CardsWeather = () => {
+
+function CardsWeather() {
   const dateBuilder = (d: Date) => {
     const months = [
       "January",
@@ -56,14 +57,15 @@ const CardsWeather = () => {
   };
 
   const [data, setData] = useState({
-    main: { temp: NaN, feels_like: NaN, humidity: null },
-    wind: { speed: NaN, deg: null },
+    main: { temp: NaN, feels_like: NaN, humidity: NaN },
     visibility: null,
     name: null,
     sys: { country: null },
+    wind: { speed: NaN, deg: NaN },
     weather: [{ main: null, description: null }],
   });
- const [isLoading, setLoading] = useState(false);
+
+  const [isLoading, setLoading] = useState(false);
 
   useEffect(() => {
     setLoading(true);
@@ -75,8 +77,8 @@ const CardsWeather = () => {
         });
   }, []);
 
-  if (isLoading) return <p>Lodiang...</p>;
-  if (!data) return <p>No profile data</p>;
+  if (isLoading) return <p>Loading...</p>;
+
 
   return (
     <Card>
@@ -106,10 +108,10 @@ const CardsWeather = () => {
           <TemperatureSub>
             {data.name}, {data.sys.country}
           </TemperatureSub>
+
           <Title>
-            {data.weather.map(({ main }) => (
-              <span>{main}</span>
-            ))}
+           {data.weather.map(({main}) =>
+               <span>{main}</span>)}
           </Title>
         </>
       </TemperatureWrapper>
