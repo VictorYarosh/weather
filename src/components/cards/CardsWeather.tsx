@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import {
   BurgerContent, BurgerContentText,
   Card,
@@ -17,69 +17,13 @@ import IconEye from "../../images/eye.png";
 import IconWater from "../../images/Vector.png";
 import IconTemperature from "../../images/temperature.png";
 import IconWindy from "../../images/windy.png";
+import useFetch from "../../hooks/use-weather";
 
 
-
-
-
-function CardsWeather() {
-  const dateBuilder = (d: Date) => {
-    const months = [
-      "January",
-      "February",
-      "March",
-      "April",
-      "May",
-      "June",
-      "July",
-      "August",
-      "September",
-      "October",
-      "November",
-      "December",
-    ];
-    const days = [
-      "Sunday",
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday",
-    ];
-
-    const day = days[d.getDay()];
-    const date = d.getDate();
-    const month = months[d.getMonth()];
-    const year = d.getFullYear();
-
-    return `${day} ${date} ${month} ${year}`;
-  };
-
-  const [data, setData] = useState({
-    main: { temp: NaN, feels_like: NaN, humidity: NaN },
-    visibility: null,
-    name: null,
-    sys: { country: null },
-    wind: { speed: NaN, deg: NaN },
-    weather: [{ main: null, description: null }],
-  });
-
-  const [isLoading, setLoading] = useState(false);
-
-  useEffect(() => {
-    setLoading(true);
-    fetch(`${api.base}weather?q=Kyiv,ua&units=metric&APPID=${api.key}`)
-        .then((res) => res.json())
-        .then((data) => {
-          setData(data);
-          setLoading(false);
-        });
-  }, []);
+const CardsWeather = () => {
+  const {dateBuilder,data,isLoading} = useFetch(`${api.base}weather?q=Kyiv,ua&units=metric&APPID=${api.key}`);
 
   if (isLoading) return <p>Loading...</p>;
-
-
   return (
     <Card>
       <Dropdown>

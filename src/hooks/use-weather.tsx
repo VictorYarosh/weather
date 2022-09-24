@@ -1,9 +1,7 @@
-import {useEffect, useState} from "react";
+import {useState, useEffect} from "react";
 import {api} from "../const";
 
-
-function useCardsWeather() {
-
+const useFetch = (s: string) => {
     const dateBuilder = (d: Date) => {
         const months = [
             "January",
@@ -36,7 +34,7 @@ function useCardsWeather() {
 
         return `${day} ${date} ${month} ${year}`;
     };
-
+    const [isLoading, setLoading] = useState(false);
     const [data, setData] = useState({
         main: { temp: NaN, feels_like: NaN, humidity: NaN },
         visibility: null,
@@ -45,9 +43,6 @@ function useCardsWeather() {
         wind: { speed: NaN, deg: NaN },
         weather: [{ main: null, description: null }],
     });
-
-    const [isLoading, setLoading] = useState(false);
-
     useEffect(() => {
         setLoading(true);
         fetch(`${api.base}weather?q=Kyiv,ua&units=metric&APPID=${api.key}`)
@@ -57,6 +52,8 @@ function useCardsWeather() {
                 setLoading(false);
             });
     }, []);
-}
 
-export default useCardsWeather;
+    return {dateBuilder,data,isLoading};
+};
+
+export default useFetch;
