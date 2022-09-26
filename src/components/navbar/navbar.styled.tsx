@@ -11,10 +11,11 @@ export const NavBar = styled.nav`
     padding: 0 10px;
   }
 `;
-export const Links = styled.a`
+export const Links = styled.ul`
   text-decoration: none;
   color: white;
   display: flex;
+  list-style: none;
   @media (max-width: 425px) {
     margin: 0;
     font-size: 15px;
@@ -28,6 +29,7 @@ export const LogoTxt = styled.a`
   font-weight: 400;
   font-size: 20px;
   line-height: 36px;
+  
 
   @media (max-width: 425px) {
     margin: 15px 25px;
@@ -38,7 +40,7 @@ export const LogoTxt = styled.a`
     font-size: 13px
   }
 `;
-export const LinksPage = styled.div`
+export const LinksPage = styled.li`
   padding: 20px 20px;
   font-weight: 400;
   font-size: 20px;

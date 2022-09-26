@@ -1,31 +1,19 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import styled from "styled-components";
-import Navbar from "./components/navbar/Navbar";
-import CardsWeather from "./components/cards/CardsWeather";
-import CardWeatherAll from "./components/cards/CardWeatherAll";
+import {Title} from "./cocommon.styled";
+import Navbar from "./components/navbar/navbar";
+import CartWeather from "./components/cards/cards-weather";
+import CardWeatherAll from "./components/cards/card-weather-all";
 
-const BodyTitle = styled.div`
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  height: 100%;
-  
-  @media (max-width: 768px) {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-`;
 
 function App() {
   return (
     <Router>
       <Navbar />
-      <BodyTitle>
-        <CardsWeather />
+      <Title>
+        <CartWeather />
         <CardWeatherAll />
-      </BodyTitle>
+      </Title>
 
       <Switch>
         <Route exact path="/"></Route>
