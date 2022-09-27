@@ -28,11 +28,11 @@ export const days = [
     "Saturday",
 ];
 
-export const weatherAll = {
-    main: { temp: NaN, feels_like: NaN, humidity: null },
+export const weather = {
+    main: {temp: NaN, feels_like: NaN, humidity: null},
     visibility: null,
     name: null,
-    sys: { country: null },
-    wind: { speed: NaN, deg: null },
-    weather: [{ main: null, description: null}],
+    sys: {country: null},
+    wind: {speed: NaN, deg: null},
+    weather: [{main: NaN, description: null}],
 }

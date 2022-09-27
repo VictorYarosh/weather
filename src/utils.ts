@@ -1,6 +1,6 @@
 import {days, months} from "./const";
 
-const dateBuilder = (d: Date) => {
+export const dateBuilder = (d: Date) => {
     const day = days[d.getDay()];
     const date = d.getDate();
     const month = months[d.getMonth()];
@@ -8,4 +8,10 @@ const dateBuilder = (d: Date) => {
 
     return `${day} ${date} ${month} ${year}`;
 };
-export default dateBuilder;
+
+
+export const getFormattedTempeture = (data: number) => {
+    if(Math.trunc(data) !== null) {
+        return data
+    }
+}

@@ -117,7 +117,7 @@ export const Temperature = styled.p`
     font-size: 60px;
   }
 `;
-export const TemperatureSub = styled.span`
+export const TemperatureSub = styled.div`
   padding: 20px 0;
   font-size: 24px;
   font-weight: 400;
