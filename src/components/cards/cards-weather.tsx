@@ -15,7 +15,8 @@ import IconWater from "../../images/Vector.png";
 import IconTemperature from "../../images/temperature.png";
 import IconWindy from "../../images/windy.png";
 import useCartWeather from "../../hooks/useCartWeather";
-import {getFormattedTempeture} from "../../utils";
+import {getFormattedTemperature} from "../../utils";
+
 
 
 const CartWeather = () => {
@@ -35,7 +36,7 @@ const CartWeather = () => {
         </WeatherIcon>
         <TemperatureWrapper>
             <Temperature>
-                {getFormattedTempeture(data.main.temp)}
+                {getFormattedTemperature(data.main.temp)}°C
             </Temperature>
             <TemperatureSub>
                {data.name}, {data.sys.country}
@@ -58,11 +59,11 @@ const CartWeather = () => {
             <div>
                 <FooterSub>
                     <FooterImg src={IconTemperature} />
-                    <p>{getFormattedTempeture(data.main.feels_like)}°C</p>
+                    <p>{getFormattedTemperature(data.main.feels_like)}°C</p>
                 </FooterSub>
                 <FooterSub>
                     <FooterImg src={IconWindy} />
-                    <p>{getFormattedTempeture(data.wind.speed)}s</p>
+                    <p>{getFormattedTemperature(data.wind.speed)}s</p>
                 </FooterSub>
             </div>
         </FooterWrapper>

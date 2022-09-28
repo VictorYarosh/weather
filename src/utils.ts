@@ -9,9 +9,8 @@ export const dateBuilder = (d: Date) => {
     return `${day} ${date} ${month} ${year}`;
 };
 
-
-export const getFormattedTempeture = (data: number) => {
-    if(Math.trunc(data) !== null) {
-        return data
-    }
+export const getFormattedTemperature = (data: number | null) => {
+   if(data) {
+       return Math.trunc(data)
+   }
 }

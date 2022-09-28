@@ -29,10 +29,10 @@ export const days = [
 ];
 
 export const weather = {
-    main: {temp: NaN, feels_like: NaN, humidity: null},
+    main: {temp: null, feels_like: null, humidity: null},
     visibility: null,
     name: null,
     sys: {country: null},
-    wind: {speed: NaN, deg: null},
-    weather: [{main: NaN, description: null}],
+    wind: {speed: null, deg: null},
+    weather: [{main: null, description: null}]
 }
