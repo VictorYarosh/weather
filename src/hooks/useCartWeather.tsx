@@ -21,14 +21,6 @@ const useCartWeather = (url: string) => {
       .finally(() => {
         setLoading(false);
       });
-
-    // setLoading(false);
-    // fetch(`${api.base}weather?q=Kyiv,ua&units=metric&APPID=${api.key}`)
-    //     .then((res) => res.json())
-    //     .then((data) => {
-    //         setData(data);
-    //         setLoading(false);
-    //     })
   }, []);
 
   return { dateBuilder, data, isLoading, error };
