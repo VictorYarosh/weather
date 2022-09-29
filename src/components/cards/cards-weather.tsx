@@ -7,7 +7,7 @@ import {
   WeatherIcon,
   WeatherImg
 } from "./cards-weather.styled";
-import DropdownMemu from "./commons/dropdown";
+import DropdownMenu from "./commons/dropdown";
 import {api} from "../../const";
 import SunIcon from "../../images/sunny.png";
 import IconEye from "../../images/eye.png";
@@ -20,13 +20,14 @@ import {getFormattedTemperature} from "../../utils";
 
 
 const CartWeather = () => {
-  const {dateBuilder,isLoading,data} = useCartWeather(`${api.base}weather?q=Kyiv,ua&units=metric&APPID=${api.key}`);
+  const {dateBuilder,isLoading,data,error} = useCartWeather(`${api.base}weather?q=Kyiv,ua&units=metric&APPID=${api.key}`);
 
 
   if (isLoading) return <p>Loading...</p>
+  if (error) console.log(error)
   return (
     <Card>
-        <DropdownMemu />
+        <DropdownMenu />
         <WeatherIcon>
             <WeatherImg src={SunIcon} />
             <TitleWrapper>
