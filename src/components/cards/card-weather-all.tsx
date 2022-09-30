@@ -1,9 +1,6 @@
-import React  from "react";
+import React from 'react';
 
-import {Card} from "./cards-weather.styled";
-
-
-
+import { Card } from './cards-weather.styled';
 
 const CardWeatherAll: React.FC = () => {
   return (

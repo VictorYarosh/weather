@@ -1,20 +1,18 @@
-import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import {Title} from "./cocommon.styled";
-import Navbar from "./components/navbar/navbar";
-import CartWeather from "./components/cards/cards-weather";
-import CardWeatherAll from "./components/cards/card-weather-all";
-
+import React from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { CardsTitle } from './cocommon.styled';
+import Index from './components/navbar';
+import CardWeather from './components/cards/cards-weather';
+import CardWeatherAll from './components/cards/card-weather-all';
 
 function App() {
   return (
     <Router>
-      <Navbar />
-      <Title>
-        <CartWeather />
+      <Index />
+      <CardsTitle>
+        <CardWeather />
         <CardWeatherAll />
-      </Title>
-
+      </CardsTitle>
       <Switch>
         <Route exact path="/"></Route>
         <Route path="/about">

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const NavBar = styled.nav`
   background-color: purple;
@@ -21,25 +21,7 @@ export const Links = styled.ul`
     font-size: 15px;
   }
 `;
-export const LinksImg = styled.img`
-    padding: 10px 10px;
-`;
-export const LogoTxt = styled.a`
-  margin: 20px 60px;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 36px;
-  
 
-  @media (max-width: 425px) {
-    margin: 15px 25px;
-    line-height: 22px;
-    font-size: 15px
-  }
-  @media (max-width: 425px) {
-    font-size: 13px
-  }
-`;
 export const LinksPage = styled.li`
   padding: 20px 20px;
   font-weight: 400;
@@ -51,4 +33,3 @@ export const LinksPage = styled.li`
     font-size: 12px;
   }
 `;
-

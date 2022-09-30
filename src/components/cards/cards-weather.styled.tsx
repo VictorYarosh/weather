@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Card = styled.div`
   width: 450px;
@@ -15,48 +15,6 @@ export const Card = styled.div`
     width: 320px;
     height: 525px;
   }
-`;
-export const Dropdown = styled.div`
-  display: flex;
-  justify-content: flex-end;
-`;
-export const DropdownInput = styled.input`
-  display: none;
-  margin: 50px -30px;
-`;
-export const DropdownList = styled.ul`
-  color: #fff;
-  padding: 5px 35px;
-  cursor: pointer;
-`;
-export const DropdownListLi = styled.li`
-  background: none repeat scroll 0 0 #fff;
-  height: 7px;
-  width: 7px;
-  line-height: 0;
-  list-style: none outside none;
-  margin-right: 15px;
-  margin-top: 3px;
-  vertical-align: top;
-  border-radius: 50%;
-  pointer-events: none;
-`;
-export const BurgerContent = styled.div`
-  display: none;
-  position: absolute;
-  background-color: purple;
-  overflow: auto;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  max-width: 100px;
-  max-height: 30%;
-`;
-export const BurgerContentText = styled.a`
-  position: relative;
-  color: white;
-  padding: 17px;
-  text-decoration: none;
-  display: block;
-  text-align: center;
 `;
 export const WeatherIcon = styled.div`
   display: flex;
@@ -137,7 +95,7 @@ export const FooterImg = styled.img`
   padding: 13px 15px;
   width: 24px;
   height: 24px;
-  
+
   @media (max-width: 425px) {
     width: 20px;
     height: 20px;
@@ -147,11 +105,11 @@ export const FooterText = styled.p`
   :before {
     border-right: 2px solid white;
     bottom: 0;
-    content: "";
+    content: '';
     position: relative;
     top: 0px;
     left: 110px;
-    
+
     @media (max-width: 425px) {
       left: 90px;
     }
