@@ -4,7 +4,7 @@ import { NavBar, Links } from './navbar.styled';
 import { LinksPage } from './navbar.styled';
 import Logo from '../logo/logo';
 
-const Index = () => {
+const Navbar = () => {
   return (
     <NavBar>
       <Logo />
@@ -16,4 +16,4 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default Navbar;
