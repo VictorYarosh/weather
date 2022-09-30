@@ -8,16 +8,17 @@ const useCardWeather = () => {
   const [isLoading, setLoading] = useState(false);
 
   useEffect(() => {
-    async function getWeather() {
+    const getWeather = async () => {
       try {
         const response = await axios.get(
           `${api.base}weather?q=Kyiv,ua&units=metric&APPID=${api.key}`
         );
         setData(response.data);
-      } catch (isLoading) {
+      } catch (error) {
+        console.error(error);
         setLoading(false);
       }
-    }
+    };
     getWeather().then((r) => null);
   }, []);
 
