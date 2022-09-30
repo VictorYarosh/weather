@@ -20,11 +20,11 @@ import IconEye from '../../images/eye.png';
 import IconWater from '../../images/Vector.png';
 import IconTemperature from '../../images/temperature.png';
 import IconWindy from '../../images/windy.png';
-import useCardWeather from '../../hooks/useCardWeather';
+import cardWeatherHook from '../../hooks/card-weather-hook';
 import { getFormattedTemperature } from '../../utils';
 
 const CardWeather = () => {
-  const { dateBuilder, data } = useCardWeather();
+  const { dateBuilder, data } = cardWeatherHook();
 
   return (
     <Card>

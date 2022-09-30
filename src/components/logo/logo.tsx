@@ -1,15 +1,14 @@
 import React from 'react';
 
-import { LinksImg, LogoTxt } from './logo-styled';
-import { Links } from '../navbar/navbar.styled';
+import { LogoContainer, LogoImg, LogoName } from './logo-styled';
 import LogoSrc from '../../images/logo.svg';
 
 const Logo = () => {
   return (
-    <Links>
-      <LinksImg src={LogoSrc} />
-      <LogoTxt>Weather by VicBox</LogoTxt>
-    </Links>
+    <LogoContainer>
+      <LogoImg src={LogoSrc} />
+      <LogoName>Weather by VicBox</LogoName>
+    </LogoContainer>
   );
 };
 

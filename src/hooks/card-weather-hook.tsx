@@ -1,9 +1,10 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
-import { api, weather } from '../components/cards/const';
+import { weather } from '../components/cards/const';
+import { api } from '../const';
 import { dateBuilder } from '../utils';
 
-const useCardWeather = () => {
+const cardWeatherHook = () => {
   const [data, setData] = useState(weather);
   const [isLoading, setLoading] = useState(false);
 
@@ -19,10 +20,12 @@ const useCardWeather = () => {
         setLoading(false);
       }
     };
-    getWeather().then((r) => null);
+    getWeather().catch((error) => {
+      console.error(error);
+    });
   }, []);
 
   return { dateBuilder, data, isLoading };
 };
 
-export default useCardWeather;
+export default cardWeatherHook;

@@ -6,10 +6,6 @@ export const NavBar = styled.nav`
   justify-content: space-between;
   height: auto;
   background-image: linear-gradient(to bottom right, #6447b5, #9881da);
-
-  @media (max-width: 425px) {
-    padding: 0 10px;
-  }
 `;
 export const Links = styled.ul`
   text-decoration: none;
@@ -17,7 +13,7 @@ export const Links = styled.ul`
   display: flex;
   list-style: none;
   @media (max-width: 425px) {
-    margin: 0;
+    margin-top: 20px;
     font-size: 15px;
   }
 `;

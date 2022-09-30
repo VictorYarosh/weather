@@ -34,7 +34,7 @@ export const BurgerContent = styled.div`
   max-width: 100px;
   max-height: 30%;
 `;
-export const BurgerContentText = styled.a`
+export const BurgerContentLink = styled.a`
   position: relative;
   color: white;
   padding: 17px;

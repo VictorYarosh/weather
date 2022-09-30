@@ -1,7 +1,7 @@
 import React from 'react';
 import {
   BurgerContent,
-  BurgerContentText,
+  BurgerContentLink,
   Dropdown,
   DropdownInput,
   DropdownList,
@@ -18,9 +18,9 @@ const DropdownMenu = () => {
         <DropdownListLi></DropdownListLi>
       </DropdownList>
       <BurgerContent>
-        <BurgerContentText>Home</BurgerContentText>
-        <BurgerContentText>About</BurgerContentText>
-        <BurgerContentText>Contacts</BurgerContentText>
+        <BurgerContentLink>Home</BurgerContentLink>
+        <BurgerContentLink>About</BurgerContentLink>
+        <BurgerContentLink>Contacts</BurgerContentLink>
       </BurgerContent>
     </Dropdown>
   );

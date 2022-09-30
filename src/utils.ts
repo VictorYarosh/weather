@@ -1,4 +1,4 @@
-import { days, months } from './components/cards/const';
+import { days, months } from './const';
 
 export const dateBuilder = (d: Date) => {
   const day = days[d.getDay()];
