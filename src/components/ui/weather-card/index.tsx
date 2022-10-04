@@ -1,6 +1,7 @@
 import React from 'react';
 import {
   Card,
+  CardStyled,
   FooterImg,
   FooterSub,
   FooterText,
@@ -29,49 +30,54 @@ const CardWeather = () => {
   const { dateBuilder, data } = cardWeatherHook();
 
   return (
-    <Card>
-      <DropdownMenu />
-      <WeatherIcon>
-        <WeatherImg src={SunIcon} />
-        <TitleWrapper>
-          <Title>Valle de Angeles, HN</Title>
-          <TitleSub>{dateBuilder(new Date())}</TitleSub>
-        </TitleWrapper>
-      </WeatherIcon>
-      <TemperatureWrapper>
-        <Temperature>{getFormattedTemperature(data.main.temp)}°C</Temperature>
-        <TemperatureSub>
-          {data.name}, {data.sys.country}
-        </TemperatureSub>
-        <Title>
-          {data.weather.map(({ main }) => (
-            <span>{main}</span>
-          ))}
-        </Title>
-      </TemperatureWrapper>
-      <FooterWrapper>
-        <div>
-          <FooterSub>
-            <FooterImg src={IconEye} />
-            <FooterText>{data.visibility}km</FooterText>
-          </FooterSub>
-          <FooterSub>
-            <FooterImg src={IconWater} />
-            <FooterText>{data.main.humidity}km</FooterText>
-          </FooterSub>
-        </div>
-        <div>
-          <FooterSub>
-            <FooterImg src={IconTemperature} />
-            <p>{getFormattedTemperature(data.main.feels_like)}°C</p>
-          </FooterSub>
-          <FooterSub>
-            <FooterImg src={IconWindy} />
-            <p>{getFormattedTemperature(data.wind.speed)}s</p>
-          </FooterSub>
-        </div>
-      </FooterWrapper>
-    </Card>
+    <CardStyled>
+      <Card>
+        <DropdownMenu />
+        <WeatherIcon>
+          <WeatherImg src={SunIcon} />
+          <TitleWrapper>
+            <TemperatureSub>
+              {data.name}, {data.sys.country}
+            </TemperatureSub>
+            <TitleSub>{dateBuilder(new Date())}</TitleSub>
+          </TitleWrapper>
+        </WeatherIcon>
+        <TemperatureWrapper>
+          <Temperature>{getFormattedTemperature(data.main.temp)}°C</Temperature>
+          <Title>
+            {' '}
+            {data.weather.map(({ main }) => (
+              <span>{main}</span>
+            ))}
+          </Title>
+        </TemperatureWrapper>
+        <FooterWrapper>
+          <div>
+            <FooterSub>
+              <FooterImg src={IconEye} />
+              <FooterText>{data.visibility}km</FooterText>
+            </FooterSub>
+            <FooterSub>
+              <FooterImg src={IconWater} />
+              <FooterText>{data.main.humidity}km</FooterText>
+            </FooterSub>
+          </div>
+          <div>
+            <FooterSub>
+              <FooterImg src={IconTemperature} />
+              <p>{getFormattedTemperature(data.main.feels_like)}°C</p>
+            </FooterSub>
+            <FooterSub>
+              <FooterImg src={IconWindy} />
+              <p>{getFormattedTemperature(data.wind.speed)}s</p>
+            </FooterSub>
+          </div>
+        </FooterWrapper>
+      </Card>
+      <Card>
+        <div></div>
+      </Card>
+    </CardStyled>
   );
 };
 

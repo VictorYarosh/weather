@@ -8,8 +8,6 @@ export const Navbar = styled.nav`
   background-image: linear-gradient(to bottom right, #6447b5, #9881da);
 `;
 
-export const LayoutStyled = styled.div``;
-
 export const Links = styled.ul`
   text-decoration: none;
   color: white;

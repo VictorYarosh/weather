@@ -1,5 +1,16 @@
 import styled from 'styled-components';
 
+export const CardStyled = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+
+  @media (max-width: 425px) {
+    flex-direction: column;
+  }
+`;
+
+export const LayoutStyled = styled.div``;
+
 export const Card = styled.div`
   width: 450px;
   height: 575px;
@@ -7,6 +18,9 @@ export const Card = styled.div`
   border-radius: 50px;
   background-color: #5639a8;
 
+  @media (max-width: 768px) {
+    margin: 70px 30px;
+  }
   @media (max-width: 425px) {
     width: 375px;
     height: 540px;
@@ -34,11 +48,9 @@ export const TitleWrapper = styled.div`
   color: white;
   font-weight: 400;
   line-height: 27px;
-  margin: 20px 0;
 
   @media (max-width: 425px) {
     font-size: 14px;
-    margin: 10px 0px 0px -15px;
   }
   @media (max-width: 375px) {
     font-size: 10px;
@@ -49,15 +61,21 @@ export const Title = styled.p`
   font-size: 25px;
   font-weight: 600;
 
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
   @media (max-width: 425px) {
-    font-size: 20px;
-    margin-bottom: 20px;
+    font-size: 14px;
   }
 `;
 export const TitleSub = styled.span`
   font-weight: 400;
   font-size: 15px;
   line-height: 27px;
+
+  @media (max-width: 768px) {
+    font-size: 12px;
+  }
 `;
 export const TemperatureWrapper = styled.div`
   display: flex;
@@ -76,7 +94,7 @@ export const Temperature = styled.p`
   }
 `;
 export const TemperatureSub = styled.div`
-  padding: 20px 0;
+  padding: 20px 0 0;
   font-size: 24px;
   font-weight: 400;
 `;
@@ -84,6 +102,7 @@ export const FooterWrapper = styled.div`
   display: flex;
   justify-content: space-evenly;
   color: white;
+  margin: 50px 0;
 `;
 export const FooterSub = styled.span`
   display: flex;
