@@ -1,8 +1,9 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
-import { weather } from '../components/cards/const';
+
 import { api } from '../const';
 import { dateBuilder } from '../utils';
+import { weather } from '../components/ui/weather-card/const';
 
 const cardWeatherHook = () => {
   const [data, setData] = useState(weather);

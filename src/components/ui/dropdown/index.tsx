@@ -6,7 +6,7 @@ import {
   DropdownInput,
   DropdownList,
   DropdownListLi
-} from '../commons/dropdown-styled';
+} from './dropdown.styled';
 
 const DropdownMenu = () => {
   return (

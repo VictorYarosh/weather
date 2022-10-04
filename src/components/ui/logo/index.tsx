@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { LogoContainer, LogoImg, LogoName } from './logo-styled';
-import LogoSrc from '../../images/logo.svg';
+import { LogoContainer, LogoImg, LogoName } from './logo.styled';
+import LogoSrc from '../../../assets/images/logo.svg';
 
 const Logo = () => {
   return (

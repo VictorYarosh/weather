@@ -1,12 +1,15 @@
 import styled from 'styled-components';
 
-export const NavBar = styled.nav`
+export const Navbar = styled.nav`
   background-color: purple;
   display: flex;
   justify-content: space-between;
   height: auto;
   background-image: linear-gradient(to bottom right, #6447b5, #9881da);
 `;
+
+export const LayoutStyled = styled.div``;
+
 export const Links = styled.ul`
   text-decoration: none;
   color: white;

@@ -13,15 +13,17 @@ import {
   TitleWrapper,
   WeatherIcon,
   WeatherImg
-} from './cards-weather.styled';
-import DropdownMenu from './commons/dropdown';
-import SunIcon from '../../images/sunny.png';
-import IconEye from '../../images/eye.png';
-import IconWater from '../../images/Vector.png';
-import IconTemperature from '../../images/temperature.png';
-import IconWindy from '../../images/windy.png';
-import cardWeatherHook from '../../hooks/card-weather-hook';
-import { getFormattedTemperature } from '../../utils';
+} from './weather-card.styled';
+
+import SunIcon from '../../../assets/images/sunny.png';
+import IconEye from '../../../assets/images/eye.png';
+import IconWater from '../../../assets/images/Vector.png';
+import IconTemperature from '../../../assets/images/temperature.png';
+import IconWindy from '../../../assets/images/windy.png';
+
+import { getFormattedTemperature } from '../../../utils';
+import cardWeatherHook from '../../../hooks/card-weather-hook';
+import DropdownMenu from '../dropdown';
 
 const CardWeather = () => {
   const { dateBuilder, data } = cardWeatherHook();
