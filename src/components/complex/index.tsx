@@ -1,15 +1,14 @@
 import React from 'react';
+import { WeatherWrapper } from './weather-cars.styled';
+import WeatherCardAll from '../ui/weather-card-all';
+import WeatherCard from '../ui/weather-card';
 
-import { Card, WeatherWrapper } from '../ui/weather-card/weather-card.styled';
-
-const WeatherCardAll = () => {
+const Weather = () => {
   return (
     <WeatherWrapper>
-      <Card>
-        <div></div>
-      </Card>
+      <WeatherCard />
+      <WeatherCardAll />
     </WeatherWrapper>
   );
 };
-
-export default WeatherCardAll;
+export default Weather;

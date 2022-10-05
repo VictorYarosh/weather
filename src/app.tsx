@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { Layout } from './components/containers/layout';
-import WeatherCard from './components/ui/weather-card';
+import Weather from './components/complex';
 
 function App() {
   return (
@@ -9,7 +9,7 @@ function App() {
       <Layout>
         <Switch>
           <Route exact path="/">
-            {<WeatherCard />}
+            {<Weather />}
           </Route>
           <Route path="/about"></Route>
         </Switch>
