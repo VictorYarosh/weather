@@ -5,9 +5,10 @@ import { api } from '../const';
 import { dateBuilder } from '../utils';
 import { weather } from '../components/ui/weather-card/const';
 
-const cardWeatherHook = () => {
+const useHookWeather = () => {
   const [data, setData] = useState(weather);
   const [isLoading, setLoading] = useState(false);
+  // const [location, setlocation] = useState('')
 
   useEffect(() => {
     const getWeather = async () => {
@@ -29,4 +30,4 @@ const cardWeatherHook = () => {
   return { dateBuilder, data, isLoading };
 };
 
-export default cardWeatherHook;
+export default useHookWeather;

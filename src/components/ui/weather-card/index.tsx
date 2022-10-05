@@ -1,7 +1,6 @@
 import React from 'react';
 import {
   Card,
-  CardStyled,
   FooterImg,
   FooterSub,
   FooterText,
@@ -13,7 +12,8 @@ import {
   TitleSub,
   TitleWrapper,
   WeatherIcon,
-  WeatherImg
+  WeatherImg,
+  WeatherWrapper
 } from './weather-card.styled';
 
 import SunIcon from '../../../assets/images/sunny.png';
@@ -23,14 +23,14 @@ import IconTemperature from '../../../assets/images/temperature.png';
 import IconWindy from '../../../assets/images/windy.png';
 
 import { getFormattedTemperature } from '../../../utils';
-import cardWeatherHook from '../../../hooks/card-weather-hook';
 import DropdownMenu from '../dropdown';
+import useHookWeather from '../../../hooks/use-weather-hook';
 
-const CardWeather = () => {
-  const { dateBuilder, data } = cardWeatherHook();
+const WeatherCard = () => {
+  const { dateBuilder, data } = useHookWeather();
 
   return (
-    <CardStyled>
+    <WeatherWrapper>
       <Card>
         <DropdownMenu />
         <WeatherIcon>
@@ -74,11 +74,8 @@ const CardWeather = () => {
           </div>
         </FooterWrapper>
       </Card>
-      <Card>
-        <div></div>
-      </Card>
-    </CardStyled>
+    </WeatherWrapper>
   );
 };
 
-export default CardWeather;
+export default WeatherCard;

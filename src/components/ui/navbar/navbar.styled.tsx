@@ -13,6 +13,7 @@ export const Links = styled.ul`
   color: white;
   display: flex;
   list-style: none;
+
   @media (max-width: 425px) {
     margin-top: 20px;
     font-size: 15px;

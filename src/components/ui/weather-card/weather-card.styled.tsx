@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const CardStyled = styled.div`
+export const WeatherWrapper = styled.div`
   display: flex;
   justify-content: space-evenly;
 
@@ -8,9 +8,6 @@ export const CardStyled = styled.div`
     flex-direction: column;
   }
 `;
-
-export const LayoutStyled = styled.div``;
-
 export const Card = styled.div`
   width: 450px;
   height: 575px;
