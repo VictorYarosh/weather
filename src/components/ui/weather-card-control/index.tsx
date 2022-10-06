@@ -1,7 +1,7 @@
 import React from 'react';
 import { WeatherCardWrapper } from '../weather-card/weather-card.styled';
 
-const WeatherCarAdd = () => {
+const WeatherCardControl = () => {
   return (
     <WeatherCardWrapper>
       <div></div>
@@ -9,4 +9,4 @@ const WeatherCarAdd = () => {
   );
 };
 
-export default WeatherCarAdd;
+export default WeatherCardControl;
