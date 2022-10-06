@@ -1,8 +1,8 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 
-import { api } from '../../../const';
 import { weather } from './const';
+import { api } from '../../../const';
 import { dateBuilder } from '../../../utils';
 
 const useWeatherHook = () => {

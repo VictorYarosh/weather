@@ -14,16 +14,16 @@ import {
   WeatherIcon,
   WeatherImg
 } from './weather-card.styled';
-import DropdownMenu from '../dropdown';
 
+import useWeatherHook from './use-weather-hook';
+
+import DropdownMenu from '../dropdown';
 import SunIcon from '../../../assets/images/sunny.png';
 import IconEye from '../../../assets/images/eye.png';
 import IconWater from '../../../assets/images/Vector.png';
 import IconTemperature from '../../../assets/images/temperature.png';
 import IconWindy from '../../../assets/images/windy.png';
-
 import { getFormattedTemperature } from '../../../utils';
-import useWeatherHook from './use-weather-hook';
 
 const WeatherCard = () => {
   const { dateBuilder, data } = useWeatherHook();
