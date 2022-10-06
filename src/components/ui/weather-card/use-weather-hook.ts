@@ -1,14 +1,13 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 
-import { api } from '../const';
-import { dateBuilder } from '../utils';
-import { weather } from '../components/ui/weather-card/const';
+import { api } from '../../../const';
+import { weather } from './const';
+import { dateBuilder } from '../../../utils';
 
-const useHookWeather = () => {
+const useWeatherHook = () => {
   const [data, setData] = useState(weather);
   const [isLoading, setLoading] = useState(false);
-  // const [location, setlocation] = useState('')
 
   useEffect(() => {
     const getWeather = async () => {
@@ -30,4 +29,4 @@ const useHookWeather = () => {
   return { dateBuilder, data, isLoading };
 };
 
-export default useHookWeather;
+export default useWeatherHook;

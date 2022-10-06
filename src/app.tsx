@@ -1,7 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+
 import { Layout } from './components/containers/layout';
-import Weather from './components/complex';
+import Weather from './components/complex/main/weather';
 
 function App() {
   return (

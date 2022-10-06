@@ -1,10 +1,8 @@
 import React, { FC } from 'react';
-import styled from 'styled-components';
-import { LayoutProps } from './types';
 
-import NavBar from '../ui/navbar';
-
-export const LayoutStyled = styled.div``;
+import { LayoutStyled } from './layout.styled';
+import NavBar from '../../ui/navbar';
+import { LayoutProps } from '../layout/types';
 
 export const Layout: FC<LayoutProps> = ({ children }) => (
   <LayoutStyled>

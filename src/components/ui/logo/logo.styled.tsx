@@ -21,6 +21,7 @@ export const LogoName = styled.a`
     line-height: 22px;
     font-size: 13px;
   }
+
   @media (max-width: 375px) {
     margin: 30px 10px;
     line-height: 22px;

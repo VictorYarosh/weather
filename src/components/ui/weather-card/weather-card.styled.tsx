@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Card = styled.div`
+export const WeatherCardWrapper = styled.div`
   width: 450px;
   height: 575px;
   margin: 80px 0;
@@ -10,10 +10,12 @@ export const Card = styled.div`
   @media (max-width: 768px) {
     margin: 70px 30px;
   }
+
   @media (max-width: 425px) {
     width: 375px;
     height: 540px;
   }
+
   @media (max-width: 375px) {
     width: 320px;
     height: 525px;
@@ -41,6 +43,7 @@ export const TitleWrapper = styled.div`
   @media (max-width: 425px) {
     font-size: 14px;
   }
+
   @media (max-width: 375px) {
     font-size: 10px;
   }
@@ -53,6 +56,7 @@ export const Title = styled.p`
   @media (max-width: 768px) {
     font-size: 16px;
   }
+
   @media (max-width: 425px) {
     font-size: 14px;
   }
@@ -66,6 +70,7 @@ export const TitleSub = styled.span`
     font-size: 12px;
   }
 `;
+
 export const TemperatureWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -95,6 +100,7 @@ export const FooterWrapper = styled.div`
 `;
 export const FooterSub = styled.span`
   display: flex;
+
   @media (max-width: 425px) {
     font-size: 12px;
   }
@@ -121,6 +127,7 @@ export const FooterText = styled.p`
     @media (max-width: 425px) {
       left: 90px;
     }
+
     @media (max-width: 375px) {
       left: 80px;
     }
