@@ -12,7 +12,7 @@ function App() {
       <Layout>
         <Switch>
           <Route exact path="/">
-            {<Weather />}
+            <Weather />
           </Route>
           <Route path="/about"></Route>
         </Switch>

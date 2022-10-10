@@ -43,7 +43,6 @@ const WeatherCard = () => {
       <TemperatureWrapper>
         <Temperature>{getFormattedTemperature(data.main.temp)}°C</Temperature>
         <Title>
-          {' '}
           {data.weather.map(({ main }) => (
             <span>{main}</span>
           ))}
