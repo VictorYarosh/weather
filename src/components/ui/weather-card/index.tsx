@@ -15,7 +15,7 @@ import {
   WeatherImg
 } from './weather-card.styled';
 
-import useWeatherCardHook from './use-weather-card-hook';
+import useWeatherCard from './use-weather-card';
 
 import DropdownMenu from '../dropdown';
 import SunIcon from '../../../assets/images/sunny.png';
@@ -26,7 +26,7 @@ import IconWindy from '../../../assets/images/windy.png';
 import { getFormattedTemperature } from '../../../utils';
 
 const WeatherCard = () => {
-  const { dateBuilder, data } = useWeatherCardHook();
+  const { dateBuilder, data } = useWeatherCard();
 
   return (
     <WeatherCardWrapper>

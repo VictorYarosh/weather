@@ -5,7 +5,7 @@ import { weather } from './const';
 import { api } from '../../../const';
 import { dateBuilder } from '../../../utils';
 
-const useWeatherCardHook = () => {
+const useWeatherCard = () => {
   const [data, setData] = useState(weather);
   const [isLoading, setLoading] = useState(false);
 
@@ -29,4 +29,4 @@ const useWeatherCardHook = () => {
   return { dateBuilder, data, isLoading };
 };
 
-export default useWeatherCardHook;
+export default useWeatherCard;
