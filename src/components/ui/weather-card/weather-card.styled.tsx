@@ -5,58 +5,54 @@ export const WeatherCardWrapper = styled.div`
   height: 575px;
   margin: 80px 0;
   border-radius: 50px;
-  background-color: #5639a8;
+  background: hsl(262, 80%, 25%, 0.5);
 
   @media (max-width: 768px) {
-    margin: 70px 30px;
+    margin: 45px 20px;
+    height: 520px;
   }
-
   @media (max-width: 425px) {
-    width: 375px;
-    height: 540px;
+    width: 385px;
+    height: 500px;
   }
-
   @media (max-width: 375px) {
-    width: 320px;
-    height: 525px;
+    width: 332px;
+    height: 475px;
   }
 `;
 export const WeatherIcon = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
+  margin: -15px 0;
 `;
 export const WeatherImg = styled.img`
   width: 100px;
   height: 100px;
-  position: relative;
-  margin-right: 30px;
-
-  @media (max-width: 425px) {
-    margin-right: 18px;
-  }
 `;
 export const TitleWrapper = styled.div`
   color: white;
   font-weight: 400;
   line-height: 27px;
+  padding-right: 100px;
 
+  @media (max-width: 768px) {
+    padding: 0;
+  }
   @media (max-width: 425px) {
     font-size: 14px;
   }
-
   @media (max-width: 375px) {
     font-size: 10px;
   }
 `;
 export const Title = styled.p`
-  margin: 0;
-  font-size: 25px;
+  padding-top: 50px;
+  font-size: 18px;
   font-weight: 600;
 
   @media (max-width: 768px) {
-    font-size: 16px;
+    font-size: 15px;
   }
-
   @media (max-width: 425px) {
     font-size: 14px;
   }
@@ -67,7 +63,7 @@ export const TitleSub = styled.span`
   line-height: 27px;
 
   @media (max-width: 768px) {
-    font-size: 12px;
+    font-size: 13px;
   }
 `;
 
@@ -77,16 +73,33 @@ export const TemperatureWrapper = styled.div`
   align-items: center;
   color: white;
   position: relative;
+  padding-top: 50px;
+
+  @media (max-width: 768px) {
+    padding-top: 25px;
+  }
 `;
 export const Temperature = styled.p`
   line-height: 10px;
-  font-size: 70px;
+  font-size: 144px;
   font-weight: 500;
+  margin: 75px;
+  position: absolute;
 
+  @media (max-width: 768px) {
+    font-size: 130px;
+  }
   @media (max-width: 425px) {
-    font-size: 60px;
+    font-size: 120px;
   }
 `;
+export const TemperatureSing = styled.p`
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 25px;
+  padding-left: 180px;
+`;
+
 export const TemperatureSub = styled.div`
   padding: 20px 0 0;
   font-size: 24px;
@@ -97,20 +110,32 @@ export const FooterWrapper = styled.div`
   justify-content: space-evenly;
   color: white;
   margin: 50px 0;
+
+  @media (max-width: 768px) {
+    margin: 20px 0;
+  }
 `;
 export const FooterSub = styled.span`
   display: flex;
+  font-size: 18px;
 
-  @media (max-width: 425px) {
+  @media (max-width: 768px) {
     font-size: 12px;
+  }
+  @media (max-width: 425px) {
+    font-size: 15px;
   }
 `;
 export const FooterImg = styled.img`
-  padding: 13px 15px;
+  padding: 18px 5px;
   width: 24px;
   height: 24px;
 
+  @media (max-width: 768px) {
+    padding: 8px 5px;
+  }
   @media (max-width: 425px) {
+    padding: 13px 5px;
     width: 20px;
     height: 20px;
   }
@@ -121,15 +146,17 @@ export const FooterText = styled.p`
     bottom: 0;
     content: '';
     position: relative;
-    top: 0px;
-    left: 110px;
+    top: 0;
+    left: 170px;
 
-    @media (max-width: 425px) {
-      left: 90px;
+    @media (max-width: 768px) {
+      left: 120px;
     }
-
+    @media (max-width: 425px) {
+      left: 140px;
+    }
     @media (max-width: 375px) {
-      left: 80px;
+      left: 135px;
     }
   }
 `;

@@ -15,8 +15,8 @@ export const DropdownList = styled.ul`
 `;
 export const DropdownListLi = styled.li`
   background: none repeat scroll 0 0 #fff;
-  height: 7px;
-  width: 7px;
+  height: 4px;
+  width: 4px;
   line-height: 0;
   list-style: none outside none;
   margin-right: 15px;
