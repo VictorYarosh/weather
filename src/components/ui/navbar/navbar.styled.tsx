@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
 export const Navbar = styled.nav`
-  background-color: purple;
+  //background: hsl(262, 80%, 25%, 0.5);
   display: flex;
   justify-content: space-between;
   height: auto;
-  background-image: linear-gradient(to bottom right, #6447b5, #9881da);
+  background-image: linear-gradient(to bottom, #6447b5, #9881da);
 `;
 
 export const Links = styled.ul`

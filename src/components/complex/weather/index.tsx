@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React from 'react';
 
 import { WeatherWrapper } from './weather.styled';
 import WeatherCard from '../../ui/weather-card';
