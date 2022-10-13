@@ -15,6 +15,9 @@ export const WeatherCardWrapper = styled.div`
     width: 385px;
     height: 500px;
   }
+  @media (max-width: 414px) {
+    width: 375px;
+  }
   @media (max-width: 375px) {
     width: 332px;
     height: 475px;
