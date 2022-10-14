@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const Navbar = styled.nav`
-  //background: hsl(262, 80%, 25%, 0.5);
   display: flex;
   justify-content: space-between;
   height: auto;

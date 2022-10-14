@@ -1,26 +1,13 @@
 import styled from 'styled-components';
 
 export const WeatherCardWrapper = styled.div`
-  width: 450px;
-  height: 575px;
-  margin: 80px 0;
+  margin: 20px;
+  min-width: 30%;
   border-radius: 50px;
   background: hsl(262, 80%, 25%, 0.5);
 
-  @media (max-width: 768px) {
-    margin: 45px 20px;
-    height: 520px;
-  }
-  @media (max-width: 425px) {
-    width: 385px;
-    height: 500px;
-  }
-  @media (max-width: 414px) {
-    width: 375px;
-  }
-  @media (max-width: 375px) {
-    width: 332px;
-    height: 475px;
+  @media (max-width: 1024px) {
+    min-width: 35%;
   }
 `;
 export const WeatherIcon = styled.div`
@@ -114,13 +101,15 @@ export const FooterWrapper = styled.div`
   color: white;
   margin: 50px 0;
 
+  @media (max-width: 1024px) {
+    margin: 40px -10px;
+  }
   @media (max-width: 768px) {
     margin: 20px 0;
   }
 `;
 export const FooterSub = styled.span`
   display: flex;
-  font-size: 18px;
 
   @media (max-width: 768px) {
     font-size: 12px;
@@ -129,11 +118,25 @@ export const FooterSub = styled.span`
     font-size: 15px;
   }
 `;
+export const FooterLine = styled.p`
+  :after {
+    border-right: 2px solid white;
+    bottom: 0;
+    content: '';
+    position: relative;
+    top: 50px;
+    left: 20px;
+  }
+  :before {
+    border-right: 2px solid white;
+    bottom: 0;
+    content: '';
+    position: relative;
+    top: 0;
+    left: 22px;
+  }
+`;
 export const FooterImg = styled.img`
-  padding: 18px 5px;
-  width: 24px;
-  height: 24px;
-
   @media (max-width: 768px) {
     padding: 8px 5px;
   }
@@ -144,22 +147,6 @@ export const FooterImg = styled.img`
   }
 `;
 export const FooterText = styled.p`
-  :before {
-    border-right: 2px solid white;
-    bottom: 0;
-    content: '';
-    position: relative;
-    top: 0;
-    left: 170px;
-
-    @media (max-width: 768px) {
-      left: 120px;
-    }
-    @media (max-width: 425px) {
-      left: 140px;
-    }
-    @media (max-width: 375px) {
-      left: 135px;
-    }
-  }
+  font-size: 16px;
+  padding-left: 10px;
 `;

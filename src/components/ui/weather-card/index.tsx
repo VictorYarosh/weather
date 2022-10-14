@@ -1,6 +1,7 @@
 import React from 'react';
 import {
   FooterImg,
+  FooterLine,
   FooterSub,
   FooterText,
   FooterWrapper,
@@ -55,6 +56,7 @@ const WeatherCard = () => {
           <FooterSub>
             <FooterImg src={IconEye} />
             <FooterText>Visibility {data.visibility}km</FooterText>
+            <FooterLine></FooterLine>
           </FooterSub>
           <FooterSub>
             <FooterImg src={IconWater} />
@@ -64,11 +66,15 @@ const WeatherCard = () => {
         <div>
           <FooterSub>
             <FooterImg src={IconTemperature} />
-            <p>Feels like {getFormattedTemperature(data.main.feels_like)}°C</p>
+            <FooterText>
+              Feels like {getFormattedTemperature(data.main.feels_like)}°C
+            </FooterText>
           </FooterSub>
           <FooterSub>
             <FooterImg src={IconWindy} />
-            <p>Wind {getFormattedTemperature(data.wind.speed)}s</p>
+            <FooterText>
+              Wind {getFormattedTemperature(data.wind.speed)}s
+            </FooterText>
           </FooterSub>
         </div>
       </FooterWrapper>

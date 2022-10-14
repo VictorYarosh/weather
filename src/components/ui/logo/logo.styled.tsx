@@ -8,7 +8,7 @@ export const LogoContainer = styled.div`
 export const LogoImg = styled.img`
   width: 80px;
   height: 80px;
-  margin: 10px 20px;
+  padding: 10px;
 `;
 export const LogoName = styled.a`
   margin: 40px 0;
