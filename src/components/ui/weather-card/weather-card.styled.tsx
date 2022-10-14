@@ -9,6 +9,9 @@ export const WeatherCardWrapper = styled.div`
   @media (max-width: 1024px) {
     min-width: 35%;
   }
+  @media (max-width: 425px) {
+    height: 500px;
+  }
 `;
 export const WeatherIcon = styled.div`
   display: flex;
@@ -18,17 +21,23 @@ export const WeatherIcon = styled.div`
 export const WeatherImg = styled.img`
   width: 100px;
   height: 100px;
+
+  @media (max-width: 768px) {
+    width: 80px;
+    height: 80px;
+  }
 `;
 export const TitleWrapper = styled.div`
   color: white;
   font-weight: 400;
   line-height: 27px;
-  padding-right: 100px;
+  padding-right: 80px;
 
   @media (max-width: 768px) {
     padding: 0;
   }
   @media (max-width: 425px) {
+    padding-right: 50px;
     font-size: 14px;
   }
   @media (max-width: 375px) {
@@ -44,7 +53,7 @@ export const Title = styled.p`
     font-size: 15px;
   }
   @media (max-width: 425px) {
-    font-size: 14px;
+    font-size: 20px;
   }
 `;
 export const TitleSub = styled.span`
@@ -77,10 +86,10 @@ export const Temperature = styled.p`
   position: absolute;
 
   @media (max-width: 768px) {
-    font-size: 130px;
+    font-size: 120px;
   }
   @media (max-width: 425px) {
-    font-size: 120px;
+    font-size: 130px;
   }
 `;
 export const TemperatureSing = styled.p`
@@ -88,12 +97,22 @@ export const TemperatureSing = styled.p`
   font-weight: 400;
   line-height: 25px;
   padding-left: 180px;
+
+  @media (max-width: 768px) {
+    font-size: 26px;
+    line-height: 22px;
+    padding-left: 105px;
+  }
 `;
 
 export const TemperatureSub = styled.div`
   padding: 20px 0 0;
   font-size: 24px;
   font-weight: 400;
+
+  @media (max-width: 768px) {
+    font-size: 20px;
+  }
 `;
 export const FooterWrapper = styled.div`
   display: flex;
@@ -105,7 +124,7 @@ export const FooterWrapper = styled.div`
     margin: 40px -10px;
   }
   @media (max-width: 768px) {
-    margin: 20px 0;
+    margin: 35px -10px;
   }
 `;
 export const FooterSub = styled.span`
@@ -126,6 +145,16 @@ export const FooterLine = styled.p`
     position: relative;
     top: 50px;
     left: 20px;
+
+    @media (max-width: 1024px) {
+      left: 12px;
+    }
+    @media (max-width: 768px) {
+      top: 40px;
+    }
+    @media (max-width: 425px) {
+      top: 48px;
+    }
   }
   :before {
     border-right: 2px solid white;
@@ -134,12 +163,13 @@ export const FooterLine = styled.p`
     position: relative;
     top: 0;
     left: 22px;
+
+    @media (max-width: 1024px) {
+      left: 14px;
+    }
   }
 `;
 export const FooterImg = styled.img`
-  @media (max-width: 768px) {
-    padding: 8px 5px;
-  }
   @media (max-width: 425px) {
     padding: 13px 5px;
     width: 20px;
@@ -149,4 +179,12 @@ export const FooterImg = styled.img`
 export const FooterText = styled.p`
   font-size: 16px;
   padding-left: 10px;
+
+  @media (max-width: 768px) {
+    padding-left: 0;
+    font-size: 12px;
+  }
+  @media (max-width: 425px) {
+    font-size: 15px;
+  }
 `;
