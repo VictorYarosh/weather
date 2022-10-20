@@ -135,7 +135,7 @@ export const FooterLine = styled.p`
     }
     @media (max-width: 768px) {
       top: 40px;
-      left: 15px;
+      left: 12px;
     }
     @media (max-width: 425px) {
       top: 48px;
@@ -149,30 +149,21 @@ export const FooterLine = styled.p`
     top: 0;
     left: 22px;
 
-    @media (max-width: 1024px) {
-      left: 22px;
-    }
     @media (max-width: 768px) {
-      left: 16px;
+      left: 12px;
     }
   }
 `;
 export const FooterImg = styled.img`
-  @media (max-width: 425px) {
-    padding: 13px 5px;
-    width: 20px;
-    height: 20px;
-  }
+  padding: 10px 5px;
 `;
 export const FooterText = styled.p`
   font-size: 16px;
-  padding-left: 10px;
 
   @media (max-width: 768px) {
-    padding-left: 0;
-    font-size: 12px;
+    font-size: 13px;
   }
-  @media (max-width: 425px) {
-    font-size: 15px;
+  @media (max-width: 375px) {
+    font-size: 12px;
   }
 `;
