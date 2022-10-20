@@ -4,7 +4,9 @@ export const Navbar = styled.nav`
   display: flex;
   justify-content: space-between;
   height: auto;
-  background-image: linear-gradient(to bottom, #6447b5, #9881da);
+  background: hsl(245, 62%, 80%);
+  //background-color: white;
+  //opacity: 0.8;
 `;
 
 export const Links = styled.ul`

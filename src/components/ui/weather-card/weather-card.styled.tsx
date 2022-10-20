@@ -1,28 +1,24 @@
 import styled from 'styled-components';
 
 export const WeatherCardWrapper = styled.div`
-  margin: 20px;
-  min-width: 30%;
   border-radius: 50px;
   background: hsl(262, 80%, 25%, 0.5);
+  margin: 20px 20px;
+  width: 400px;
 
-  @media (max-width: 1024px) {
-    min-width: 35%;
-  }
   @media (max-width: 425px) {
-    height: 500px;
+    width: auto;
   }
 `;
 export const WeatherIcon = styled.div`
   display: flex;
-  justify-content: space-around;
-  margin: -15px 0;
+  justify-content: space-evenly;
 `;
 export const WeatherImg = styled.img`
   width: 100px;
   height: 100px;
 
-  @media (max-width: 768px) {
+  @media (max-width: 425px) {
     width: 80px;
     height: 80px;
   }
@@ -31,13 +27,9 @@ export const TitleWrapper = styled.div`
   color: white;
   font-weight: 400;
   line-height: 27px;
-  padding-right: 80px;
 
-  @media (max-width: 768px) {
-    padding: 0;
-  }
   @media (max-width: 425px) {
-    padding-right: 50px;
+    line-height: 20px;
     font-size: 14px;
   }
   @media (max-width: 375px) {
@@ -72,11 +64,6 @@ export const TemperatureWrapper = styled.div`
   align-items: center;
   color: white;
   position: relative;
-  padding-top: 50px;
-
-  @media (max-width: 768px) {
-    padding-top: 25px;
-  }
 `;
 export const Temperature = styled.p`
   line-height: 10px;
@@ -101,7 +88,7 @@ export const TemperatureSing = styled.p`
   @media (max-width: 768px) {
     font-size: 26px;
     line-height: 22px;
-    padding-left: 105px;
+    padding-left: 160px;
   }
 `;
 
@@ -118,13 +105,10 @@ export const FooterWrapper = styled.div`
   display: flex;
   justify-content: space-evenly;
   color: white;
-  margin: 50px 0;
+  margin: 40px 0;
 
-  @media (max-width: 1024px) {
-    margin: 40px -10px;
-  }
-  @media (max-width: 768px) {
-    margin: 35px -10px;
+  @media (max-width: 425px) {
+    margin: 30px 0;
   }
 `;
 export const FooterSub = styled.span`
@@ -147,10 +131,11 @@ export const FooterLine = styled.p`
     left: 20px;
 
     @media (max-width: 1024px) {
-      left: 12px;
+      left: 22px;
     }
     @media (max-width: 768px) {
       top: 40px;
+      left: 15px;
     }
     @media (max-width: 425px) {
       top: 48px;
@@ -165,7 +150,10 @@ export const FooterLine = styled.p`
     left: 22px;
 
     @media (max-width: 1024px) {
-      left: 14px;
+      left: 22px;
+    }
+    @media (max-width: 768px) {
+      left: 16px;
     }
   }
 `;
