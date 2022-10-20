@@ -4,9 +4,7 @@ export const Navbar = styled.nav`
   display: flex;
   justify-content: space-between;
   height: auto;
-  background: hsl(245, 62%, 80%);
-  //background-color: white;
-  //opacity: 0.8;
+  background: rgba(255, 255, 255, 0.19);
 `;
 
 export const Links = styled.ul`

@@ -3,16 +3,15 @@ import styled from 'styled-components';
 export const WeatherCardWrapper = styled.div`
   border-radius: 50px;
   background: hsl(262, 80%, 25%, 0.5);
-  margin: 20px 20px;
   width: 400px;
+  padding: 24px;
 
   @media (max-width: 425px) {
-    width: auto;
+    padding: 0;
   }
 `;
 export const WeatherIcon = styled.div`
   display: flex;
-  justify-content: space-evenly;
 `;
 export const WeatherImg = styled.img`
   width: 100px;
@@ -24,6 +23,7 @@ export const WeatherImg = styled.img`
   }
 `;
 export const TitleWrapper = styled.div`
+  margin-left: 40px;
   color: white;
   font-weight: 400;
   line-height: 27px;
@@ -111,15 +111,28 @@ export const FooterWrapper = styled.div`
     margin: 30px 0;
   }
 `;
-export const FooterSub = styled.span`
+export const WeatherOptions = styled.div`
+  flex: 1 1 0;
+`;
+export const WeatherOptionsText = styled.p`
   display: flex;
-
-  @media (max-width: 768px) {
-    font-size: 12px;
-  }
-  @media (max-width: 425px) {
-    font-size: 15px;
-  }
+  //justify-content: space-between;
+`;
+export const WeatherOptionsContainer = styled.span`
+  display: flex;
+`;
+export const WeatherOptionsIcon = styled.img`
+  padding: 10px;
+`;
+export const WeatherOptionsTitle = styled.p`
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+`;
+export const WeatherOptionsDescription = styled.p`
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
 `;
 export const FooterLine = styled.p`
   :after {
@@ -152,18 +165,5 @@ export const FooterLine = styled.p`
     @media (max-width: 768px) {
       left: 12px;
     }
-  }
-`;
-export const FooterImg = styled.img`
-  padding: 10px 5px;
-`;
-export const FooterText = styled.p`
-  font-size: 16px;
-
-  @media (max-width: 768px) {
-    font-size: 13px;
-  }
-  @media (max-width: 375px) {
-    font-size: 12px;
   }
 `;

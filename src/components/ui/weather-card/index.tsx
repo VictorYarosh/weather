@@ -1,9 +1,6 @@
-import React from 'react';
+import React, { FC } from 'react';
 import {
-  FooterImg,
   FooterLine,
-  FooterSub,
-  FooterText,
   FooterWrapper,
   Temperature,
   TemperatureSing,
@@ -14,7 +11,13 @@ import {
   TitleWrapper,
   WeatherCardWrapper,
   WeatherIcon,
-  WeatherImg
+  WeatherImg,
+  WeatherOptions,
+  WeatherOptionsContainer,
+  WeatherOptionsDescription,
+  WeatherOptionsIcon,
+  WeatherOptionsText,
+  WeatherOptionsTitle
 } from './weather-card.styled';
 
 import useWeatherCard from './use-weather-card';
@@ -26,9 +29,10 @@ import IconWater from '../../../assets/images/water.svg';
 import IconTemperature from '../../../assets/images/temperature.svg';
 import IconWindy from '../../../assets/images/windy.svg';
 import { getFormattedTemperature } from '../../../utils';
+import { WeatherCardProps } from './types';
 
-const WeatherCard = () => {
-  const { dateBuilder, data } = useWeatherCard();
+const WeatherCard: FC<WeatherCardProps> = ({ city }) => {
+  const { dateBuilder, data } = useWeatherCard({ city });
 
   return (
     <WeatherCardWrapper>
@@ -52,31 +56,46 @@ const WeatherCard = () => {
         </Title>
       </TemperatureWrapper>
       <FooterWrapper>
-        <div>
-          <FooterSub>
-            <FooterImg src={IconEye} />
-            <FooterText>Visibility {data.visibility}km</FooterText>
-            <FooterLine></FooterLine>
-          </FooterSub>
-          <FooterSub>
-            <FooterImg src={IconWater} />
-            <FooterText>Humidity {data.main.humidity}km</FooterText>
-          </FooterSub>
-        </div>
-        <div>
-          <FooterSub>
-            <FooterImg src={IconTemperature} />
-            <FooterText>
-              Feels like {getFormattedTemperature(data.main.feels_like)}°C
-            </FooterText>
-          </FooterSub>
-          <FooterSub>
-            <FooterImg src={IconWindy} />
-            <FooterText>
-              Wind {getFormattedTemperature(data.wind.speed)}s
-            </FooterText>
-          </FooterSub>
-        </div>
+        <WeatherOptions>
+          <WeatherOptionsContainer>
+            <WeatherOptionsIcon src={IconEye} />
+            <WeatherOptionsText>
+              <WeatherOptionsTitle>Visibility</WeatherOptionsTitle>
+              <WeatherOptionsDescription>
+                {data.visibility}km
+              </WeatherOptionsDescription>
+            </WeatherOptionsText>
+          </WeatherOptionsContainer>
+          <WeatherOptionsContainer>
+            <WeatherOptionsIcon src={IconWater} />
+            <WeatherOptionsText>
+              <WeatherOptionsTitle>Humidity</WeatherOptionsTitle>
+              <WeatherOptionsDescription>
+                {data.main.humidity}km
+              </WeatherOptionsDescription>
+            </WeatherOptionsText>
+          </WeatherOptionsContainer>
+        </WeatherOptions>
+        <WeatherOptions>
+          <WeatherOptionsContainer>
+            <WeatherOptionsIcon src={IconTemperature} />
+            <WeatherOptionsText>
+              <WeatherOptionsTitle>Feels like</WeatherOptionsTitle>
+              <WeatherOptionsDescription>
+                {getFormattedTemperature(data.main.feels_like)}°C
+              </WeatherOptionsDescription>
+            </WeatherOptionsText>
+          </WeatherOptionsContainer>
+          <WeatherOptionsContainer>
+            <WeatherOptionsIcon src={IconWindy} />
+            <WeatherOptionsText>
+              <WeatherOptionsTitle>Wind</WeatherOptionsTitle>
+              <WeatherOptionsDescription>
+                {getFormattedTemperature(data.wind.speed)}s
+              </WeatherOptionsDescription>
+            </WeatherOptionsText>
+          </WeatherOptionsContainer>
+        </WeatherOptions>
       </FooterWrapper>
     </WeatherCardWrapper>
   );
