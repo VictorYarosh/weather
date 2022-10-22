@@ -5,5 +5,5 @@ export const WeatherWrapper = styled.div`
   justify-content: center;
   flex-wrap: wrap;
   gap: 40px;
-  margin-top: 30px;
+  padding: 30px 20px;
 `;

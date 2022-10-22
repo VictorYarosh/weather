@@ -1,6 +1,5 @@
 import React, { FC } from 'react';
 import {
-  FooterLine,
   FooterWrapper,
   Temperature,
   TemperatureSing,

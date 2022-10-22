@@ -5,7 +5,11 @@ export const WeatherCardWrapper = styled.div`
   background: hsl(262, 80%, 25%, 0.5);
   width: 400px;
   padding: 24px;
+  height: 50vh;
 
+  @media (max-width: 1024px) {
+    height: 75vh;
+  }
   @media (max-width: 425px) {
     padding: 0;
   }
@@ -16,11 +20,6 @@ export const WeatherIcon = styled.div`
 export const WeatherImg = styled.img`
   width: 100px;
   height: 100px;
-
-  @media (max-width: 425px) {
-    width: 80px;
-    height: 80px;
-  }
 `;
 export const TitleWrapper = styled.div`
   margin-left: 40px;
@@ -36,8 +35,8 @@ export const TitleWrapper = styled.div`
     font-size: 10px;
   }
 `;
-export const Title = styled.p`
-  padding-top: 50px;
+export const Title = styled.div`
+  padding-top: 70px;
   font-size: 18px;
   font-weight: 600;
 
@@ -105,65 +104,48 @@ export const FooterWrapper = styled.div`
   display: flex;
   justify-content: space-evenly;
   color: white;
-  margin: 40px 0;
-
-  @media (max-width: 425px) {
-    margin: 30px 0;
-  }
+  padding: 40px 0;
 `;
 export const WeatherOptions = styled.div`
   flex: 1 1 0;
 `;
-export const WeatherOptionsText = styled.p`
+export const WeatherOptionsText = styled.div`
   display: flex;
-  //justify-content: space-between;
+  justify-content: space-between;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 12px;
+  width: 55%;
+
+  @media (max-width: 425px) {
+    font-size: 14px;
+  }
+  @media (max-width: 375px) {
+    font-size: 12px;
+  }
 `;
-export const WeatherOptionsContainer = styled.span`
+export const WeatherOptionsContainer = styled.div`
   display: flex;
+
+  @media (max-width: 425px) {
+    justify-content: center;
+  }
 `;
 export const WeatherOptionsIcon = styled.img`
-  padding: 10px;
+  padding: 5px;
 `;
 export const WeatherOptionsTitle = styled.p`
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 24px;
+  padding-right: 5px;
 `;
-export const WeatherOptionsDescription = styled.p`
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 24px;
-`;
-export const FooterLine = styled.p`
-  :after {
-    border-right: 2px solid white;
-    bottom: 0;
-    content: '';
-    position: relative;
-    top: 50px;
-    left: 20px;
+export const WeatherOptionsDescription = styled.p``;
 
-    @media (max-width: 1024px) {
-      left: 22px;
-    }
-    @media (max-width: 768px) {
-      top: 40px;
-      left: 12px;
-    }
-    @media (max-width: 425px) {
-      top: 48px;
-    }
-  }
-  :before {
-    border-right: 2px solid white;
-    bottom: 0;
-    content: '';
-    position: relative;
-    top: 0;
-    left: 22px;
-
-    @media (max-width: 768px) {
-      left: 12px;
-    }
-  }
-`;
+// export const FooterLine = styled.p`
+//   :not(:last-child):after {
+//     border-right: 2px solid white;
+//     bottom: 0;
+//     content: '';
+//     position: relative;
+//     top: 0;
+//     right: -15px;
+//   }
+// `;
