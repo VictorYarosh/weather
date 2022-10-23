@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import {
+  FooterLine,
   FooterWrapper,
   Temperature,
   TemperatureSing,
@@ -63,6 +64,7 @@ const WeatherCard: FC<WeatherCardProps> = ({ city }) => {
               <WeatherOptionsDescription>
                 {data.visibility}km
               </WeatherOptionsDescription>
+              <FooterLine />
             </WeatherOptionsText>
           </WeatherOptionsContainer>
           <WeatherOptionsContainer>

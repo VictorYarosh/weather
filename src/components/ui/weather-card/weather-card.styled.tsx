@@ -5,11 +5,7 @@ export const WeatherCardWrapper = styled.div`
   background: hsl(262, 80%, 25%, 0.5);
   width: 400px;
   padding: 24px;
-  height: 50vh;
 
-  @media (max-width: 1024px) {
-    height: 75vh;
-  }
   @media (max-width: 425px) {
     padding: 0;
   }
@@ -139,13 +135,25 @@ export const WeatherOptionsTitle = styled.p`
 `;
 export const WeatherOptionsDescription = styled.p``;
 
-// export const FooterLine = styled.p`
-//   :not(:last-child):after {
-//     border-right: 2px solid white;
-//     bottom: 0;
-//     content: '';
-//     position: relative;
-//     top: 0;
-//     right: -15px;
-//   }
-// `;
+export const FooterLine = styled.p`
+  :after {
+    border-right: 2px solid white;
+    bottom: 0;
+    content: '';
+    position: relative;
+    top: 0;
+    right: -15px;
+  }
+  :before {
+    border-right: 2px solid white;
+    bottom: 0;
+    content: '';
+    position: relative;
+    top: 50px;
+    right: -17px;
+
+    @media (max-width: 425px) {
+      top: 40px;
+    }
+  }
+`;

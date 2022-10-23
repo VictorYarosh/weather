@@ -13,6 +13,7 @@ export const AddNewWeather = styled.div`
   background: rgba(255, 255, 255, 0.26);
   border-radius: 100px;
   box-shadow: 1px 1px 5px hsl(262, 80%, 25%, 0.5);
+  cursor: pointer;
 `;
 export const PlusIcon = styled.img`
   width: 100px;
