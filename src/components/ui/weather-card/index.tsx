@@ -23,7 +23,7 @@ import {
 import useWeatherCard from './use-weather-card';
 
 import DropdownMenu from '../dropdown';
-import SunIcon from '../../../assets/images/sunny.png';
+import SunIcon from '../../../assets/icons/01d.png';
 import IconEye from '../../../assets/images/eye.svg';
 import IconWater from '../../../assets/images/water.svg';
 import IconTemperature from '../../../assets/images/temperature.svg';
