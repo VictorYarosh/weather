@@ -1,6 +1,5 @@
 import React, { FC } from 'react';
 import {
-  FooterLine,
   FooterWrapper,
   Temperature,
   TemperatureSing,
@@ -13,15 +12,15 @@ import {
   WeatherIcon,
   WeatherImg,
   WeatherOptions,
-  WeatherOptionsContainer,
-  WeatherOptionsDescription,
-  WeatherOptionsIcon,
-  WeatherOptionsText,
-  WeatherOptionsTitle
+  WeatherOptionContainer,
+  WeatherOptionDescription,
+  WeatherOptionIcon,
+  WeatherOptionText,
+  WeatherOptionTitle
 } from './weather-card.styled';
 
 import useWeatherCard from './use-weather-card';
-
+import { WeatherCardProps } from './types';
 import DropdownMenu from '../dropdown';
 import SunIcon from '../../../assets/icons/01d.png';
 import IconEye from '../../../assets/images/eye.svg';
@@ -29,7 +28,6 @@ import IconWater from '../../../assets/images/water.svg';
 import IconTemperature from '../../../assets/images/temperature.svg';
 import IconWindy from '../../../assets/images/windy.svg';
 import { getFormattedTemperature } from '../../../utils';
-import { WeatherCardProps } from './types';
 
 const WeatherCard: FC<WeatherCardProps> = ({ city }) => {
   const { dateBuilder, data } = useWeatherCard({ city });
@@ -57,45 +55,44 @@ const WeatherCard: FC<WeatherCardProps> = ({ city }) => {
       </TemperatureWrapper>
       <FooterWrapper>
         <WeatherOptions>
-          <WeatherOptionsContainer>
-            <WeatherOptionsIcon src={IconEye} />
-            <WeatherOptionsText>
-              <WeatherOptionsTitle>Visibility</WeatherOptionsTitle>
-              <WeatherOptionsDescription>
+          <WeatherOptionContainer>
+            <WeatherOptionIcon src={IconEye} />
+            <WeatherOptionText>
+              <WeatherOptionTitle>Visibility</WeatherOptionTitle>
+              <WeatherOptionDescription>
                 {data.visibility}km
-              </WeatherOptionsDescription>
-              <FooterLine />
-            </WeatherOptionsText>
-          </WeatherOptionsContainer>
-          <WeatherOptionsContainer>
-            <WeatherOptionsIcon src={IconWater} />
-            <WeatherOptionsText>
-              <WeatherOptionsTitle>Humidity</WeatherOptionsTitle>
-              <WeatherOptionsDescription>
+              </WeatherOptionDescription>
+            </WeatherOptionText>
+          </WeatherOptionContainer>
+          <WeatherOptionContainer>
+            <WeatherOptionIcon src={IconWater} />
+            <WeatherOptionText>
+              <WeatherOptionTitle>Humidity</WeatherOptionTitle>
+              <WeatherOptionDescription>
                 {data.main.humidity}km
-              </WeatherOptionsDescription>
-            </WeatherOptionsText>
-          </WeatherOptionsContainer>
+              </WeatherOptionDescription>
+            </WeatherOptionText>
+          </WeatherOptionContainer>
         </WeatherOptions>
         <WeatherOptions>
-          <WeatherOptionsContainer>
-            <WeatherOptionsIcon src={IconTemperature} />
-            <WeatherOptionsText>
-              <WeatherOptionsTitle>Feels like</WeatherOptionsTitle>
-              <WeatherOptionsDescription>
+          <WeatherOptionContainer>
+            <WeatherOptionIcon src={IconTemperature} />
+            <WeatherOptionText>
+              <WeatherOptionTitle>Feels like</WeatherOptionTitle>
+              <WeatherOptionDescription>
                 {getFormattedTemperature(data.main.feels_like)}°C
-              </WeatherOptionsDescription>
-            </WeatherOptionsText>
-          </WeatherOptionsContainer>
-          <WeatherOptionsContainer>
-            <WeatherOptionsIcon src={IconWindy} />
-            <WeatherOptionsText>
-              <WeatherOptionsTitle>Wind</WeatherOptionsTitle>
-              <WeatherOptionsDescription>
+              </WeatherOptionDescription>
+            </WeatherOptionText>
+          </WeatherOptionContainer>
+          <WeatherOptionContainer>
+            <WeatherOptionIcon src={IconWindy} />
+            <WeatherOptionText>
+              <WeatherOptionTitle>Wind</WeatherOptionTitle>
+              <WeatherOptionDescription>
                 {getFormattedTemperature(data.wind.speed)}s
-              </WeatherOptionsDescription>
-            </WeatherOptionsText>
-          </WeatherOptionsContainer>
+              </WeatherOptionDescription>
+            </WeatherOptionText>
+          </WeatherOptionContainer>
         </WeatherOptions>
       </FooterWrapper>
     </WeatherCardWrapper>

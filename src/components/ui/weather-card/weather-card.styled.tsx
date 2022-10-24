@@ -112,55 +112,13 @@ export const FooterWrapper = styled.div`
 `;
 export const WeatherOptions = styled.div`
   flex: 1 1 0;
-
-  @media (max-width: 425px) {
-    flex: none;
-  }
 `;
-export const WeatherOptionsText = styled.div`
-  display: flex;
-  justify-content: space-between;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 12px;
-
-  @media (max-width: 425px) {
-    font-size: 14px;
-  }
-  @media (max-width: 375px) {
-    font-size: 12px;
-  }
-`;
-export const WeatherOptionsContainer = styled.div`
-  display: flex;
-`;
-export const WeatherOptionsIcon = styled.img`
+export const WeatherOptionText = styled.div``;
+export const WeatherOptionContainer = styled.div``;
+export const WeatherOptionIcon = styled.img`
   padding: 5px;
 `;
-export const WeatherOptionsTitle = styled.p`
+export const WeatherOptionTitle = styled.p`
   padding-right: 5px;
 `;
-export const WeatherOptionsDescription = styled.p``;
-
-export const FooterLine = styled.p`
-  :after {
-    border-right: 2px solid white;
-    bottom: 0;
-    content: '';
-    position: relative;
-    top: 0;
-    right: -15px;
-  }
-  :before {
-    border-right: 2px solid white;
-    bottom: 0;
-    content: '';
-    position: relative;
-    top: 50px;
-    right: -17px;
-
-    @media (max-width: 425px) {
-      top: 40px;
-    }
-  }
-`;
+export const WeatherOptionDescription = styled.p``;

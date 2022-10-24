@@ -1,10 +1,10 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 
+import { WeatherCardProps } from './types';
 import { weather } from './const';
 import { api } from '../../../const';
 import { dateBuilder } from '../../../utils';
-import { WeatherCardProps } from './types';
 
 const useWeatherCard = ({ city }: WeatherCardProps) => {
   const [data, setData] = useState(weather);

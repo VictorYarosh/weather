@@ -7,12 +7,12 @@ export const LogoContainer = styled.div`
 `;
 export const LogoImg = styled.img`
   color: white;
-  width: 80px;
-  height: 80px;
-  padding: 10px;
+  width: 65px;
+  height: 65px;
+  padding: 12px 20px 12px 70px;
 `;
 export const LogoName = styled.a`
-  margin: 40px 0;
+  margin: 30px 0;
   font-weight: 400;
   font-size: 20px;
   line-height: 36px;
