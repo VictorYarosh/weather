@@ -63,7 +63,7 @@ export const TemperatureWrapper = styled.div`
   align-items: center;
   color: white;
   position: relative;
-  padding-bottom: 40px;
+  padding-bottom: 70px;
 `;
 export const Temperature = styled.p`
   line-height: 10px;
