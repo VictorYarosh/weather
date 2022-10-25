@@ -20,7 +20,7 @@ export const Links = styled.ul`
 `;
 
 export const LinksPage = styled.li`
-  padding: 20px 20px;
+  padding: 10px 20px;
   font-weight: 400;
   font-size: 20px;
   line-height: 36px;
