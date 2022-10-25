@@ -19,8 +19,8 @@ import {
   WeatherOptionTitle
 } from './weather-card.styled';
 
-import useWeatherCard from './use-weather-card';
 import { WeatherCardProps } from './types';
+import useWeatherCard from './use-weather-card';
 import DropdownMenu from '../dropdown';
 import SunIcon from '../../../assets/icons/01d.png';
 import IconEye from '../../../assets/images/eye.svg';
@@ -53,7 +53,6 @@ const WeatherCard: FC<WeatherCardProps> = ({ city }) => {
           ))}
         </Title>
       </TemperatureWrapper>
-
       <FooterWrapper>
         <WeatherOptions>
           <WeatherOptionContainer>
@@ -78,7 +77,6 @@ const WeatherCard: FC<WeatherCardProps> = ({ city }) => {
           </WeatherOptionText>
         </WeatherOptions>
       </FooterWrapper>
-
       <FooterWrapper>
         <WeatherOptions>
           <WeatherOptionContainer>

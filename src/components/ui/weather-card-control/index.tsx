@@ -1,12 +1,13 @@
 import React from 'react';
+
 import {
-  AddDescription,
   AddNewButton,
   AddNewWeather,
-  PlusIcon
+  PlusIcon,
+  AddDescription
 } from './weather-card-control.styled';
-import Plus from '../../../assets/icons/plus.svg';
 import { WeatherCardWrapper } from '../weather-card/weather-card.styled';
+import Plus from '../../../assets/icons/plus.svg';
 
 const WeatherCardControl = () => {
   return (

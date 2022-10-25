@@ -21,7 +21,7 @@ export const WeatherImg = styled.img`
   height: 100px;
 `;
 export const TitleWrapper = styled.div`
-  margin-left: 40px;
+  margin-left: 17px;
   color: white;
   font-weight: 400;
   line-height: 27px;

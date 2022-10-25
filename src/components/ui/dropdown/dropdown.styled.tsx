@@ -10,7 +10,6 @@ export const DropdownInput = styled.input`
 `;
 export const DropdownList = styled.ul`
   color: #fff;
-  padding: 5px 35px;
   cursor: pointer;
 `;
 export const DropdownListLi = styled.li`
@@ -19,7 +18,7 @@ export const DropdownListLi = styled.li`
   width: 4px;
   line-height: 0;
   list-style: none outside none;
-  margin-right: 15px;
+  margin-right: 30px;
   margin-top: 3px;
   vertical-align: top;
   border-radius: 50%;
