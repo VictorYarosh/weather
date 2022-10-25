@@ -6,7 +6,7 @@ export const LayoutStyled = styled.div`
     linear-gradient(127deg, #82e1ff, rgba(0, 255, 0, 0) 70.71%),
     linear-gradient(336deg, #6447b5, rgba(0, 0, 255, 0) 70.71%);
 
-  @media only screen and (max-width: 480px) {
+  @media only screen and (max-width: 970px) {
     height: auto;
   }
 `;

@@ -10,6 +10,10 @@ export const LogoImg = styled.img`
   width: 65px;
   height: 65px;
   padding: 12px 20px 12px 70px;
+
+  @media (max-width: 425px) {
+    padding: 5px 10px 12px 25px;
+  }
 `;
 export const LogoName = styled.a`
   margin: 30px 0;
@@ -18,16 +22,11 @@ export const LogoName = styled.a`
   line-height: 36px;
 
   @media (max-width: 425px) {
-    margin: 40px 15px;
+    margin: 35px 10px;
     line-height: 22px;
     font-size: 13px;
   }
-  @media (max-width: 414px) {
-    margin: 37px 10px;
-  }
   @media (max-width: 375px) {
-    margin: 30px 10px;
-    line-height: 22px;
-    font-size: 12px;
+    margin: 35px 0px;
   }
 `;
