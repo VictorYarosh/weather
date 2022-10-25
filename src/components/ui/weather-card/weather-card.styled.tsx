@@ -1,63 +1,50 @@
 import styled from 'styled-components';
 
 export const WeatherCardWrapper = styled.div`
-  width: 450px;
-  height: 575px;
-  margin: 80px 0;
   border-radius: 50px;
   background: hsl(262, 80%, 25%, 0.5);
+  width: 400px;
+  padding: 24px;
 
-  @media (max-width: 768px) {
-    margin: 45px 20px;
-    height: 520px;
+  @media (max-width: 970px) {
+    height: 475px;
   }
   @media (max-width: 425px) {
-    width: 385px;
-    height: 500px;
-  }
-  @media (max-width: 414px) {
-    width: 375px;
-  }
-  @media (max-width: 375px) {
-    width: 332px;
-    height: 475px;
+    padding: 0;
   }
 `;
 export const WeatherIcon = styled.div`
   display: flex;
-  justify-content: space-around;
-  margin: -15px 0;
 `;
 export const WeatherImg = styled.img`
   width: 100px;
   height: 100px;
 `;
 export const TitleWrapper = styled.div`
+  margin-left: 40px;
   color: white;
   font-weight: 400;
   line-height: 27px;
-  padding-right: 100px;
 
-  @media (max-width: 768px) {
-    padding: 0;
-  }
   @media (max-width: 425px) {
+    line-height: 20px;
     font-size: 14px;
   }
   @media (max-width: 375px) {
     font-size: 10px;
   }
 `;
-export const Title = styled.p`
-  padding-top: 50px;
+export const Title = styled.div`
+  padding-top: 70px;
   font-size: 18px;
   font-weight: 600;
 
   @media (max-width: 768px) {
     font-size: 15px;
+    padding-top: 55px;
   }
   @media (max-width: 425px) {
-    font-size: 14px;
+    font-size: 18px;
   }
 `;
 export const TitleSub = styled.span`
@@ -76,11 +63,7 @@ export const TemperatureWrapper = styled.div`
   align-items: center;
   color: white;
   position: relative;
-  padding-top: 50px;
-
-  @media (max-width: 768px) {
-    padding-top: 25px;
-  }
+  padding-bottom: 40px;
 `;
 export const Temperature = styled.p`
   line-height: 10px;
@@ -90,7 +73,7 @@ export const Temperature = styled.p`
   position: absolute;
 
   @media (max-width: 768px) {
-    font-size: 130px;
+    margin: 60px;
   }
   @media (max-width: 425px) {
     font-size: 120px;
@@ -101,65 +84,83 @@ export const TemperatureSing = styled.p`
   font-weight: 400;
   line-height: 25px;
   padding-left: 180px;
+
+  @media (max-width: 768px) {
+    font-size: 26px;
+    line-height: 22px;
+    padding-left: 135px;
+  }
 `;
 
 export const TemperatureSub = styled.div`
   padding: 20px 0 0;
   font-size: 24px;
   font-weight: 400;
+
+  @media (max-width: 768px) {
+    font-size: 20px;
+  }
 `;
 export const FooterWrapper = styled.div`
   display: flex;
-  justify-content: space-evenly;
   color: white;
-  margin: 50px 0;
+  padding-bottom: 25px;
 
-  @media (max-width: 768px) {
-    margin: 20px 0;
+  @media (max-width: 425px) {
+    padding: 15px;
   }
 `;
-export const FooterSub = styled.span`
+export const WeatherOptions = styled.div`
+  flex: 1 1 0;
   display: flex;
+  justify-content: space-between;
+
+  :not(:last-child) {
+    height: 24px;
+    border-right: 2px solid;
+  }
+`;
+
+export const WeatherOptionContainer = styled.div`
+  display: flex;
+  align-items: center;
+`;
+export const WeatherOptionText = styled.div``;
+export const WeatherOptionIcon = styled.img`
+  height: 22px;
+  width: 22px;
+  padding: 0 10px;
+
+  @media (max-width: 425px) {
+    padding: 0 5px;
+  }
+  @media (max-width: 375px) {
+    padding: 0 2px;
+  }
+`;
+export const WeatherOptionTitle = styled.div`
+  font-weight: 400;
   font-size: 18px;
+  line-height: 27px;
 
-  @media (max-width: 768px) {
-    font-size: 12px;
-  }
   @media (max-width: 425px) {
-    font-size: 15px;
+    font-size: 16px;
+  }
+  @media (max-width: 375px) {
+    font-size: 14px;
   }
 `;
-export const FooterImg = styled.img`
-  padding: 18px 5px;
-  width: 24px;
-  height: 24px;
+export const WeatherOptionDescription = styled.div`
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 27px;
+  padding-right: 10px;
 
-  @media (max-width: 768px) {
-    padding: 8px 5px;
-  }
   @media (max-width: 425px) {
-    padding: 13px 5px;
-    width: 20px;
-    height: 20px;
+    font-size: 16px;
   }
-`;
-export const FooterText = styled.p`
-  :before {
-    border-right: 2px solid white;
-    bottom: 0;
-    content: '';
-    position: relative;
-    top: 0;
-    left: 170px;
-
-    @media (max-width: 768px) {
-      left: 120px;
-    }
-    @media (max-width: 425px) {
-      left: 140px;
-    }
-    @media (max-width: 375px) {
-      left: 135px;
-    }
+  @media (max-width: 375px) {
+    font-size: 14px;
+    padding-right: 5px;
   }
 `;

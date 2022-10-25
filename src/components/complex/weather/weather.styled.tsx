@@ -2,9 +2,8 @@ import styled from 'styled-components';
 
 export const WeatherWrapper = styled.div`
   display: flex;
-  justify-content: space-evenly;
-
-  @media (max-width: 425px) {
-    display: block;
-  }
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 30px 20px;
 `;

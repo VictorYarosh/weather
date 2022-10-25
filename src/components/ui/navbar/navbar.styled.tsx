@@ -1,11 +1,10 @@
 import styled from 'styled-components';
 
 export const Navbar = styled.nav`
-  //background: hsl(262, 80%, 25%, 0.5);
   display: flex;
   justify-content: space-between;
-  height: auto;
-  background-image: linear-gradient(to bottom, #6447b5, #9881da);
+  height: 95px;
+  background: rgba(255, 255, 255, 0.19);
 `;
 
 export const Links = styled.ul`
@@ -21,7 +20,7 @@ export const Links = styled.ul`
 `;
 
 export const LinksPage = styled.li`
-  padding: 20px 20px;
+  padding: 10px 20px;
   font-weight: 400;
   font-size: 20px;
   line-height: 36px;

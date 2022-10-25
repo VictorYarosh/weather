@@ -6,27 +6,27 @@ export const LogoContainer = styled.div`
   display: flex;
 `;
 export const LogoImg = styled.img`
-  width: 80px;
-  height: 80px;
-  margin: 10px 20px;
+  color: white;
+  width: 65px;
+  height: 65px;
+  padding: 12px 20px 12px 70px;
+
+  @media (max-width: 425px) {
+    padding: 5px 10px 12px 25px;
+  }
 `;
 export const LogoName = styled.a`
-  margin: 40px 0;
+  margin: 30px 0;
   font-weight: 400;
   font-size: 20px;
   line-height: 36px;
 
   @media (max-width: 425px) {
-    margin: 40px 15px;
+    margin: 35px 10px;
     line-height: 22px;
     font-size: 13px;
   }
-  @media (max-width: 414px) {
-    margin: 37px 10px;
-  }
   @media (max-width: 375px) {
-    margin: 30px 10px;
-    line-height: 22px;
-    font-size: 12px;
+    margin: 35px 0px;
   }
 `;

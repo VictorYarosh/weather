@@ -4,5 +4,5 @@ export const weather = {
   name: null,
   sys: { country: null },
   wind: { speed: null, deg: null },
-  weather: [{ main: null, description: null }]
+  weather: [{ main: null, description: null, icon: null }]
 };
