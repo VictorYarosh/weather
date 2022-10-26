@@ -1,5 +1,8 @@
 import styled from 'styled-components';
 
+export const Footer = styled.div`
+  padding-bottom: 60px;
+`;
 export const WeatherCardWrapper = styled.div`
   border-radius: 50px;
   background: hsl(262, 80%, 25%, 0.5);
@@ -13,29 +16,25 @@ export const WeatherCardWrapper = styled.div`
     padding: 0;
   }
 `;
-export const WeatherIcon = styled.div`
+export const WeatherHeadCard = styled.div`
   display: flex;
+  padding: 15px 0;
 `;
 export const WeatherImg = styled.img`
   width: 100px;
   height: 100px;
 `;
 export const TitleWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
   margin-left: 17px;
   color: white;
   font-weight: 400;
   line-height: 27px;
-
-  @media (max-width: 425px) {
-    line-height: 20px;
-    font-size: 14px;
-  }
-  @media (max-width: 375px) {
-    font-size: 10px;
-  }
 `;
 export const Title = styled.div`
-  padding-top: 70px;
+  padding-top: 85px;
   font-size: 18px;
   font-weight: 600;
 
@@ -49,11 +48,11 @@ export const Title = styled.div`
 `;
 export const TitleSub = styled.span`
   font-weight: 400;
-  font-size: 15px;
+  font-size: 18px;
   line-height: 27px;
 
   @media (max-width: 768px) {
-    font-size: 13px;
+    font-size: 16px;
   }
 `;
 
@@ -64,6 +63,10 @@ export const TemperatureWrapper = styled.div`
   color: white;
   position: relative;
   padding-bottom: 70px;
+
+  @media (max-width: 425px) {
+    padding-bottom: 25px;
+  }
 `;
 export const Temperature = styled.p`
   line-height: 10px;
@@ -73,17 +76,15 @@ export const Temperature = styled.p`
   position: absolute;
 
   @media (max-width: 768px) {
+    font-size: 110px;
     margin: 60px;
-  }
-  @media (max-width: 425px) {
-    font-size: 120px;
   }
 `;
 export const TemperatureSing = styled.p`
-  font-size: 30px;
-  font-weight: 400;
-  line-height: 25px;
-  padding-left: 180px;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 36px;
+  padding-left: 135px;
 
   @media (max-width: 768px) {
     font-size: 26px;
@@ -93,9 +94,9 @@ export const TemperatureSing = styled.p`
 `;
 
 export const TemperatureSub = styled.div`
-  padding: 20px 0 0;
+  font-weight: 600;
   font-size: 24px;
-  font-weight: 400;
+  line-height: 36px;
 
   @media (max-width: 768px) {
     font-size: 20px;
@@ -104,7 +105,7 @@ export const TemperatureSub = styled.div`
 export const FooterWrapper = styled.div`
   display: flex;
   color: white;
-  padding-bottom: 25px;
+  padding: 20px 0;
 
   @media (max-width: 425px) {
     padding: 15px;

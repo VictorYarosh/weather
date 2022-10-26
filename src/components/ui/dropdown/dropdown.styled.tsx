@@ -9,6 +9,7 @@ export const DropdownInput = styled.input`
   margin: 50px -30px;
 `;
 export const DropdownList = styled.ul`
+  position: absolute;
   color: #fff;
   cursor: pointer;
 `;
