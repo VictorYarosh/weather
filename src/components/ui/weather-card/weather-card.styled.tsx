@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const WeatherCardWrapper = styled.div`
-  border-radius: 50px;
+  border-radius: 40px;
   background: hsl(262, 80%, 25%, 0.5);
   width: 400px;
   padding: 24px;
@@ -15,7 +15,7 @@ export const WeatherCardWrapper = styled.div`
 `;
 export const WeatherHeadCard = styled.div`
   display: flex;
-  padding: 35px 0;
+  padding: 25px 0;
 `;
 export const WeatherImg = styled.img`
   width: 100px;
@@ -25,7 +25,7 @@ export const TitleWrapper = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: column;
-  margin-left: 17px;
+  margin: 10px 17px;
   color: white;
 `;
 export const Title = styled.span`
@@ -54,8 +54,11 @@ export const TemperatureWrapper = styled.div`
   align-items: center;
   color: white;
   position: relative;
-  padding-bottom: 70px;
+  padding-bottom: 50px;
 
+  @media (max-width: 768px) {
+    padding-bottom: 30px;
+  }
   @media (max-width: 425px) {
     padding-bottom: 25px;
   }
@@ -102,12 +105,12 @@ export const TemperatureDescription = styled.div`
 `;
 
 export const Footer = styled.div`
-  padding-bottom: 20px;
+  padding-bottom: 36px;
 `;
 export const FooterWrapper = styled.div`
   display: flex;
   color: white;
-  padding: 15px 0;
+  margin-top: 25px;
 `;
 
 export const WeatherOptions = styled.div`
