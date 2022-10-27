@@ -12,7 +12,7 @@ export const WeatherCardWrapper = styled.div`
 `;
 export const WeatherHeadCard = styled.div`
   display: flex;
-  padding: 25px 0;
+  padding: 10px 0 25px 0;
 `;
 export const WeatherImg = styled.img`
   width: 100px;
@@ -134,7 +134,7 @@ export const WeatherOptionIcon = styled.img`
     padding: 0px 5px;
   }
 `;
-export const WeatherOptionTitle = styled.div`
+export const WeatherOptionTitle = styled.span`
   font-weight: 400;
   font-size: 18px;
   line-height: 27px;
@@ -146,7 +146,7 @@ export const WeatherOptionTitle = styled.div`
     font-size: 12px;
   }
 `;
-export const WeatherOptionDescription = styled.div`
+export const WeatherOptionDescription = styled.span`
   font-weight: 400;
   font-size: 18px;
   line-height: 27px;

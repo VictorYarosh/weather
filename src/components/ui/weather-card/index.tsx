@@ -46,11 +46,13 @@ const WeatherCard: FC<WeatherCardProps> = ({ city }) => {
         </TitleWrapper>
       </WeatherHeadCard>
       <TemperatureWrapper>
-        <TemperatureSing>°C</TemperatureSing>
-        <Temperature>{getFormattedTemperature(data.main.temp)}</Temperature>
+        <div>
+          <TemperatureSing>°C</TemperatureSing>
+          <Temperature>{getFormattedTemperature(data.main.temp)}</Temperature>
+        </div>
         <TemperatureDescription>
           {data.weather.map(({ description }) => (
-            <div>{description}</div>
+            <span>{description}</span>
           ))}
         </TemperatureDescription>
       </TemperatureWrapper>
