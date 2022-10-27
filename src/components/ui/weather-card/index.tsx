@@ -11,7 +11,6 @@ import {
   WeatherOptionContainer,
   WeatherOptionDescription,
   WeatherOptionIcon,
-  WeatherOptionText,
   WeatherOptionTitle,
   Footer,
   WeatherHeadCard,
@@ -50,14 +49,14 @@ const WeatherCard: FC<WeatherCardProps> = ({ city }) => {
         <Temperature>
           <TemperatureNumber>
             {getFormattedTemperature(data.main.temp)}
+            <TemperatureSing>°C</TemperatureSing>
           </TemperatureNumber>
-          <TemperatureSing>°C</TemperatureSing>
+          <TemperatureDescription>
+            {data.weather.map(({ description }) => (
+              <p>{description}</p>
+            ))}
+          </TemperatureDescription>
         </Temperature>
-        <TemperatureDescription>
-          {data.weather.map(({ description }) => (
-            <span>{description}</span>
-          ))}
-        </TemperatureDescription>
       </TemperatureWrapper>
       <Footer>
         <FooterWrapper>
@@ -66,22 +65,18 @@ const WeatherCard: FC<WeatherCardProps> = ({ city }) => {
               <WeatherOptionIcon src={IconEye} />
               <WeatherOptionTitle>Visibility</WeatherOptionTitle>
             </WeatherOptionContainer>
-            <WeatherOptionText>
-              <WeatherOptionDescription>
-                {data.visibility}km
-              </WeatherOptionDescription>
-            </WeatherOptionText>
+            <WeatherOptionDescription>
+              {data.visibility}km
+            </WeatherOptionDescription>
           </WeatherOptions>
           <WeatherOptions>
             <WeatherOptionContainer>
               <WeatherOptionIcon src={IconWater} />
               <WeatherOptionTitle>Humidity</WeatherOptionTitle>
             </WeatherOptionContainer>
-            <WeatherOptionText>
-              <WeatherOptionDescription>
-                {data.main.humidity}km
-              </WeatherOptionDescription>
-            </WeatherOptionText>
+            <WeatherOptionDescription>
+              {data.main.humidity}km
+            </WeatherOptionDescription>
           </WeatherOptions>
         </FooterWrapper>
         <FooterWrapper>
@@ -90,22 +85,18 @@ const WeatherCard: FC<WeatherCardProps> = ({ city }) => {
               <WeatherOptionIcon src={IconTemperature} />
               <WeatherOptionTitle>Feels like</WeatherOptionTitle>
             </WeatherOptionContainer>
-            <WeatherOptionText>
-              <WeatherOptionDescription>
-                {getFormattedTemperature(data.main.feels_like)}°C
-              </WeatherOptionDescription>
-            </WeatherOptionText>
+            <WeatherOptionDescription>
+              {getFormattedTemperature(data.main.feels_like)}°C
+            </WeatherOptionDescription>
           </WeatherOptions>
           <WeatherOptions>
             <WeatherOptionContainer>
               <WeatherOptionIcon src={IconWindy} />
               <WeatherOptionTitle>Wind</WeatherOptionTitle>
             </WeatherOptionContainer>
-            <WeatherOptionText>
-              <WeatherOptionDescription>
-                {getFormattedTemperature(data.wind.speed)}s
-              </WeatherOptionDescription>
-            </WeatherOptionText>
+            <WeatherOptionDescription>
+              {getFormattedTemperature(data.wind.speed)}s
+            </WeatherOptionDescription>
           </WeatherOptions>
         </FooterWrapper>
       </Footer>
