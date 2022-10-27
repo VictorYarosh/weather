@@ -1,8 +1,5 @@
 import styled from 'styled-components';
 
-export const Footer = styled.div`
-  padding-bottom: 60px;
-`;
 export const WeatherCardWrapper = styled.div`
   border-radius: 50px;
   background: hsl(262, 80%, 25%, 0.5);
@@ -18,7 +15,7 @@ export const WeatherCardWrapper = styled.div`
 `;
 export const WeatherHeadCard = styled.div`
   display: flex;
-  padding: 15px 0;
+  padding: 35px 0;
 `;
 export const WeatherImg = styled.img`
   width: 100px;
@@ -30,29 +27,24 @@ export const TitleWrapper = styled.div`
   flex-direction: column;
   margin-left: 17px;
   color: white;
-  font-weight: 400;
-  line-height: 27px;
 `;
-export const Title = styled.div`
-  padding-top: 85px;
-  font-size: 18px;
+export const Title = styled.span`
   font-weight: 600;
-
-  @media (max-width: 768px) {
-    font-size: 15px;
-    padding-top: 55px;
-  }
-  @media (max-width: 425px) {
-    font-size: 18px;
-  }
-`;
-export const TitleSub = styled.span`
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 27px;
+  font-size: 24px;
+  line-height: 36px;
 
   @media (max-width: 768px) {
     font-size: 16px;
+  }
+`;
+export const TitleDescription = styled.div`
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 27px;
+
+  @media (max-width: 375px) {
+    font-size: 14px;
+    line-height: 12px;
   }
 `;
 
@@ -68,23 +60,11 @@ export const TemperatureWrapper = styled.div`
     padding-bottom: 25px;
   }
 `;
-export const Temperature = styled.p`
-  line-height: 10px;
-  font-size: 144px;
-  font-weight: 500;
-  margin: 75px;
-  position: absolute;
-
-  @media (max-width: 768px) {
-    font-size: 110px;
-    margin: 60px;
-  }
-`;
 export const TemperatureSing = styled.p`
   font-weight: 300;
   font-size: 24px;
   line-height: 36px;
-  padding-left: 135px;
+  padding-left: 160px;
 
   @media (max-width: 768px) {
     font-size: 26px;
@@ -92,25 +72,44 @@ export const TemperatureSing = styled.p`
     padding-left: 135px;
   }
 `;
+export const Temperature = styled.p`
+  line-height: 10px;
+  font-size: 144px;
+  font-weight: 500;
+  margin: 75px 0;
+  position: absolute;
 
-export const TemperatureSub = styled.div`
+  @media (max-width: 1024px) {
+    font-size: 135px;
+  }
+  @media (max-width: 768px) {
+    font-size: 110px;
+    margin: 60px;
+  }
+`;
+export const TemperatureDescription = styled.div`
+  padding-top: 75px;
+  font-size: 18px;
   font-weight: 600;
-  font-size: 24px;
-  line-height: 36px;
 
   @media (max-width: 768px) {
-    font-size: 20px;
+    font-size: 15px;
+    padding-top: 55px;
   }
+  @media (max-width: 425px) {
+    font-size: 18px;
+  }
+`;
+
+export const Footer = styled.div`
+  padding-bottom: 20px;
 `;
 export const FooterWrapper = styled.div`
   display: flex;
   color: white;
-  padding: 20px 0;
-
-  @media (max-width: 425px) {
-    padding: 15px;
-  }
+  padding: 15px 0;
 `;
+
 export const WeatherOptions = styled.div`
   flex: 1 1 0;
   display: flex;
@@ -121,7 +120,6 @@ export const WeatherOptions = styled.div`
     border-right: 2px solid;
   }
 `;
-
 export const WeatherOptionContainer = styled.div`
   display: flex;
   align-items: center;
@@ -131,13 +129,6 @@ export const WeatherOptionIcon = styled.img`
   height: 22px;
   width: 22px;
   padding: 0 10px;
-
-  @media (max-width: 425px) {
-    padding: 0 5px;
-  }
-  @media (max-width: 375px) {
-    padding: 0 2px;
-  }
 `;
 export const WeatherOptionTitle = styled.div`
   font-weight: 400;

@@ -23,5 +23,5 @@ export const AddDescription = styled.div`
   font-weight: 500;
   font-size: 24px;
   line-height: 36px;
-  padding: 10px 0;
+  padding: 30px 0;
 `;

@@ -3,10 +3,7 @@ import {
   FooterWrapper,
   Temperature,
   TemperatureSing,
-  TemperatureSub,
   TemperatureWrapper,
-  Title,
-  TitleSub,
   TitleWrapper,
   WeatherCardWrapper,
   WeatherImg,
@@ -17,7 +14,10 @@ import {
   WeatherOptionText,
   WeatherOptionTitle,
   Footer,
-  WeatherHeadCard
+  WeatherHeadCard,
+  TemperatureDescription,
+  Title,
+  TitleDescription
 } from './weather-card.styled';
 
 import { WeatherCardProps } from './types';
@@ -39,20 +39,20 @@ const WeatherCard: FC<WeatherCardProps> = ({ city }) => {
       <WeatherHeadCard>
         <WeatherImg src={SunIcon} />
         <TitleWrapper>
-          <TemperatureSub>
+          <Title>
             {data.name}, {data.sys.country}
-          </TemperatureSub>
-          <TitleSub>{dateBuilder(new Date())}</TitleSub>
+          </Title>
+          <TitleDescription>{dateBuilder(new Date())}</TitleDescription>
         </TitleWrapper>
       </WeatherHeadCard>
       <TemperatureWrapper>
         <TemperatureSing>°C</TemperatureSing>
         <Temperature>{getFormattedTemperature(data.main.temp)}</Temperature>
-        <Title>
+        <TemperatureDescription>
           {data.weather.map(({ description }) => (
             <div>{description}</div>
           ))}
-        </Title>
+        </TemperatureDescription>
       </TemperatureWrapper>
       <Footer>
         <FooterWrapper>
