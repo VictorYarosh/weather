@@ -50,7 +50,6 @@ export const TemperatureWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   color: white;
-  position: relative;
   padding-bottom: 50px;
 
   @media (max-width: 768px) {
@@ -64,41 +63,35 @@ export const TemperatureSing = styled.p`
   font-weight: 300;
   font-size: 24px;
   line-height: 36px;
-  padding-left: 160px;
 
   @media (max-width: 768px) {
     font-size: 26px;
     line-height: 22px;
-    padding-left: 135px;
   }
 `;
-export const Temperature = styled.p`
+export const Temperature = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: start;
+`;
+export const TemperatureNumber = styled.p`
   line-height: 10px;
   font-size: 144px;
   font-weight: 500;
-  margin: 75px 0;
-  position: absolute;
+  margin: 70px 0;
 
   @media (max-width: 1024px) {
     font-size: 135px;
   }
   @media (max-width: 768px) {
     font-size: 110px;
-    margin: 60px;
   }
 `;
 export const TemperatureDescription = styled.div`
-  padding-top: 75px;
   font-size: 18px;
   font-weight: 600;
-
-  @media (max-width: 768px) {
-    font-size: 15px;
-    padding-top: 55px;
-  }
-  @media (max-width: 425px) {
-    font-size: 18px;
-  }
+  line-height: 15px;
+  padding-right: 15px;
 `;
 
 export const Footer = styled.div`
