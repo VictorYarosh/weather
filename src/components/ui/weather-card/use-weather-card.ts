@@ -27,6 +27,7 @@ const useWeatherCard = ({ city }: WeatherCardProps) => {
     });
   }, []);
 
+  const IconWeather = null;
   return { dateBuilder, data, isLoading };
 };
 

@@ -61,7 +61,7 @@ export const TemperatureSing = styled.p`
   font-size: 24px;
   line-height: 36px;
   position: absolute;
-  margin: 20px -15px;
+  margin: 30px -20px;
 
   @media (max-width: 768px) {
     font-size: 26px;
@@ -74,7 +74,7 @@ export const Temperature = styled.div`
   align-items: center;
   flex-direction: column;
 `;
-export const TemperatureNumber = styled.p`
+export const TemperatureNumber = styled.div`
   display: flex;
   justify-content: flex-end;
   font-size: 144px;
@@ -92,6 +92,7 @@ export const TemperatureDescription = styled.div`
   font-size: 18px;
   font-weight: 600;
   line-height: 15px;
+  margin: 0;
 `;
 
 export const Footer = styled.div`

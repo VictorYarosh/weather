@@ -12,7 +12,7 @@ export const DropdownList = styled.ul`
   position: absolute;
   color: #fff;
   cursor: pointer;
-  margin: 0 6px;
+  margin: 0 16px;
 `;
 export const DropdownListLi = styled.li`
   background: none repeat scroll 0 0 #fff;
