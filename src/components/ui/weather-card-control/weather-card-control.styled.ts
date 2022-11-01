@@ -18,7 +18,8 @@ export const PlusIcon = styled.img`
   width: 70px;
   padding: 30px;
 `;
-export const AddDescription = styled.div`
+export const AddDescription = styled.p`
+  margin: 0;
   color: white;
   font-weight: 500;
   font-size: 24px;
