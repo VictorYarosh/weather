@@ -37,7 +37,7 @@ const WeatherCard: FC<WeatherCardProps> = ({ city }) => {
     <WeatherCardWrapper>
       <DropdownMenu />
       <WeatherHeadCard>
-        <WeatherImg>{}</WeatherImg>
+        <WeatherImg src={SunIcon} />
         <TitleWrapper>
           <Title>
             {data.name}, {data.sys.country}
