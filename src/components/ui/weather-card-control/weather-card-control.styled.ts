@@ -21,7 +21,7 @@ export const PlusIcon = styled.img`
 export const AddDescription = styled.p`
   margin: 0;
   color: white;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 24px;
   line-height: 36px;
   padding: 30px 0;

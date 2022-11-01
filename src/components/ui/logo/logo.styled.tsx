@@ -12,7 +12,7 @@ export const LogoImg = styled.img`
   padding: 12px 20px 12px 70px;
 
   @media (max-width: 425px) {
-    padding: 5px 10px 12px 25px;
+    padding: 15px 10px 12px 25px;
   }
 `;
 export const LogoName = styled.a`
@@ -23,8 +23,8 @@ export const LogoName = styled.a`
 
   @media (max-width: 425px) {
     margin: 35px 10px;
-    line-height: 22px;
-    font-size: 13px;
+    line-height: 30px;
+    font-size: 12px;
   }
   @media (max-width: 375px) {
     margin: 35px 0;

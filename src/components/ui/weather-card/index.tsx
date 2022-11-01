@@ -69,7 +69,7 @@ const WeatherCard: FC<WeatherCardProps> = ({ city }) => {
               <WeatherOptionTitle>Visibility</WeatherOptionTitle>
             </WeatherOptionContainer>
             <WeatherOptionDescription>
-              {data.visibility}km
+              {data.visibility}
             </WeatherOptionDescription>
           </WeatherOptions>
           <WeatherOptions>
@@ -78,7 +78,7 @@ const WeatherCard: FC<WeatherCardProps> = ({ city }) => {
               <WeatherOptionTitle>Humidity</WeatherOptionTitle>
             </WeatherOptionContainer>
             <WeatherOptionDescription>
-              {data.main.humidity}km
+              {data.main.humidity}
             </WeatherOptionDescription>
           </WeatherOptions>
         </FooterWrapper>
@@ -98,7 +98,7 @@ const WeatherCard: FC<WeatherCardProps> = ({ city }) => {
               <WeatherOptionTitle>Wind</WeatherOptionTitle>
             </WeatherOptionContainer>
             <WeatherOptionDescription>
-              {getFormattedTemperature(data.wind.speed)}s
+              {getFormattedTemperature(data.wind.speed)}
             </WeatherOptionDescription>
           </WeatherOptions>
         </FooterWrapper>
