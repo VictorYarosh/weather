@@ -18,7 +18,6 @@ export const Links = styled.ul`
     font-size: 15px;
   }
 `;
-
 export const LinksPage = styled.li`
   padding: 10px 20px;
   font-weight: 400;
