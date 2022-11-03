@@ -8,6 +8,7 @@ import {
 } from './weather-card-control.styled';
 import { WeatherCardWrapper } from '../weather-card/weather-card.styled';
 import Plus from '../../../assets/icons/plus.svg';
+// import Search from '../search';
 
 const WeatherCardControl = () => {
   return (
@@ -18,6 +19,7 @@ const WeatherCardControl = () => {
         </AddNewWeather>
         <AddDescription>Add new location</AddDescription>
       </AddNewButton>
+      {/*<Search />*/}
     </WeatherCardWrapper>
   );
 };

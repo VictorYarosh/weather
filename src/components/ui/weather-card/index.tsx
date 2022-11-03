@@ -17,8 +17,7 @@ import {
   TemperatureDescription,
   Title,
   TitleDescription,
-  TemperatureNumber,
-  TemperatureNumberWrapper
+  TemperatureNumber
 } from './weather-card.styled';
 
 import { WeatherCardProps } from './types';
@@ -48,19 +47,20 @@ const WeatherCard: FC<WeatherCardProps> = ({ city }) => {
       </WeatherHeadCard>
       <TemperatureWrapper>
         <Temperature>
-          <TemperatureNumberWrapper>
-            <TemperatureNumber>
-              {getFormattedTemperature(data.main.temp)}
-            </TemperatureNumber>
-            <TemperatureSing>°C</TemperatureSing>
-          </TemperatureNumberWrapper>
+          <TemperatureNumber>
+            {getFormattedTemperature(data.main.temp)}
+          </TemperatureNumber>
           <TemperatureDescription>
             {data.weather.map(({ description }) => (
               <p>{description}</p>
             ))}
           </TemperatureDescription>
         </Temperature>
+        <TemperatureSing>
+          <p>°C</p>
+        </TemperatureSing>
       </TemperatureWrapper>
+
       <Footer>
         <FooterWrapper>
           <WeatherOptions>

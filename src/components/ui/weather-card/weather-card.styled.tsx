@@ -40,6 +40,9 @@ export const TitleDescription = styled.p`
   line-height: 27px;
   margin: 0;
 
+  @media (max-width: 768px) {
+    font-size: 14px;
+  }
   @media (max-width: 425px) {
     font-size: 12px;
     line-height: 18px;
@@ -60,16 +63,12 @@ export const TemperatureWrapper = styled.div`
     padding-bottom: 15px;
   }
 `;
-export const TemperatureSing = styled.p`
-  font-weight: 300;
-  font-size: 24px;
-  line-height: 36px;
-  position: absolute;
-  margin: 45px -30px;
-
-  @media (max-width: 768px) {
-    font-size: 26px;
-    line-height: 22px;
+export const TemperatureSing = styled.div`
+  p {
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 36px;
+    margin: 0;
   }
 `;
 export const Temperature = styled.div`
@@ -78,28 +77,17 @@ export const Temperature = styled.div`
   align-items: center;
   flex-direction: column;
 `;
-export const TemperatureNumberWrapper = styled.div`
-  display: flex;
-  justify-content: flex-end;
-`;
-export const TemperatureNumber = styled.p`
+export const TemperatureNumber = styled.span`
   font-size: 144px;
   font-weight: 500;
-  margin: 0 0 -17px 0;
-
-  @media (max-width: 1024px) {
-    font-size: 135px;
-  }
-  @media (max-width: 768px) {
-    font-size: 110px;
-  }
+  line-height: 150px;
 `;
 export const TemperatureDescription = styled.div`
   p {
     font-size: 18px;
     font-weight: 400;
-    line-height: 15px;
-    margin: -10px;
+    line-height: 27px;
+    margin: 0;
   }
 `;
 
@@ -115,14 +103,6 @@ export const WeatherOptions = styled.div`
   flex: 1 1 0;
   display: flex;
   justify-content: space-between;
-  padding: 0 15px;
-
-  @media (max-width: 425px) {
-    padding: 0 10px;
-  }
-  @media (max-width: 375px) {
-    padding: 0 5px;
-  }
 
   :not(:last-child) {
     height: 24px;
@@ -139,6 +119,7 @@ export const WeatherOptionContainer = styled.div`
   }
 `;
 export const WeatherOptionIcon = styled.img`
+  margin-right: 5px;
   height: 22px;
   width: 22px;
 `;
