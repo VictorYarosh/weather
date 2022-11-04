@@ -54,8 +54,8 @@ export const TitleDescription = styled.p`
 
 export const TemperatureWrapper = styled.div`
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: center;
+  align-items: flex-start;
   color: white;
   padding-bottom: 50px;
 
@@ -64,6 +64,7 @@ export const TemperatureWrapper = styled.div`
   }
 `;
 export const TemperatureSing = styled.div`
+  padding-top: 13px;
   p {
     font-weight: 300;
     font-size: 24px;
@@ -106,7 +107,7 @@ export const WeatherOptions = styled.div`
 
   :not(:last-child) {
     height: 24px;
-    border-right: 2px solid;
+    border-right: 1px solid;
   }
 `;
 export const WeatherOptionContainer = styled.div`
