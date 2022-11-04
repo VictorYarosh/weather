@@ -119,11 +119,11 @@ export const WeatherOptionContainer = styled.div`
   }
 `;
 export const WeatherOptionIcon = styled.img`
-  margin-right: 5px;
   height: 22px;
   width: 22px;
 `;
 export const WeatherOptionTitle = styled.span`
+  margin: 0 10px 0 5px;
   font-weight: 400;
   font-size: 16px;
   line-height: 27px;

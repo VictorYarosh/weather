@@ -60,7 +60,6 @@ const WeatherCard: FC<WeatherCardProps> = ({ city }) => {
           <p>°C</p>
         </TemperatureSing>
       </TemperatureWrapper>
-
       <Footer>
         <FooterWrapper>
           <WeatherOptions>
