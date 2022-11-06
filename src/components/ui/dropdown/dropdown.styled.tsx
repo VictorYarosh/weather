@@ -9,9 +9,10 @@ export const DropdownInput = styled.input`
   margin: 50px -30px;
 `;
 export const DropdownList = styled.ul`
+  position: absolute;
   color: #fff;
-  padding: 5px 35px;
   cursor: pointer;
+  margin: 0 16px;
 `;
 export const DropdownListLi = styled.li`
   background: none repeat scroll 0 0 #fff;
@@ -19,7 +20,6 @@ export const DropdownListLi = styled.li`
   width: 4px;
   line-height: 0;
   list-style: none outside none;
-  margin-right: 15px;
   margin-top: 3px;
   vertical-align: top;
   border-radius: 50%;
@@ -30,7 +30,7 @@ export const BurgerContent = styled.div`
   position: absolute;
   background-color: purple;
   overflow: auto;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
   max-width: 100px;
   max-height: 30%;
 `;

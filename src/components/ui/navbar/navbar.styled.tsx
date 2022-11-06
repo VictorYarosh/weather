@@ -18,12 +18,12 @@ export const Links = styled.ul`
     font-size: 15px;
   }
 `;
-
 export const LinksPage = styled.li`
   padding: 10px 20px;
   font-weight: 400;
-  font-size: 20px;
+  font-size: 24px;
   line-height: 36px;
+  cursor: pointer;
 
   @media (max-width: 425px) {
     padding: 10px;

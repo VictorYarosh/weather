@@ -12,17 +12,17 @@ export const AddNewWeather = styled.div`
   width: 130px;
   background: rgba(255, 255, 255, 0.26);
   border-radius: 100px;
-  box-shadow: 1px 1px 5px hsl(262, 80%, 25%, 0.5);
   cursor: pointer;
 `;
 export const PlusIcon = styled.img`
-  width: 100px;
-  padding: 15px;
+  width: 70px;
+  padding: 30px;
 `;
-export const AddDescription = styled.div`
+export const AddDescription = styled.p`
+  margin: 0;
   color: white;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 24px;
   line-height: 36px;
-  padding: 10px 0;
+  padding: 30px 0;
 `;
