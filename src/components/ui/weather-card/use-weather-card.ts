@@ -1,6 +1,5 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
-
 import { WeatherCardProps } from './types';
 import { weather } from './const';
 import { api } from '../../../const';
