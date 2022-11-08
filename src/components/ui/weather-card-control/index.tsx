@@ -3,21 +3,45 @@ import React from 'react';
 import {
   AddNewButton,
   AddNewWeather,
+  SearchInput,
   PlusIcon,
+  AddWeatherCityWrapper,
+  AddWeatherCity,
   AddDescription
 } from './weather-card-control.styled';
+import { IoMdSearch } from 'react-icons/io';
 import { WeatherCardWrapper } from '../weather-card/weather-card.styled';
 import Plus from '../../../assets/icons/plus.svg';
+import useWeatherCardControl from './use-weather-card-control';
 
 const WeatherCardControl = () => {
+  const { handleInput, handleSubmit, handleAddSearch, isActive } =
+    useWeatherCardControl();
+
   return (
     <WeatherCardWrapper>
-      <AddNewButton>
-        <AddNewWeather>
-          <PlusIcon src={Plus} />
-        </AddNewWeather>
-        <AddDescription>Add new location</AddDescription>
-      </AddNewButton>
+      {isActive ? (
+        <SearchInput>
+          <input
+            type="text"
+            placeholder="Search country"
+            onChange={(e) => handleInput(e)}
+          />
+          <button type="button" onClick={(e) => handleSubmit(e)}>
+            <IoMdSearch />
+          </button>
+        </SearchInput>
+      ) : (
+        <AddNewButton>
+          <AddNewWeather>
+            <PlusIcon src={Plus} onClick={handleAddSearch} />
+          </AddNewWeather>
+          <AddDescription>Add new location</AddDescription>
+        </AddNewButton>
+      )}
+      <AddWeatherCityWrapper>
+        <AddWeatherCity></AddWeatherCity>
+      </AddWeatherCityWrapper>
     </WeatherCardWrapper>
   );
 };

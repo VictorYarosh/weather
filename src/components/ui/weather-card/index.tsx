@@ -23,16 +23,7 @@ import {
 import { WeatherCardProps } from './types';
 import useWeatherCard from './use-weather-card';
 import DropdownMenu from '../dropdown';
-import {
-  IoMdThunderstorm,
-  IoMdSearch,
-  IoMdSunny,
-  IoMdRainy,
-  IoMdSnow,
-  IoMdCloud
-} from 'react-icons/io';
-import { BsCloudHaze2Fill, BsCloudDrizzleFill } from 'react-icons/bs';
-import { ImSpinner8 } from 'react-icons/im';
+import SunIcon from '../../../assets/images/sunny.png';
 import IconEye from '../../../assets/images/eye.svg';
 import IconWater from '../../../assets/images/water.svg';
 import IconTemperature from '../../../assets/images/temperature.svg';
@@ -42,39 +33,12 @@ import { getFormattedTemperature } from '../../../utils';
 const WeatherCard: FC<WeatherCardProps> = ({ city }) => {
   const { dateBuilder, data, isLoading } = useWeatherCard({ city });
 
-  let icon;
-  console.log(data.weather[0].main);
-
-  switch (data.weather[0].main) {
-    case 'Clouds':
-      icon = <IoMdCloud />;
-      break;
-    case 'Haze':
-      icon = <BsCloudHaze2Fill />;
-      break;
-    case 'Rain':
-      icon = <IoMdRainy />;
-      break;
-    case 'Clear':
-      icon = <IoMdSunny />;
-      break;
-    case 'Drizzle':
-      icon = <BsCloudDrizzleFill />;
-      break;
-    case 'Snow':
-      icon = <IoMdSnow />;
-      break;
-    case 'Thunderstorm':
-      icon = <IoMdThunderstorm />;
-      break;
-  }
-
   return (
     <WeatherCardWrapper>
       {isLoading}
       <DropdownMenu />
       <WeatherHeadCard>
-        <WeatherImg>{icon}</WeatherImg>
+        <WeatherImg src={SunIcon} />
         <TitleWrapper>
           <Title>
             {data.name}, {data.sys.country}

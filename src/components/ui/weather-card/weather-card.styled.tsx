@@ -104,6 +104,7 @@ export const WeatherOptions = styled.div`
   flex: 1 1 0;
   display: flex;
   justify-content: space-between;
+  padding: 0 15px;
 
   :not(:last-child) {
     height: 24px;
@@ -113,11 +114,6 @@ export const WeatherOptions = styled.div`
 export const WeatherOptionContainer = styled.div`
   display: flex;
   align-items: center;
-  padding-left: 15px;
-
-  @media (max-width: 425px) {
-    padding: 0;
-  }
 `;
 export const WeatherOptionIcon = styled.img`
   height: 22px;
@@ -128,15 +124,20 @@ export const WeatherOptionTitle = styled.span`
   font-weight: 400;
   font-size: 16px;
   line-height: 27px;
+
+  @media (max-width: 375px) {
+    font-size: 12px;
+  }
 `;
 export const WeatherOptionDescription = styled.span`
-  padding-right: 15px;
   font-weight: 400;
   font-size: 18px;
   line-height: 24px;
 
   @media (max-width: 425px) {
-    padding: 0;
-    font-size: 14px;
+    font-size: 12px;
+  }
+  @media (max-width: 375px) {
+    font-size: 10px;
   }
 `;
