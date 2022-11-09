@@ -43,6 +43,7 @@ const WeatherCard: FC<WeatherCardProps> = ({ city }) => {
           <Title>
             {data.name}, {data.sys.country}
           </Title>
+
           <TitleDescription>{dateBuilder(new Date())}</TitleDescription>
         </TitleWrapper>
       </WeatherHeadCard>
