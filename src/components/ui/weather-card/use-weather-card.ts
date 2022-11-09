@@ -1,13 +1,5 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
-import {
-  IoMdThunderstorm,
-  IoMdSunny,
-  IoMdRainy,
-  IoMdSnow,
-  IoMdCloud
-} from 'react-icons/io';
-import { BsCloudHaze2Fill, BsCloudDrizzleFill } from 'react-icons/bs';
 
 import { WeatherCardProps } from './types';
 import { weather } from './const';
@@ -17,7 +9,6 @@ import { dateBuilder } from '../../../utils';
 const useWeatherCard = ({ city }: WeatherCardProps) => {
   const [data, setData] = useState(weather);
   const [isLoading, setLoading] = useState(false);
-  const [getIcons, setGetIcons] = useState('');
 
   useEffect(() => {
     const getWeather = async () => {
@@ -35,33 +26,6 @@ const useWeatherCard = ({ city }: WeatherCardProps) => {
       console.error(error);
     });
   }, []);
-
-  // const icons = (data.weather[0].main) => {
-  //
-  //   switch () {
-  //     case 'Clouds': {
-  //       return <IoMdCloud/>
-  //     }
-  //     case 'Haze': {
-  //       return <BsCloudHaze2Fill />;
-  //     }
-  //     case 'Rain': {
-  //       return <IoMdRainy />;
-  //     }
-  //     case 'Clear': {
-  //       return <IoMdSunny />;
-  //     }
-  //     case 'Drizzle': {
-  //       return <BsCloudDrizzleFill />;
-  //     }
-  //     case 'Snow': {
-  //       return <IoMdSnow />;
-  //     }
-  //     case 'Thunderstorm': {
-  //       return <IoMdThunderstorm />;
-  //     }
-  //   }
-  // };
 
   return { dateBuilder, data, isLoading };
 };

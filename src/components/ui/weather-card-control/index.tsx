@@ -40,7 +40,7 @@ const WeatherCardControl = () => {
                 <ImSpinner8 />
               </SpinerWrapper>
             ) : (
-              <AddWeatherCity>jdalkdja</AddWeatherCity>
+              <AddWeatherCity>New location</AddWeatherCity>
             )}
           </AddWeatherCityWrapper>
         </>

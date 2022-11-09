@@ -8,6 +8,7 @@ const useWeatherCardControl = () => {
 
   const [data, setData] = useState(null);
   const [location, setLocation] = useState('');
+
   const [isLoading, setLoading] = useState(false);
 
   const handleAddSearch = () => {
