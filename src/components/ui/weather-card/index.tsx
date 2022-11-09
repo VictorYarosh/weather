@@ -23,7 +23,7 @@ import {
 import { WeatherCardProps } from './types';
 import useWeatherCard from './use-weather-card';
 import DropdownMenu from '../dropdown';
-import SunIcon from '../../../assets/icons/01d.png';
+import SunIcon from '../../../assets/images/sunny.png';
 import IconEye from '../../../assets/images/eye.svg';
 import IconWater from '../../../assets/images/water.svg';
 import IconTemperature from '../../../assets/images/temperature.svg';
@@ -31,10 +31,11 @@ import IconWindy from '../../../assets/images/windy.svg';
 import { getFormattedTemperature } from '../../../utils';
 
 const WeatherCard: FC<WeatherCardProps> = ({ city }) => {
-  const { dateBuilder, data } = useWeatherCard({ city });
+  const { dateBuilder, data, isLoading } = useWeatherCard({ city });
 
   return (
     <WeatherCardWrapper>
+      {isLoading}
       <DropdownMenu />
       <WeatherHeadCard>
         <WeatherImg />

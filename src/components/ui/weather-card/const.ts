@@ -1,5 +1,5 @@
 export const weather = {
-  main: { temp: null, feels_like: null, humidity: null },
+  main: { temp: null, feels_like: null, humidity: null, icons: null },
   visibility: null,
   name: null,
   sys: { country: null },

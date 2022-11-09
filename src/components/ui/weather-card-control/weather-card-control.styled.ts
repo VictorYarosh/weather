@@ -7,6 +7,45 @@ export const AddNewButton = styled.div`
   align-items: center;
   flex-direction: column;
 `;
+export const SearchInput = styled.div`
+  background: rgba(255, 255, 255, 0.26);
+  input {
+    width: 85%;
+    height: 30px;
+    margin: 5px;
+    border: none;
+  }
+  button {
+    height: 30px;
+    width: 10%;
+    background-color: rgba(255, 255, 255, 0.26);
+    cursor: pointer;
+    border: transparent;
+    color: white;
+  }
+`;
+
+export const AddWeatherCityWrapper = styled.div``;
+export const SpinerWrapper = styled.div`
+  svg {
+    color: white;
+    animation-name: spin;
+    animation-duration: 2000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+    @keyframes spin {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  }
+`;
+export const AddWeatherCity = styled.div``;
+
 export const AddNewWeather = styled.div`
   height: 130px;
   width: 130px;
