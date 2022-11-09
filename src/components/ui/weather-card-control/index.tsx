@@ -7,7 +7,8 @@ import {
   PlusIcon,
   AddWeatherCityWrapper,
   AddWeatherCity,
-  AddDescription
+  AddDescription,
+  SpinerWrapper
 } from './weather-card-control.styled';
 import { ImSpinner8 } from 'react-icons/im';
 import { IoMdSearch } from 'react-icons/io';
@@ -22,16 +23,27 @@ const WeatherCardControl = () => {
   return (
     <WeatherCardWrapper>
       {isActive ? (
-        <SearchInput>
-          <input
-            type="text"
-            placeholder="Search country"
-            onChange={(e) => handleInput(e)}
-          />
-          <button type="button" onClick={(e) => handleSubmit(e)}>
-            <IoMdSearch />
-          </button>
-        </SearchInput>
+        <>
+          <SearchInput>
+            <input
+              type="text"
+              placeholder="Search country"
+              onChange={(e) => handleInput(e)}
+            />
+            <button type="button" onClick={(e) => handleSubmit(e)}>
+              <IoMdSearch />
+            </button>
+          </SearchInput>
+          <AddWeatherCityWrapper>
+            {!data ? (
+              <SpinerWrapper>
+                <ImSpinner8 />
+              </SpinerWrapper>
+            ) : (
+              <AddWeatherCity>jdalkdja</AddWeatherCity>
+            )}
+          </AddWeatherCityWrapper>
+        </>
       ) : (
         <AddNewButton>
           <AddNewWeather>
@@ -40,9 +52,6 @@ const WeatherCardControl = () => {
           <AddDescription>Add new location</AddDescription>
         </AddNewButton>
       )}
-      {/*<AddWeatherCityWrapper>*/}
-      {/*  <AddWeatherCity></AddWeatherCity>*/}
-      {/*</AddWeatherCityWrapper>*/}
     </WeatherCardWrapper>
   );
 };

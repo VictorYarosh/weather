@@ -5,6 +5,7 @@ import { api } from '../../../const';
 const useWeatherCardControl = () => {
   const [inputValue, setInputValue] = useState('');
   const [isActive, setIsActive] = useState(false);
+
   const [data, setData] = useState(null);
   const [location, setLocation] = useState('');
   const [isLoading, setLoading] = useState(false);
@@ -40,10 +41,10 @@ const useWeatherCardControl = () => {
   };
 
   return {
-    inputValue,
     handleInput,
     handleSubmit,
     handleAddSearch,
+    inputValue,
     isActive,
     isLoading,
     data
