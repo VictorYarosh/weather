@@ -7,33 +7,33 @@ import { useState } from 'react';
 import { weather } from './const';
 
 const getIcons = () => {
-  const [icons, setIcons] = useState(weather);
+  const [data, setData] = useState(weather);
+  // const [icons, setIcons] = useState(weather);
 
-  // let icon;
-  //  switch () {
-  //    case 'Sun': {
-  //      icon = 'SunIcon';
-  //      break;
-  //    }
-  //    case 'Clouds': {
-  //      icon = 'CloudIcon';
-  //      break;
-  //    }
-  //    case 'Rain': {
-  //      icon = 'RainIcon';
-  //      break;
-  //    }
-  //    case 'Snow': {
-  //      icon = 'SnowIcon';
-  //      break;
-  //    }
-  //    case 'Thunderstorm': {
-  //      icon = 'ThunderstormIcon';
-  //      break;
-  //    }
-  //  }
+  let icon;
 
-  return { icons };
+  // switch () {
+  //   case 'Sun': {
+  //     icon = 'SunIcon';
+  //     break;
+  //   }
+  //   case 'Clouds': {
+  //     icon = 'CloudIcon';
+  //     break;
+  //   }
+  //   case 'Rain': {
+  //     icon = 'RainIcon';
+  //     break;
+  //   }
+  //   case 'Snow': {
+  //     icon = 'SnowIcon';
+  //     break;
+  //   }
+  //   case 'Thunderstorm': {
+  //     icon = 'ThunderstormIcon';
+  //     break;
+  //   }
+  // }
 };
 
 export default getIcons;

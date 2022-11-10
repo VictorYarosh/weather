@@ -1,14 +1,13 @@
 import { SetStateAction, useEffect, useState } from 'react';
 import axios from 'axios';
 import { api } from '../../../const';
+import { weather } from '../weather-card/const';
 
 const useWeatherCardControl = () => {
   const [inputValue, setInputValue] = useState('');
   const [isActive, setIsActive] = useState(false);
 
-  const [data, setData] = useState(null);
-  const [location, setLocation] = useState('');
-
+  const [data, setData] = useState(weather);
   const [isLoading, setLoading] = useState(false);
 
   const handleAddSearch = () => {
@@ -21,7 +20,6 @@ const useWeatherCardControl = () => {
         const response = await axios.get(
           `${api.base}weather?q=${location},ua&units=metric&APPID=${api.key}`
         );
-        setData(response.data);
       } catch (error) {
         console.error(error);
         setLoading(false);
