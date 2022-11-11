@@ -40,9 +40,7 @@ const WeatherCard: FC<WeatherCardProps> = ({ city }) => {
       <DropdownMenu />
       <WeatherHeadCard>
         <WeatherImg
-          src={`../../../assets/icons/${getWeatherImageName(
-            weather.weather.icon
-          )}.png`}
+          src={`/assets/icons/${getWeatherImageName(data.weather[0].icon)}`}
         />
         <TitleWrapper>
           <Title>
