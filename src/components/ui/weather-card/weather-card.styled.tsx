@@ -65,6 +65,7 @@ export const TemperatureWrapper = styled.div`
 `;
 export const TemperatureSing = styled.div`
   padding-top: 13px;
+
   p {
     font-weight: 300;
     font-size: 24px;
