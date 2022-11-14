@@ -30,8 +30,10 @@ import IconWater from '../../../assets/images/water.svg';
 import IconTemperature from '../../../assets/images/temperature.svg';
 import IconWindy from '../../../assets/images/windy.svg';
 
-const WeatherCard: FC<WeatherCardProps> = ({ city, weather }) => {
-  const { dateBuilder, data, isLoading } = useWeatherCard({ city, weather });
+const WeatherCard: FC<WeatherCardProps> = ({ city }) => {
+  const { dateBuilder, data, isLoading } = useWeatherCard({
+    city
+  });
 
   return (
     <WeatherCardWrapper>

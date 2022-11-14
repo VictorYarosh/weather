@@ -7,7 +7,7 @@ import WeatherCardControl from '../../ui/weather-card-control';
 export const Weather = () => {
   return (
     <WeatherWrapper>
-      <WeatherCard city="Kyiv" weather="Icon" />
+      <WeatherCard city="Kyiv" />
       <WeatherCardControl />
     </WeatherWrapper>
   );
