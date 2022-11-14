@@ -20,3 +20,5 @@ export const getWeatherImageName = (weather: string): string => {
       return 'unknown.png';
   }
 };
+
+export const getFormattedFooterNumber = (data: number | null) => {};

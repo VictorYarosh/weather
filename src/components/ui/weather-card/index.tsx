@@ -27,7 +27,11 @@ import IconEye from '../../../assets/images/eye.svg';
 import IconWater from '../../../assets/images/water.svg';
 import IconTemperature from '../../../assets/images/temperature.svg';
 import IconWindy from '../../../assets/images/windy.svg';
-import { getFormattedTemperature, getWeatherImageName } from '../../../helpers';
+import {
+  getFormattedFooterNumber,
+  getFormattedTemperature,
+  getWeatherImageName
+} from '../../../helpers';
 
 const WeatherCard: FC<WeatherCardProps> = ({ city }) => {
   const { dateBuilder, data, isLoading } = useWeatherCard({ city });
