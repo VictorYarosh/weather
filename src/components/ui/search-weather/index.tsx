@@ -1,7 +1,7 @@
 import React from 'react';
+import SearchIcon from '../../../assets/images/search.svg';
 
-import { SearchInput } from './search.styles';
-import { IoMdSearch } from 'react-icons/io';
+import { SearchIconWrapper, SearchInput } from './search.styles';
 import useSearchWeather from './use-search-weather';
 
 const SearchWeather = () => {
@@ -11,7 +11,7 @@ const SearchWeather = () => {
     <SearchInput>
       <input type="text" placeholder="Search country" />
       <button type="button">
-        <IoMdSearch />
+        <SearchIconWrapper src={SearchIcon} />
       </button>
     </SearchInput>
   );

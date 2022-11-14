@@ -7,9 +7,9 @@ import {
   AddWeatherCityWrapper,
   AddWeatherCity,
   AddDescription,
-  SpinerWrapper
+  SpinnerWrapper
 } from './weather-card-control.styled';
-import { ImSpinner8 } from 'react-icons/im';
+import SpinnerIcon from '../../../assets/images/spinner.svg';
 import { WeatherCardWrapper } from '../weather-card/weather-card.styled';
 import Plus from '../../../assets/icons/plus.svg';
 import useWeatherCardControl from './use-weather-card-control';
@@ -25,9 +25,9 @@ const WeatherCardControl = () => {
           <SearchWeather />
           <AddWeatherCityWrapper>
             {!data ? (
-              <SpinerWrapper>
-                <ImSpinner8 />
-              </SpinerWrapper>
+              <SpinnerWrapper>
+                <img src={SpinnerIcon} />
+              </SpinnerWrapper>
             ) : (
               <AddWeatherCity>New location</AddWeatherCity>
             )}

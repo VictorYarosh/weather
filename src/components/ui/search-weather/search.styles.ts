@@ -9,11 +9,15 @@ export const SearchInput = styled.div`
     border: none;
   }
   button {
-    height: 30px;
+    height: 32px;
     width: 10%;
     background-color: rgba(255, 255, 255, 0.26);
     cursor: pointer;
     border: transparent;
-    color: white;
   }
+`;
+export const SearchIconWrapper = styled.img`
+  width: 15px;
+  height: 15px;
+  margin: -1px;
 `;

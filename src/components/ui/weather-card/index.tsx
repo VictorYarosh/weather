@@ -27,23 +27,18 @@ import IconEye from '../../../assets/images/eye.svg';
 import IconWater from '../../../assets/images/water.svg';
 import IconTemperature from '../../../assets/images/temperature.svg';
 import IconWindy from '../../../assets/images/windy.svg';
-import {
-  getFormattedFooterNumber,
-  getFormattedTemperature,
-  getWeatherImageName
-} from '../../../helpers';
+import { getFormattedTemperature } from '../../../helpers';
+import { getWeatherImageName } from './weather-icon';
 
-const WeatherCard: FC<WeatherCardProps> = ({ city }) => {
-  const { dateBuilder, data, isLoading } = useWeatherCard({ city });
+const WeatherCard: FC<WeatherCardProps> = ({ city, weather }) => {
+  const { dateBuilder, data, isLoading } = useWeatherCard({ city, weather });
 
   return (
     <WeatherCardWrapper>
       {isLoading}
       <DropdownMenu />
       <WeatherHeadCard>
-        <WeatherImg
-          src={`/assets/icons/${getWeatherImageName(data.weather[0].icon)}`}
-        />
+        <WeatherImg src={getWeatherImageName(data.weather[0].icon)} />
         <TitleWrapper>
           <Title>
             {data.name}, {data.sys.country}
