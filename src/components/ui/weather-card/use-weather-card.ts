@@ -8,7 +8,7 @@ import { dateBuilder } from '../../../utils';
 
 const useWeatherCard = ({ city }: WeatherCardProps) => {
   const [data, setData] = useState(weather);
-  const [isLoading, setLoading] = useState(false);
+  const [isLoading, setLoading] = useState(true);
 
   useEffect(() => {
     const getWeather = async () => {
@@ -19,8 +19,8 @@ const useWeatherCard = ({ city }: WeatherCardProps) => {
         setData(response.data);
       } catch (error) {
         console.error(error);
-        setLoading(false);
       }
+      setLoading(false);
     };
     getWeather().catch((error) => {
       console.error(error);

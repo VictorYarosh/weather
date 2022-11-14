@@ -21,7 +21,6 @@ import {
 } from './weather-card.styled';
 
 import { WeatherCardProps } from './types';
-import { getWeatherImageName } from './weather-icon';
 import useWeatherCard from './use-weather-card';
 import DropdownMenu from '../dropdown';
 import { getFormattedTemperature } from '../../../helpers';
@@ -34,13 +33,13 @@ const WeatherCard: FC<WeatherCardProps> = ({ city }) => {
   const { dateBuilder, data, isLoading } = useWeatherCard({
     city
   });
-
   return (
     <WeatherCardWrapper>
-      {isLoading}
       <DropdownMenu />
       <WeatherHeadCard>
-        <WeatherImg src={getWeatherImageName(data.weather[0].icon)} />
+        <WeatherImg
+          src={`http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`}
+        />
         <TitleWrapper>
           <Title>
             {data.name}, {data.sys.country}

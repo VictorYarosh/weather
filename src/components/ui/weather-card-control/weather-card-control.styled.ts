@@ -9,6 +9,7 @@ export const AddNewButton = styled.div`
 `;
 
 export const AddWeatherCityWrapper = styled.div``;
+
 export const SpinnerWrapper = styled.div`
   img {
     animation-name: spin;
