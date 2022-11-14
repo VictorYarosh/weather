@@ -21,14 +21,14 @@ import {
 } from './weather-card.styled';
 
 import { WeatherCardProps } from './types';
+import { getWeatherImageName } from './weather-icon';
 import useWeatherCard from './use-weather-card';
 import DropdownMenu from '../dropdown';
+import { getFormattedTemperature } from '../../../helpers';
 import IconEye from '../../../assets/images/eye.svg';
 import IconWater from '../../../assets/images/water.svg';
 import IconTemperature from '../../../assets/images/temperature.svg';
 import IconWindy from '../../../assets/images/windy.svg';
-import { getFormattedTemperature } from '../../../helpers';
-import { getWeatherImageName } from './weather-icon';
 
 const WeatherCard: FC<WeatherCardProps> = ({ city, weather }) => {
   const { dateBuilder, data, isLoading } = useWeatherCard({ city, weather });
