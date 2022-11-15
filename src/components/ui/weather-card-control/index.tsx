@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 
 import {
   AddNewButton,
@@ -7,22 +7,33 @@ import {
   AddWeatherCityWrapper,
   AddWeatherCity,
   AddDescription,
-  SpinnerWrapper
+  SpinnerWrapper,
+  SearchInput,
+  SearchIconWrapper
 } from './weather-card-control.styled';
-import SpinnerIcon from '../../../assets/images/spinner.svg';
-import { WeatherCardWrapper } from '../weather-card/weather-card.styled';
-import Plus from '../../../assets/icons/plus.svg';
-import useWeatherCardControl from './use-weather-card-control';
-import SearchWeather from '../search-weather';
 
-const WeatherCardControl = () => {
-  const { handleAddSearch, isActive, data } = useWeatherCardControl();
+import useWeatherCardControl from './use-weather-card-control';
+import { WeatherCardControlProps } from './types';
+import { WeatherCardWrapper } from '../weather-card/weather-card.styled';
+import SpinnerIcon from '../../../assets/images/spinner.svg';
+import Plus from '../../../assets/icons/plus.svg';
+
+import SearchIcon from '../../../assets/images/search.svg';
+
+const WeatherCardControl: FC<WeatherCardControlProps> = () => {
+  const { handleAddSearch, isActive, data, search, handleOnChange } =
+    useWeatherCardControl();
 
   return (
     <WeatherCardWrapper>
       {isActive ? (
         <>
-          <SearchWeather />
+          <SearchInput>
+            <input type="text" placeholder="Search country" />
+            <button type="button" onClick={handleOnChange}>
+              <SearchIconWrapper src={SearchIcon} />
+            </button>
+          </SearchInput>
           <AddWeatherCityWrapper>
             {!data ? (
               <SpinnerWrapper>

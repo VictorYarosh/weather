@@ -9,6 +9,27 @@ export const AddNewButton = styled.div`
 `;
 
 export const AddWeatherCityWrapper = styled.div``;
+export const SearchInput = styled.div`
+  background: rgba(255, 255, 255, 0.26);
+  input {
+    width: 85%;
+    height: 30px;
+    margin: 5px;
+    border: none;
+  }
+  button {
+    height: 32px;
+    width: 10%;
+    background-color: rgba(255, 255, 255, 0.26);
+    cursor: pointer;
+    border: transparent;
+  }
+`;
+export const SearchIconWrapper = styled.img`
+  width: 15px;
+  height: 15px;
+  margin: -1px;
+`;
 
 export const SpinnerWrapper = styled.div`
   img {
