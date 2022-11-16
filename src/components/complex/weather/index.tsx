@@ -6,7 +6,6 @@ import WeatherCardControl from '../../ui/weather-card-control';
 
 export const Weather: FC = () => {
   const [cities, setCities] = useState<string[]>(['Kyiv']);
-  const [newCites, setNewCites] = useState<string[]>(cities);
 
   return (
     // add React Context with loading state
@@ -17,10 +16,8 @@ export const Weather: FC = () => {
       {cities.map((city, index) => {
         return <WeatherCard key={`${city}-${index}`} city={city} />;
       })}
-      {newCites.map((newCity, index) => {
-        return (
-          <WeatherCardControl key={`${newCity}-${index}`} newCity={newCity} />
-        );
+      {cities.map((city, index) => {
+        return <WeatherCardControl key={`${city}-${index}`} city={setCities} />;
       })}
     </WeatherWrapper>
   );

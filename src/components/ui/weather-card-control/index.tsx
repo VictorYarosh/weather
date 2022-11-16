@@ -20,9 +20,9 @@ import Plus from '../../../assets/icons/plus.svg';
 
 import SearchIcon from '../../../assets/images/search.svg';
 
-const WeatherCardControl: FC<WeatherCardControlProps> = () => {
-  const { handleAddSearch, isActive, data, search, handleOnChange } =
-    useWeatherCardControl();
+const WeatherCardControl: FC<WeatherCardControlProps> = (setCities) => {
+  const { handleAddSearch, handleAddWeatherCity, isActive, loadingCity } =
+    useWeatherCardControl(setCities);
 
   return (
     <WeatherCardWrapper>
@@ -30,17 +30,17 @@ const WeatherCardControl: FC<WeatherCardControlProps> = () => {
         <>
           <SearchInput>
             <input type="text" placeholder="Search country" />
-            <button type="button" onClick={handleOnChange}>
+            <button type="button" onClick={handleAddWeatherCity}>
               <SearchIconWrapper src={SearchIcon} />
             </button>
           </SearchInput>
           <AddWeatherCityWrapper>
-            {!data ? (
+            {!loadingCity ? (
               <SpinnerWrapper>
                 <img src={SpinnerIcon} />
               </SpinnerWrapper>
             ) : (
-              <AddWeatherCity>New location</AddWeatherCity>
+              <AddWeatherCity></AddWeatherCity>
             )}
           </AddWeatherCityWrapper>
         </>

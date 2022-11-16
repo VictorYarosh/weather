@@ -1,3 +1,3 @@
 export interface WeatherCardControlProps {
-  newCity: string;
+  setCities: object;
 }
