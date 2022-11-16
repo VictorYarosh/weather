@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { WeatherCardControlProps } from './types';
 
-const useWeatherCardControl = (setCities: WeatherCardControlProps) => {
-  const [loadingCity, setLoadingCity] = useState(null);
+const useWeatherCardControl = ({ newCity }: WeatherCardControlProps) => {
+  const [loadingCity, setLoadingCity] = useState();
   const [isActive, setIsActive] = useState(false);
 
   const handleAddSearch = () => {
@@ -10,7 +10,7 @@ const useWeatherCardControl = (setCities: WeatherCardControlProps) => {
   };
 
   const handleAddWeatherCity = () => {
-    setCities;
+    setCities(newCity);
   };
 
   return {
