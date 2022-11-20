@@ -17,14 +17,14 @@ import { WeatherCardControlProps } from './types';
 import { WeatherCardWrapper } from '../weather-card/weather-card.styled';
 import SpinnerIcon from '../../../assets/images/spinner.svg';
 import Plus from '../../../assets/icons/plus.svg';
-
 import SearchIcon from '../../../assets/images/search.svg';
 
-const WeatherCardControl: FC<WeatherCardControlProps> = ({ newCity }) => {
+const WeatherCardControl: FC<WeatherCardControlProps> = ({
+  setCities,
+  cities
+}) => {
   const { handleAddSearch, handleAddWeatherCity, isActive, loadingCity } =
-    useWeatherCardControl({
-      newCity
-    });
+    useWeatherCardControl({ setCities, cities });
 
   return (
     <WeatherCardWrapper>
