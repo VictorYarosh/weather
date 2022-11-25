@@ -79,7 +79,7 @@ const WeatherCard: FC<WeatherCardProps> = ({ city }) => {
               <WeatherOptionTitle>Humidity</WeatherOptionTitle>
             </WeatherOptionContainer>
             <WeatherOptionDescription>
-              {data.main.humidity}
+              {data.main.humidity} %
             </WeatherOptionDescription>
           </WeatherOptions>
         </FooterWrapper>
@@ -99,7 +99,7 @@ const WeatherCard: FC<WeatherCardProps> = ({ city }) => {
               <WeatherOptionTitle>Wind</WeatherOptionTitle>
             </WeatherOptionContainer>
             <WeatherOptionDescription>
-              {getFormattedTemperature(data.wind.speed)}
+              {getFormattedTemperature(data.wind.speed)} s
             </WeatherOptionDescription>
           </WeatherOptions>
         </FooterWrapper>

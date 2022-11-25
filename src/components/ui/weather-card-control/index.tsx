@@ -23,16 +23,24 @@ const WeatherCardControl: FC<WeatherCardControlProps> = ({
   setCities,
   cities
 }) => {
-  const { handleAddSearch, handleAddWeatherCity, isActive, loadingCity } =
-    useWeatherCardControl({ setCities, cities });
+  const { handleAddSearch, handleChange, isActive, loadingCity } =
+    useWeatherCardControl({
+      setCities,
+      cities
+    });
 
   return (
     <WeatherCardWrapper>
       {isActive ? (
         <>
           <SearchInput>
-            <input type="text" placeholder="Search country" />
-            <button type="button" onChange={handleAddWeatherCity}>
+            <input
+              type="text"
+              placeholder="Search country"
+              value={cities}
+              onChange={handleChange}
+            />
+            <button type="button">
               <SearchIconWrapper src={SearchIcon} />
             </button>
           </SearchInput>

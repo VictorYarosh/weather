@@ -5,7 +5,7 @@ import WeatherCard from '../../ui/weather-card';
 import WeatherCardControl from '../../ui/weather-card-control';
 
 export const Weather = () => {
-  const [cities, setCities] = useState(['Kyiv']);
+  const [cities, setCities] = useState<string[]>(['Kyiv']);
 
   return (
     // add React Context with loading state
