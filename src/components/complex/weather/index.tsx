@@ -16,7 +16,7 @@ export const Weather = () => {
       {cities.map((city, index) => {
         return <WeatherCard key={`${city}-${index}`} city={city} />;
       })}
-      <WeatherCardControl setCities={setCities} cities={cities} />;
+      <WeatherCardControl setCities={setCities} cities={cities} />
     </WeatherWrapper>
   );
 };

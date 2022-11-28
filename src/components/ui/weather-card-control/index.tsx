@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-
+import { Form, Text } from 'react-uforms';
 import {
   AddNewButton,
   AddNewWeather,
@@ -23,7 +23,7 @@ const WeatherCardControl: FC<WeatherCardControlProps> = ({
   setCities,
   cities
 }) => {
-  const { handleAddSearch, handleChange, isActive, loadingCity } =
+  const { handleAddSearch, handleOnChange, isActive, loadingCity } =
     useWeatherCardControl({
       setCities,
       cities
@@ -34,18 +34,16 @@ const WeatherCardControl: FC<WeatherCardControlProps> = ({
       {isActive ? (
         <>
           <SearchInput>
-            <input
-              type="text"
-              placeholder="Search country"
-              value={cities}
-              onChange={handleChange}
-            />
-            <button type="button">
-              <SearchIconWrapper src={SearchIcon} />
-            </button>
+            <Form onSubmit={handleOnChange}>
+              <Text type="text" name="search" id="search" />
+
+              <button type="submit">
+                <SearchIconWrapper src={SearchIcon} />
+              </button>
+            </Form>
           </SearchInput>
           <AddWeatherCityWrapper>
-            {!loadingCity ? (
+            {loadingCity ? (
               <SpinnerWrapper>
                 <img src={SpinnerIcon} />
               </SpinnerWrapper>

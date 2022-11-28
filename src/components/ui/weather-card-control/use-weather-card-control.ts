@@ -12,15 +12,16 @@ const useWeatherCardControl = ({
     setIsActive(true);
   };
 
-  const handleChange = (setCities: () => void) => {
-    setCities();
+  const handleOnChange = (values: any) => {
+    console.log({ values });
+    setCities([cities, values.search]);
   };
-  const handleClick = () => {};
 
   return {
     handleAddSearch,
-    handleChange,
+    handleOnChange,
     loadingCity,
+
     isActive,
     setCities,
     cities
