@@ -43,7 +43,7 @@ const WeatherCardControl: FC<WeatherCardControlProps> = ({
             </Form>
           </SearchInput>
           <AddWeatherCityWrapper>
-            {loadingCity ? (
+            {!loadingCity ? (
               <SpinnerWrapper>
                 <img src={SpinnerIcon} />
               </SpinnerWrapper>

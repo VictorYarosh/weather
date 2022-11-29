@@ -14,7 +14,7 @@ const useWeatherCardControl = ({
 
   const handleOnChange = (values: any) => {
     console.log({ values });
-    setCities([cities, values.search]);
+    setCities(cities.concat(values.search));
   };
 
   return {
