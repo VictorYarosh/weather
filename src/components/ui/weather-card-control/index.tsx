@@ -23,7 +23,7 @@ const WeatherCardControl: FC<WeatherCardControlProps> = ({
   setCities,
   cities
 }) => {
-  const { handleAddSearch, handleOnChange, isActive, loadingCity } =
+  const { handleAddSearch, handleOnSubmit, isActive, loadingCity } =
     useWeatherCardControl({
       setCities,
       cities
@@ -34,7 +34,7 @@ const WeatherCardControl: FC<WeatherCardControlProps> = ({
       {isActive ? (
         <>
           <SearchInput>
-            <Form onSubmit={handleOnChange}>
+            <Form onSubmit={handleOnSubmit}>
               <Text type="text" name="search" id="search" />
 
               <button type="submit">
@@ -43,7 +43,7 @@ const WeatherCardControl: FC<WeatherCardControlProps> = ({
             </Form>
           </SearchInput>
           <AddWeatherCityWrapper>
-            {!loadingCity ? (
+            {loadingCity ? (
               <SpinnerWrapper>
                 <img src={SpinnerIcon} />
               </SpinnerWrapper>

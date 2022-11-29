@@ -5,21 +5,21 @@ const useWeatherCardControl = ({
   setCities,
   cities
 }: UseWeatherCardControlProps) => {
-  const [loadingCity, setLoadingCity] = useState();
+  const [loadingCity, setLoadingCity] = useState(false);
   const [isActive, setIsActive] = useState(false);
 
   const handleAddSearch = () => {
     setIsActive(true);
   };
 
-  const handleOnChange = (values: any) => {
-    console.log({ values });
-    setCities(cities.concat(values.search));
+  const handleOnSubmit = ({ values }: any) => {
+    console.log([...cities, values.search]);
+    setCities([...cities, values.search]);
   };
 
   return {
     handleAddSearch,
-    handleOnChange,
+    handleOnSubmit,
     loadingCity,
 
     isActive,
