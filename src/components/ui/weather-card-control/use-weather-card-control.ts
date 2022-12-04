@@ -5,6 +5,7 @@ const useWeatherCardControl = ({
   setCities,
   cities
 }: UseWeatherCardControlProps) => {
+  const [loadingCity, setLoadingCity] = useState(false);
   const [isActive, setIsActive] = useState(false);
 
   const handleAddSearch = () => {
@@ -21,6 +22,7 @@ const useWeatherCardControl = ({
     handleAddSearch,
     handleOnSubmit,
 
+    loadingCity,
     isActive,
     setCities,
     cities

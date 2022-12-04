@@ -23,10 +23,11 @@ const WeatherCardControl: FC<WeatherCardControlProps> = ({
   setCities,
   cities
 }) => {
-  const { handleAddSearch, handleOnSubmit, isActive } = useWeatherCardControl({
-    setCities,
-    cities
-  });
+  const { handleAddSearch, handleOnSubmit, isActive, loadingCity } =
+    useWeatherCardControl({
+      setCities,
+      cities
+    });
 
   return (
     <WeatherCardWrapper>

@@ -32,6 +32,8 @@ export const SearchIconWrapper = styled.img`
 `;
 
 export const SpinnerWrapper = styled.div`
+  display: flex;
+  justify-content: center;
   img {
     animation-name: spin;
     animation-duration: 3000ms;
