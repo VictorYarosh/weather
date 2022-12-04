@@ -5,7 +5,6 @@ const useWeatherCardControl = ({
   setCities,
   cities
 }: UseWeatherCardControlProps) => {
-  const [loadingCity, setLoadingCity] = useState(false);
   const [isActive, setIsActive] = useState(false);
 
   const handleAddSearch = () => {
@@ -15,12 +14,12 @@ const useWeatherCardControl = ({
   const handleOnSubmit = ({ values }: any) => {
     console.log([...cities, values.search]);
     setCities([...cities, values.search]);
+    setIsActive(false);
   };
 
   return {
     handleAddSearch,
     handleOnSubmit,
-    loadingCity,
 
     isActive,
     setCities,

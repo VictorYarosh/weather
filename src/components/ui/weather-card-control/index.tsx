@@ -23,33 +23,28 @@ const WeatherCardControl: FC<WeatherCardControlProps> = ({
   setCities,
   cities
 }) => {
-  const { handleAddSearch, handleOnSubmit, isActive, loadingCity } =
-    useWeatherCardControl({
-      setCities,
-      cities
-    });
+  const { handleAddSearch, handleOnSubmit, isActive } = useWeatherCardControl({
+    setCities,
+    cities
+  });
 
   return (
     <WeatherCardWrapper>
       {isActive ? (
         <>
-          <SearchInput>
-            <Form onSubmit={handleOnSubmit}>
-              <Text type="text" name="search" id="search" />
-
-              <button type="submit">
-                <SearchIconWrapper src={SearchIcon} />
-              </button>
-            </Form>
-          </SearchInput>
           <AddWeatherCityWrapper>
-            {loadingCity ? (
-              <SpinnerWrapper>
-                <img src={SpinnerIcon} />
-              </SpinnerWrapper>
-            ) : (
-              <AddWeatherCity></AddWeatherCity>
-            )}
+            <SearchInput>
+              <Form onSubmit={handleOnSubmit}>
+                <Text type="text" name="search" id="search" />
+
+                <button type="submit">
+                  <SearchIconWrapper src={SearchIcon} />
+                </button>
+              </Form>
+            </SearchInput>
+            <SpinnerWrapper>
+              <img src={SpinnerIcon} />
+            </SpinnerWrapper>
           </AddWeatherCityWrapper>
         </>
       ) : (
