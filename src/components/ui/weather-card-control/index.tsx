@@ -5,11 +5,11 @@ import {
   AddNewWeather,
   PlusIcon,
   AddWeatherCityWrapper,
-  AddWeatherCity,
   AddDescription,
   SpinnerWrapper,
   SearchInput,
-  SearchIconWrapper
+  SearchIconWrapper,
+  Spinner
 } from './weather-card-control.styled';
 
 import useWeatherCardControl from './use-weather-card-control';
@@ -23,11 +23,10 @@ const WeatherCardControl: FC<WeatherCardControlProps> = ({
   setCities,
   cities
 }) => {
-  const { handleAddSearch, handleOnSubmit, isActive, loadingCity } =
-    useWeatherCardControl({
-      setCities,
-      cities
-    });
+  const { handleAddSearch, handleOnSubmit, isActive } = useWeatherCardControl({
+    setCities,
+    cities
+  });
 
   return (
     <WeatherCardWrapper>
@@ -43,10 +42,12 @@ const WeatherCardControl: FC<WeatherCardControlProps> = ({
                 </button>
               </Form>
             </SearchInput>
-            <SpinnerWrapper>
-              <img src={SpinnerIcon} />
-            </SpinnerWrapper>
           </AddWeatherCityWrapper>
+          <SpinnerWrapper>
+            <Spinner>
+              <img src={SpinnerIcon} />
+            </Spinner>
+          </SpinnerWrapper>
         </>
       ) : (
         <AddNewButton>

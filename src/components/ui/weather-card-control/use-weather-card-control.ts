@@ -13,7 +13,6 @@ const useWeatherCardControl = ({
   };
 
   const handleOnSubmit = ({ values }: any) => {
-    console.log([...cities, values.search]);
     setCities([...cities, values.search]);
     setIsActive(false);
   };

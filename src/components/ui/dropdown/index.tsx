@@ -1,28 +1,40 @@
 import React from 'react';
 import {
+  DropdownWrapper,
   BurgerContent,
   BurgerContentLink,
-  Dropdown,
-  DropdownInput,
   DropdownList,
-  DropdownListLi
+  DropdownListLi,
+  Dropdown,
+  CrossWrapper,
+  CrossIcon
 } from './dropdown.styled';
+import Cross from '../../../assets/images/icon-cross.svg';
+import useDropdown from './use-dropdown';
 
 const DropdownMenu = () => {
+  const { handleOnClick, handleOnDisable, dropdownActive } = useDropdown();
+
   return (
-    <Dropdown>
-      <DropdownInput type={'checkbox'} />
-      <DropdownList>
-        <DropdownListLi></DropdownListLi>
-        <DropdownListLi></DropdownListLi>
-        <DropdownListLi></DropdownListLi>
-      </DropdownList>
-      <BurgerContent>
-        <BurgerContentLink>Home</BurgerContentLink>
-        <BurgerContentLink>About</BurgerContentLink>
-        <BurgerContentLink>Contacts</BurgerContentLink>
-      </BurgerContent>
-    </Dropdown>
+    <DropdownWrapper>
+      {dropdownActive ? (
+        <Dropdown>
+          <DropdownList onClick={handleOnClick}>
+            <DropdownListLi></DropdownListLi>
+            <DropdownListLi></DropdownListLi>
+            <DropdownListLi></DropdownListLi>
+          </DropdownList>
+        </Dropdown>
+      ) : (
+        <BurgerContent>
+          <BurgerContentLink>Home</BurgerContentLink>
+          <BurgerContentLink>Delete</BurgerContentLink>
+          <CrossWrapper>
+            <CrossIcon src={Cross} onClick={handleOnDisable} />
+          </CrossWrapper>
+        </BurgerContent>
+      )}
+    </DropdownWrapper>
   );
 };
 export default DropdownMenu;

@@ -5,10 +5,7 @@ export const WeatherCardWrapper = styled.div`
   background: hsl(262, 80%, 25%, 0.5);
   width: 400px;
   padding: 24px;
-
-  @media (max-width: 970px) {
-    height: 475px;
-  }
+  height: 525px;
 `;
 export const WeatherHeadCard = styled.div`
   display: flex;
@@ -57,11 +54,6 @@ export const TemperatureWrapper = styled.div`
   justify-content: center;
   align-items: flex-start;
   color: white;
-  padding-bottom: 50px;
-
-  @media (max-width: 980px) {
-    padding-bottom: 15px;
-  }
 `;
 export const TemperatureSing = styled.div`
   padding-top: 13px;
@@ -95,6 +87,10 @@ export const TemperatureDescription = styled.div`
 
 export const Footer = styled.div`
   padding: 25px 0 36px;
+
+  @media (max-width: 425px) {
+    padding: 0;
+  }
 `;
 export const FooterWrapper = styled.div`
   display: flex;
