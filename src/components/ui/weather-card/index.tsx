@@ -23,7 +23,10 @@ import {
 import { WeatherCardProps } from './types';
 import useWeatherCard from './use-weather-card';
 import DropdownMenu from '../dropdown';
-import { SpinnerWrapper } from '../weather-card-control/weather-card-control.styled';
+import {
+  Spinner,
+  SpinnerWrapper
+} from '../weather-card-control/weather-card-control.styled';
 import { getFormattedTemperature } from '../../../helpers';
 import IconEye from '../../../assets/images/eye.svg';
 import IconWater from '../../../assets/images/water.svg';
@@ -40,7 +43,9 @@ const WeatherCard: FC<WeatherCardProps> = ({ city }) => {
     <WeatherCardWrapper>
       {isLoading ? (
         <SpinnerWrapper>
-          <img src={SpinnerIcon} />
+          <Spinner>
+            <img src={SpinnerIcon} />
+          </Spinner>
         </SpinnerWrapper>
       ) : (
         <>

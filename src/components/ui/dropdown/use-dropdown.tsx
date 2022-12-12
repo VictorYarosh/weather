@@ -2,11 +2,13 @@ import { useState } from 'react';
 
 const useDropdownMenu = () => {
   const [dropdownActive, setDropdownActive] = useState(true);
-  const [dropdownDisable, setDropdownDisable] = useState(false);
 
-  const handleOnClick = () => {
+  const handleActiveDropdown = () => {
     setDropdownActive(false);
   };
+
+  //delete card in state
+  // const handleDelete = () => {};
 
   // я не знаю як повертатися до початкового стану
   const handleOnDisable = () => {
@@ -14,11 +16,10 @@ const useDropdownMenu = () => {
   };
 
   return {
-    handleOnClick,
+    handleActiveDropdown,
     handleOnDisable,
 
-    dropdownActive,
-    dropdownDisable
+    dropdownActive
   };
 };
 
