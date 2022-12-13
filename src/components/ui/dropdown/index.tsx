@@ -18,7 +18,7 @@ const DropdownMenu = () => {
 
   return (
     <DropdownWrapper>
-      {dropdownActive ? (
+      {!dropdownActive ? (
         <Dropdown>
           <DropdownList onClick={handleToggleDropdown}>
             <DropdownListLi></DropdownListLi>
