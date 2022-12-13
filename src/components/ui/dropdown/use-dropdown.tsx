@@ -7,17 +7,8 @@ const useDropdownMenu = () => {
     setDropdownActive(!dropdownActive);
   };
 
-  //delete card in state
-  // const handleDelete = () => {};
-
-  // я не знаю як повертатися до початкового стану
-  const handleOnDisable = () => {
-    // setCities();
-  };
-
   return {
     handleToggleDropdown,
-    handleOnDisable,
 
     dropdownActive
   };

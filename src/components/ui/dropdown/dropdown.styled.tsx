@@ -1,9 +1,11 @@
 import styled from 'styled-components';
 
-export const DropdownWrapper = styled.div``;
-export const Dropdown = styled.div`
+export const DropdownWrapper = styled.div`
   display: flex;
   justify-content: flex-end;
+`;
+export const Dropdown = styled.div`
+  position: absolute;
 `;
 export const DropdownList = styled.ul`
   flex-direction: column;
@@ -27,6 +29,8 @@ export const BurgerContent = styled.div`
   justify-content: space-around;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
   border-radius: 40px;
+  position: absolute;
+  width: 28%;
 `;
 export const BurgerContentLink = styled.a`
   position: relative;

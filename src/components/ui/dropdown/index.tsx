@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import {
   DropdownWrapper,
   BurgerContent,
@@ -9,8 +9,9 @@ import {
   CrossWrapper,
   CrossIcon
 } from './dropdown.styled';
-import Cross from '../../../assets/images/cross.png';
+
 import useDropdownMenu from './use-dropdown';
+import Cross from '../../../assets/images/cross.png';
 
 const DropdownMenu = () => {
   const { handleToggleDropdown, dropdownActive } = useDropdownMenu();
