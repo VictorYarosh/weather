@@ -13,13 +13,13 @@ import Cross from '../../../assets/images/cross.png';
 import useDropdownMenu from './use-dropdown';
 
 const DropdownMenu = () => {
-  const { handleActiveDropdown, dropdownActive } = useDropdownMenu();
+  const { handleToggleDropdown, dropdownActive } = useDropdownMenu();
 
   return (
     <DropdownWrapper>
       {dropdownActive ? (
         <Dropdown>
-          <DropdownList onClick={handleActiveDropdown}>
+          <DropdownList onClick={handleToggleDropdown}>
             <DropdownListLi></DropdownListLi>
             <DropdownListLi></DropdownListLi>
             <DropdownListLi></DropdownListLi>
@@ -30,7 +30,7 @@ const DropdownMenu = () => {
           <BurgerContentLink>Home</BurgerContentLink>
           <BurgerContentLink>Delete</BurgerContentLink>
           <CrossWrapper>
-            <CrossIcon src={Cross} onClick={handleActiveDropdown} />
+            <CrossIcon src={Cross} onClick={handleToggleDropdown} />
           </CrossWrapper>
         </BurgerContent>
       )}

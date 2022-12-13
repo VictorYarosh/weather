@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const useDropdownMenu = () => {
-  const [dropdownActive, setDropdownActive] = useState(true);
+  const [dropdownActive, setDropdownActive] = useState(false);
 
-  const handleActiveDropdown = () => {
-    setDropdownActive(false);
+  const handleToggleDropdown = () => {
+    setDropdownActive(!dropdownActive);
   };
 
   //delete card in state
@@ -16,7 +16,7 @@ const useDropdownMenu = () => {
   };
 
   return {
-    handleActiveDropdown,
+    handleToggleDropdown,
     handleOnDisable,
 
     dropdownActive
