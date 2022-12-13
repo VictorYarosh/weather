@@ -1,52 +1,30 @@
-import { SetStateAction, useEffect, useState } from 'react';
-import axios from 'axios';
-import { api } from '../../../const';
-import { weather } from '../weather-card/const';
+import { useState } from 'react';
+import { UseWeatherCardControlProps } from './types';
 
-const useWeatherCardControl = () => {
-  const [inputValue, setInputValue] = useState('');
+const useWeatherCardControl = ({
+  setCities,
+  cities
+}: UseWeatherCardControlProps) => {
+  const [loadingCity, setLoadingCity] = useState(false);
   const [isActive, setIsActive] = useState(false);
-
-  const [data, setData] = useState(weather);
-  const [isLoading, setLoading] = useState(false);
 
   const handleAddSearch = () => {
     setIsActive(true);
   };
 
-  useEffect(() => {
-    const getWeatherCity = async () => {
-      try {
-        const response = await axios.get(
-          `${api.base}weather?q=${location},ua&units=metric&APPID=${api.key}`
-        );
-      } catch (error) {
-        console.error(error);
-        setLoading(false);
-      }
-    };
-    getWeatherCity().catch((error) => {
-      console.error(error);
-    });
-  }, [location]);
-
-  const handleInput = (e: { target: { value: SetStateAction<string> } }) => {
-    setInputValue(e.target.value);
-  };
-
-  const handleSubmit = (e: { preventDefault: () => void }) => {
-    console.log(inputValue);
-    e.preventDefault();
+  const handleOnSubmit = ({ values }: any) => {
+    setCities([...cities, values.search]);
+    setIsActive(false);
   };
 
   return {
-    handleInput,
-    handleSubmit,
     handleAddSearch,
-    inputValue,
+    handleOnSubmit,
+
+    loadingCity,
     isActive,
-    isLoading,
-    data
+    setCities,
+    cities
   };
 };
 export default useWeatherCardControl;
