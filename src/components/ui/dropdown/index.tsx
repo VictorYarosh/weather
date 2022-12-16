@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import {
   DropdownWrapper,
   BurgerContent,
@@ -12,9 +12,13 @@ import {
 
 import useDropdownMenu from './use-dropdown';
 import Cross from '../../../assets/images/cross.png';
+import { DropdownMenuProps } from './types';
 
-const DropdownMenu = () => {
-  const { handleToggleDropdown, dropdownActive } = useDropdownMenu();
+const DropdownMenu: FC<DropdownMenuProps> = ({ setCities }) => {
+  const { handleToggleDropdown, handleDeleteCard, dropdownActive } =
+    useDropdownMenu({
+      setCities
+    });
 
   return (
     <DropdownWrapper>
@@ -29,7 +33,9 @@ const DropdownMenu = () => {
       ) : (
         <BurgerContent>
           <BurgerContentLink>Home</BurgerContentLink>
-          <BurgerContentLink>Delete</BurgerContentLink>
+          <BurgerContentLink onClick={handleDeleteCard}>
+            Delete
+          </BurgerContentLink>
           <CrossWrapper>
             <CrossIcon src={Cross} onClick={handleToggleDropdown} />
           </CrossWrapper>

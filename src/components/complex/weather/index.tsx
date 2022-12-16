@@ -25,7 +25,13 @@ export const Weather = () => {
       ) : (
         <>
           {cities.map((city, index) => {
-            return <WeatherCard key={`${city}-${index}`} city={city} />;
+            return (
+              <WeatherCard
+                key={`${city}-${index}`}
+                city={city}
+                setCities={setCities}
+              />
+            );
           })}
           <WeatherCardControl setCities={setCities} cities={cities} />
         </>
