@@ -8,7 +8,7 @@ import {
   Spinner,
   SpinnerWrapper
 } from '../../ui/weather-card-control/weather-card-control.styled';
-import SpinnerIcon from '../../../assets/images/spinner.svg';
+import SpinnerIcon from '../../../assets/images/lodiang.svg';
 
 export const Weather = () => {
   const [cities, setCities] = useState<string[]>(['Kyiv']);
