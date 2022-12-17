@@ -32,7 +32,7 @@ const DropdownMenu: FC<DropdownMenuProps> = ({ setCities }) => {
         </Dropdown>
       ) : (
         <BurgerContent>
-          <BurgerContentLink>Home</BurgerContentLink>
+          <BurgerContentLink>Map</BurgerContentLink>
           <BurgerContentLink onClick={handleDeleteCard}>
             Delete
           </BurgerContentLink>
