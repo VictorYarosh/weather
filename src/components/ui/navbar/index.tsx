@@ -7,8 +7,23 @@ const NavBar = () => {
     <Navbar>
       <Logo />
       <Links>
-        <LinksPage>GitHub</LinksPage>
-        <LinksPage>About</LinksPage>
+        <LinksPage
+          onClick={() =>
+            window.open('https://github.com/VictorYarosh/weather', '_blank')
+          }
+        >
+          GitHub
+        </LinksPage>
+        <LinksPage
+          onClick={() =>
+            window.open(
+              'https://ua.linkedin.com/in/victor-yarosh-801b45212/uk?trk=people-guest_people_search-card',
+              '_blank'
+            )
+          }
+        >
+          LinkedIn
+        </LinksPage>
       </Links>
     </Navbar>
   );
