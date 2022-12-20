@@ -14,10 +14,12 @@ import useDropdownMenu from './use-dropdown';
 import Cross from '../../../assets/images/cross.png';
 import { DropdownMenuProps } from './types';
 
-const DropdownMenu: FC<DropdownMenuProps> = ({ setCities }) => {
+const DropdownMenu: FC<DropdownMenuProps> = ({ setCities, cities, index }) => {
   const { handleToggleDropdown, handleDeleteCard, dropdownActive } =
     useDropdownMenu({
-      setCities
+      setCities,
+      cities,
+      index
     });
 
   return (
@@ -32,7 +34,7 @@ const DropdownMenu: FC<DropdownMenuProps> = ({ setCities }) => {
         </Dropdown>
       ) : (
         <BurgerContent>
-          <BurgerContentLink>Map</BurgerContentLink>
+          {/*<BurgerContentLink href="/map-ukraine">Map</BurgerContentLink>*/}
           <BurgerContentLink onClick={handleDeleteCard}>
             Delete
           </BurgerContentLink>

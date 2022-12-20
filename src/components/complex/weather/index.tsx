@@ -30,6 +30,8 @@ export const Weather = () => {
                 key={`${city}-${index}`}
                 city={city}
                 setCities={setCities}
+                index={index}
+                cities={cities}
               />
             );
           })}

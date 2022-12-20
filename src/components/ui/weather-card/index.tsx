@@ -34,10 +34,17 @@ import IconTemperature from '../../../assets/images/temperature.svg';
 import IconWindy from '../../../assets/images/windy.svg';
 import SpinnerIcon from '../../../assets/images/lodiang.svg';
 
-const WeatherCard: FC<WeatherCardProps> = ({ city, setCities }) => {
+const WeatherCard: FC<WeatherCardProps> = ({
+  city,
+  setCities,
+  index,
+  cities
+}) => {
   const { dateBuilder, data, isLoading } = useWeatherCard({
     city,
-    setCities
+    setCities,
+    cities,
+    index
   });
 
   return (
@@ -50,7 +57,7 @@ const WeatherCard: FC<WeatherCardProps> = ({ city, setCities }) => {
         </SpinnerWrapper>
       ) : (
         <>
-          <DropdownMenu setCities={setCities} />
+          <DropdownMenu setCities={setCities} index={index} cities={cities} />
           <WeatherHeadCard>
             <WeatherImg
               src={`http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`}

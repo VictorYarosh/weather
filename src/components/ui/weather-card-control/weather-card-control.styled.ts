@@ -14,15 +14,16 @@ export const AddWeatherCityWrapper = styled.div`
 
 export const SearchInput = styled.div`
   background: rgba(255, 255, 255, 0.26);
-  border-radius: 25px;
-  padding-left: 5px;
+  border-radius: 20px;
+  padding-left: 2px;
 
   input {
     width: 85%;
     height: 30px;
     margin: 5px 3px;
     border: none;
-    border-radius: 25px;
+    border-radius: 15px;
+    padding: 0 0 0 10px;
   }
   button {
     height: 32px;

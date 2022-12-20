@@ -1,7 +1,11 @@
 import { useState } from 'react';
 import { UseDropdownMenuProps } from './types';
 
-const useDropdownMenu = ({ setCities }: UseDropdownMenuProps) => {
+const useDropdownMenu = ({
+  setCities,
+  cities,
+  index
+}: UseDropdownMenuProps) => {
   const [dropdownActive, setDropdownActive] = useState(false);
 
   const handleToggleDropdown = () => {
@@ -9,6 +13,7 @@ const useDropdownMenu = ({ setCities }: UseDropdownMenuProps) => {
   };
 
   const handleDeleteCard = ({ values }: any) => {
+    setCities([].splice(index));
     setCities([].splice(values));
   };
 

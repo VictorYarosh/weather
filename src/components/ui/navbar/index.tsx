@@ -1,29 +1,17 @@
 import React from 'react';
 import { Links, LinksPage, Navbar } from './navbar.styled';
 import Logo from '../logo';
+import useNavBar from './use-navbar';
 
 const NavBar = () => {
+  const { handleOpenNewLinksGitHub, handleOpenNewLinksLinkedIn } = useNavBar();
   return (
     <Navbar>
       <Logo />
       <Links>
-        <LinksPage
-          onClick={() =>
-            window.open('https://github.com/VictorYarosh/weather', '_blank')
-          }
-        >
-          GitHub
-        </LinksPage>
-        <LinksPage
-          onClick={() =>
-            window.open(
-              'https://ua.linkedin.com/in/victor-yarosh-801b45212/uk?trk=people-guest_people_search-card',
-              '_blank'
-            )
-          }
-        >
-          LinkedIn
-        </LinksPage>
+        {/*<LinksPage>Home</LinksPage>*/}
+        <LinksPage onClick={handleOpenNewLinksGitHub}>GitHub</LinksPage>
+        <LinksPage onClick={handleOpenNewLinksLinkedIn}>LinkedIn</LinksPage>
       </Links>
     </Navbar>
   );

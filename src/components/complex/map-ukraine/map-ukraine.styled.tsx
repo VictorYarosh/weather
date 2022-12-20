@@ -10,6 +10,6 @@ export const MapUkraineImg = styled.div`
   width: 65%;
 
   path:hover {
-    fill: #82e1ff;
+    fill: #6447b5;
   }
 `;
