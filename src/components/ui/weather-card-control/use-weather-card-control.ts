@@ -1,13 +1,11 @@
-import { useState } from 'react';
-import { UseWeatherCardControlProps } from './types';
+import { useContext, useState } from 'react';
+import { CardsContext } from '../../complex/weather/cards-context';
 
-const useWeatherCardControl = ({
-  setCities,
-  cities
-}: UseWeatherCardControlProps) => {
+const useWeatherCardControl = () => {
   const [loadingCity, setLoadingCity] = useState(false);
   const [isActive, setIsActive] = useState(false);
   const [isLoading, setLoading] = useState(true);
+  const { setCities, cities } = useContext(CardsContext);
 
   const handleAddSearch = () => {
     setIsActive(true);
@@ -24,8 +22,6 @@ const useWeatherCardControl = ({
 
     loadingCity,
     isActive,
-    setCities,
-    cities,
     isLoading
   };
 };

@@ -14,11 +14,9 @@ import useDropdownMenu from './use-dropdown';
 import Cross from '../../../assets/images/cross.png';
 import { DropdownMenuProps } from './types';
 
-const DropdownMenu: FC<DropdownMenuProps> = ({ setCities, cities, index }) => {
+const DropdownMenu: FC<DropdownMenuProps> = ({ index }) => {
   const { handleToggleDropdown, handleDeleteCard, dropdownActive } =
     useDropdownMenu({
-      setCities,
-      cities,
       index
     });
 

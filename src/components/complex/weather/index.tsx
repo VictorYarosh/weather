@@ -9,6 +9,7 @@ import {
   SpinnerWrapper
 } from '../../ui/weather-card-control/weather-card-control.styled';
 import SpinnerIcon from '../../../assets/images/lodiang.svg';
+import { CardsContext } from './cards-context';
 
 export const Weather = () => {
   const [cities, setCities] = useState<string[]>(['Kyiv']);
@@ -23,20 +24,14 @@ export const Weather = () => {
           </Spinner>
         </SpinnerWrapper>
       ) : (
-        <>
+        <CardsContext.Provider value={{ cities, setCities }}>
           {cities.map((city, index) => {
             return (
-              <WeatherCard
-                key={`${city}-${index}`}
-                city={city}
-                setCities={setCities}
-                index={index}
-                cities={cities}
-              />
+              <WeatherCard key={`${city}-${index}`} city={city} index={index} />
             );
           })}
-          <WeatherCardControl setCities={setCities} cities={cities} />
-        </>
+          <WeatherCardControl />
+        </CardsContext.Provider>
       )}
     </WeatherWrapper>
   );

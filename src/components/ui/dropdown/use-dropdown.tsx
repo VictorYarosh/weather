@@ -1,27 +1,22 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { UseDropdownMenuProps } from './types';
+import { CardsContext } from '../../complex/weather/cards-context';
 
-const useDropdownMenu = ({
-  setCities,
-  cities,
-  index
-}: UseDropdownMenuProps) => {
+const useDropdownMenu = ({ index }: UseDropdownMenuProps) => {
   const [dropdownActive, setDropdownActive] = useState(false);
+  const { setCities, cities } = useContext(CardsContext);
 
   const handleToggleDropdown = () => {
     setDropdownActive(!dropdownActive);
   };
 
   const handleDeleteCard = () => {
-    const newCities = cities.splice(index);
-
-    setCities(newCities);
+    setCities(cities.splice(index));
   };
 
   return {
     handleToggleDropdown,
     handleDeleteCard,
-    setCities,
 
     dropdownActive
   };
