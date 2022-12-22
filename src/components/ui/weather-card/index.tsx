@@ -32,11 +32,12 @@ import IconEye from '../../../assets/images/eye.svg';
 import IconWater from '../../../assets/images/water.svg';
 import IconTemperature from '../../../assets/images/temperature.svg';
 import IconWindy from '../../../assets/images/windy.svg';
-import SpinnerIcon from '../../../assets/images/spinner.svg';
+import SpinnerIcon from '../../../assets/images/lodiang.svg';
 
-const WeatherCard: FC<WeatherCardProps> = ({ city }) => {
+const WeatherCard: FC<WeatherCardProps> = ({ city, index }) => {
   const { dateBuilder, data, isLoading } = useWeatherCard({
-    city
+    city,
+    index
   });
 
   return (
@@ -49,7 +50,7 @@ const WeatherCard: FC<WeatherCardProps> = ({ city }) => {
         </SpinnerWrapper>
       ) : (
         <>
-          <DropdownMenu />
+          <DropdownMenu index={index} />
           <WeatherHeadCard>
             <WeatherImg
               src={`http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`}

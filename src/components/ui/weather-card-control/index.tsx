@@ -13,41 +13,38 @@ import {
 } from './weather-card-control.styled';
 
 import useWeatherCardControl from './use-weather-card-control';
-import { WeatherCardControlProps } from './types';
 import { WeatherCardWrapper } from '../weather-card/weather-card.styled';
-import SpinnerIcon from '../../../assets/images/spinner.svg';
+import SpinnerIcon from '../../../assets/images/lodiang.svg';
 import Plus from '../../../assets/icons/plus.svg';
 import SearchIcon from '../../../assets/images/search.svg';
 
-const WeatherCardControl: FC<WeatherCardControlProps> = ({
-  setCities,
-  cities
-}) => {
-  const { handleAddSearch, handleOnSubmit, isActive } = useWeatherCardControl({
-    setCities,
-    cities
-  });
+const WeatherCardControl: FC = () => {
+  const { handleAddSearch, handleOnSubmit, isActive, isLoading } =
+    useWeatherCardControl();
 
   return (
     <WeatherCardWrapper>
       {isActive ? (
         <>
           <AddWeatherCityWrapper>
-            <SearchInput>
-              <Form onSubmit={handleOnSubmit}>
-                <Text type="text" name="search" id="search" />
+            {!isLoading ? (
+              <SpinnerWrapper>
+                <Spinner>
+                  <img src={SpinnerIcon} />
+                </Spinner>
+              </SpinnerWrapper>
+            ) : (
+              <SearchInput>
+                <Form onSubmit={handleOnSubmit}>
+                  <Text type="text" name="search" id="search" />
 
-                <button type="submit">
-                  <SearchIconWrapper src={SearchIcon} />
-                </button>
-              </Form>
-            </SearchInput>
+                  <button type="submit">
+                    <SearchIconWrapper src={SearchIcon} />
+                  </button>
+                </Form>
+              </SearchInput>
+            )}
           </AddWeatherCityWrapper>
-          <SpinnerWrapper>
-            <Spinner>
-              <img src={SpinnerIcon} />
-            </Spinner>
-          </SpinnerWrapper>
         </>
       ) : (
         <AddNewButton>

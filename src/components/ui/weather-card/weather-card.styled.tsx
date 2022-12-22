@@ -9,7 +9,7 @@ export const WeatherCardWrapper = styled.div`
 `;
 export const WeatherHeadCard = styled.div`
   display: flex;
-  padding: 40px 0 25px 0;
+  padding: 45px 0 25px 0;
 `;
 export const WeatherImg = styled.img`
   width: 100px;

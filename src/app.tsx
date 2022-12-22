@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import GlobalStyle from './components/ui/global.styles';
 import { Layout } from './components/containers/layout';
 import { Weather } from './components/complex/weather';
+import { MapUkraine } from './components/complex/map-ukraine';
 
 function App() {
   return (
@@ -14,7 +15,9 @@ function App() {
           <Route exact path="/">
             <Weather />
           </Route>
-          <Route path="/about"></Route>
+          <Route path="/map-ukraine">
+            <MapUkraine />
+          </Route>
         </Switch>
       </Layout>
     </Router>

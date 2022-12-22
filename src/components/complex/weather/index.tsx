@@ -1,22 +1,38 @@
 import React, { useState } from 'react';
 
 import { WeatherWrapper } from './weather.styled';
+import useWeather from './use-weather';
 import WeatherCard from '../../ui/weather-card';
 import WeatherCardControl from '../../ui/weather-card-control';
+import {
+  Spinner,
+  SpinnerWrapper
+} from '../../ui/weather-card-control/weather-card-control.styled';
+import SpinnerIcon from '../../../assets/images/lodiang.svg';
+import { CardsContext } from './cards-context';
 
 export const Weather = () => {
   const [cities, setCities] = useState<string[]>(['Kyiv']);
+  const { isLoading } = useWeather();
 
   return (
-    // add React Context with loading state
-    // if (isLoading) {
-    //   return <span>Loading...</span>;
-    // }
     <WeatherWrapper>
-      {cities.map((city, index) => {
-        return <WeatherCard key={`${city}-${index}`} city={city} />;
-      })}
-      <WeatherCardControl setCities={setCities} cities={cities} />
+      {isLoading ? (
+        <SpinnerWrapper>
+          <Spinner>
+            <img src={SpinnerIcon} />
+          </Spinner>
+        </SpinnerWrapper>
+      ) : (
+        <CardsContext.Provider value={{ cities, setCities }}>
+          {cities.map((city, index) => {
+            return (
+              <WeatherCard key={`${city}-${index}`} city={city} index={index} />
+            );
+          })}
+          <WeatherCardControl />
+        </CardsContext.Provider>
+      )}
     </WeatherWrapper>
   );
 };
