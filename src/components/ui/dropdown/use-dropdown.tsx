@@ -12,9 +12,10 @@ const useDropdownMenu = ({
     setDropdownActive(!dropdownActive);
   };
 
-  const handleDeleteCard = ({ values }: any) => {
-    setCities([].splice(index));
-    setCities([].splice(values));
+  const handleDeleteCard = () => {
+    const newCities = cities.splice(index);
+
+    setCities(newCities);
   };
 
   return {
