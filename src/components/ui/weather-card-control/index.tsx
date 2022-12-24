@@ -9,7 +9,8 @@ import {
   SpinnerWrapper,
   SearchInput,
   SearchIconWrapper,
-  Spinner
+  Spinner,
+  SearchInputText
 } from './weather-card-control.styled';
 
 import useWeatherCardControl from './use-weather-card-control';
@@ -36,7 +37,7 @@ const WeatherCardControl: FC = () => {
             ) : (
               <SearchInput>
                 <Form onSubmit={handleOnSubmit}>
-                  <Text type="text" name="search" id="search" />
+                  <SearchInputText type="text" name="search" id="search" />
 
                   <button type="submit">
                     <SearchIconWrapper src={SearchIcon} />

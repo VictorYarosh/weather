@@ -9,29 +9,28 @@ export const AddNewButton = styled.div`
 `;
 
 export const AddWeatherCityWrapper = styled.div`
-  border-radius: 25px;
+  box-shadow: 0 8px 16px 0 rgb(0 0 0 / 20%);
 `;
 
 export const SearchInput = styled.div`
-  background: rgba(255, 255, 255, 0.26);
-  padding-left: 2px;
+  box-shadow: 0 8px 16px 0 rgb(0 0 0 / 20%);
 
-  input {
-    width: 85%;
-    height: 30px;
-    margin: 5px 3px;
-    border: none;
-    border-radius: 15px;
-    padding: 0 0 0 10px;
-  }
   button {
+    border: 1px;
     height: 32px;
     width: 10%;
-    background-color: rgba(255, 255, 255, 0.26);
     cursor: pointer;
-    border: transparent;
+    background: hsl(262, 80%, 85%, 0.5);
     border-radius: 25px;
   }
+`;
+export const SearchInputText = styled.input`
+  width: 85%;
+  height: 30px;
+  margin: 5px 2px;
+  border: none;
+  background: hsl(262, 80%, 85%, 0.5);
+  border-radius: 25px;
 `;
 export const SearchIconWrapper = styled.img`
   width: 15px;
