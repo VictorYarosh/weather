@@ -5,10 +5,12 @@ import { WeatherCardProps } from './types';
 import { weather } from './const';
 import { api } from '../../../const';
 import { dateBuilder } from '../../../utils';
+import { CardsContext } from '../../complex/weather/cards-context';
 
-const useWeatherCard = ({ city }: WeatherCardProps) => {
+const useWeatherCard = ({ city, index }: WeatherCardProps) => {
   const [data, setData] = useState(weather);
   const [isLoading, setLoading] = useState(true);
+  const { setCities, cities } = useContext(CardsContext);
 
   useEffect(() => {
     const getWeather = async () => {
@@ -27,7 +29,11 @@ const useWeatherCard = ({ city }: WeatherCardProps) => {
     });
   }, []);
 
-  return { dateBuilder, data, isLoading };
+  const handleDeleteCard = () => {
+    setCities(cities.splice(index));
+  };
+
+  return { dateBuilder, handleDeleteCard, data, isLoading };
 };
 
 export default useWeatherCard;

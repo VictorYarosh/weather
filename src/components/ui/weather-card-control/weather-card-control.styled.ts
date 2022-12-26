@@ -13,24 +13,23 @@ export const AddWeatherCityWrapper = styled.div`
 `;
 
 export const SearchInput = styled.div`
-  box-shadow: 0 8px 16px 0 rgb(0 0 0 / 20%);
-
   button {
     border: 1px;
     height: 32px;
     width: 10%;
     cursor: pointer;
-    background: hsl(262, 80%, 85%, 0.5);
-    border-radius: 25px;
+    background: #a2acde;
+    border-radius: 10px;
   }
 `;
 export const SearchInputText = styled.input`
   width: 85%;
   height: 30px;
-  margin: 5px 2px;
+  margin: 5px;
   border: none;
-  background: hsl(262, 80%, 85%, 0.5);
-  border-radius: 25px;
+  background: #a2acde;
+  border-radius: 10px;
+  color: white;
 `;
 export const SearchIconWrapper = styled.img`
   width: 15px;

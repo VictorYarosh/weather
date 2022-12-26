@@ -1,5 +1,15 @@
 import styled from 'styled-components';
 
+export const CrossWrapper = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  padding: 5px 25px;
+`;
+export const CrossIcon = styled.img`
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+`;
 export const WeatherCardWrapper = styled.div`
   border-radius: 40px;
   background: hsl(262, 80%, 25%, 0.5);
@@ -9,7 +19,7 @@ export const WeatherCardWrapper = styled.div`
 `;
 export const WeatherHeadCard = styled.div`
   display: flex;
-  padding: 45px 0 25px 0;
+  padding: 10px 0;
 `;
 export const WeatherImg = styled.img`
   width: 100px;

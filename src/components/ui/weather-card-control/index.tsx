@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { Form, Text } from 'react-uforms';
+import { Form } from 'react-uforms';
 import {
   AddNewButton,
   AddNewWeather,
