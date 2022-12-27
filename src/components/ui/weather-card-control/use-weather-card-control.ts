@@ -12,6 +12,9 @@ const useWeatherCardControl = () => {
   };
 
   const handleOnSubmit = ({ values }: any) => {
+    // axios.get().then(response) => {
+    //
+    // };
     setCities([...cities, values.search]);
     setIsActive(false);
   };

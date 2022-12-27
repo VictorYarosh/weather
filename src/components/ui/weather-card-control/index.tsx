@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { Form } from 'react-uforms';
+import { Form, Text } from 'react-uforms';
 import {
   AddNewButton,
   AddNewWeather,
@@ -9,8 +9,7 @@ import {
   SpinnerWrapper,
   SearchInput,
   SearchIconWrapper,
-  Spinner,
-  SearchInputText
+  Spinner
 } from './weather-card-control.styled';
 
 import useWeatherCardControl from './use-weather-card-control';
@@ -37,7 +36,7 @@ const WeatherCardControl: FC = () => {
             ) : (
               <SearchInput>
                 <Form onSubmit={handleOnSubmit}>
-                  <SearchInputText type="text" name="search" id="search" />
+                  <Text type="text" name="search" id="search" />
 
                   <button type="submit">
                     <SearchIconWrapper src={SearchIcon} />

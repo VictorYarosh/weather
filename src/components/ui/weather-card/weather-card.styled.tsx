@@ -97,10 +97,6 @@ export const TemperatureDescription = styled.div`
 
 export const Footer = styled.div`
   padding: 25px 0 36px;
-
-  @media (max-width: 425px) {
-    padding: 0;
-  }
 `;
 export const FooterWrapper = styled.div`
   display: flex;
@@ -129,11 +125,11 @@ export const WeatherOptionIcon = styled.img`
 export const WeatherOptionTitle = styled.span`
   margin: 0 10px 0 5px;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 27px;
 
   @media (max-width: 375px) {
-    font-size: 12px;
+    font-size: 10px;
   }
 `;
 export const WeatherOptionDescription = styled.span`
