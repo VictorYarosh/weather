@@ -1,10 +1,10 @@
 import { useContext, useState } from 'react';
+
 import { CardsContext } from '../../complex/weather/cards-context';
 
 const useWeatherCardControl = () => {
-  const [loadingCity, setLoadingCity] = useState(false);
   const [isActive, setIsActive] = useState(false);
-  const [isLoading, setLoading] = useState(true);
+  const [loadingCity, setLoadingCity] = useState(true);
   const { setCities, cities } = useContext(CardsContext);
 
   const handleAddSearch = () => {
@@ -12,9 +12,6 @@ const useWeatherCardControl = () => {
   };
 
   const handleOnSubmit = ({ values }: any) => {
-    // axios.get().then(response) => {
-    //
-    // };
     setCities([...cities, values.search]);
     setIsActive(false);
   };
@@ -24,8 +21,7 @@ const useWeatherCardControl = () => {
     handleOnSubmit,
 
     loadingCity,
-    isActive,
-    isLoading
+    isActive
   };
 };
 export default useWeatherCardControl;

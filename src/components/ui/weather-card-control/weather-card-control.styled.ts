@@ -10,6 +10,7 @@ export const AddNewButton = styled.div`
 
 export const AddWeatherCityWrapper = styled.div`
   border-radius: 10px;
+  height: 100%;
 `;
 
 export const SearchInput = styled.div`
@@ -43,7 +44,7 @@ export const SpinnerWrapper = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 90%;
+  height: 100%;
 `;
 
 export const Spinner = styled.div`

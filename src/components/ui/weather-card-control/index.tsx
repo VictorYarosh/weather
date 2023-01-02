@@ -6,46 +6,38 @@ import {
   PlusIcon,
   AddWeatherCityWrapper,
   AddDescription,
-  SpinnerWrapper,
   SearchInput,
-  SearchIconWrapper,
-  Spinner
+  SearchIconWrapper
 } from './weather-card-control.styled';
 
 import useWeatherCardControl from './use-weather-card-control';
 import { WeatherCardWrapper } from '../weather-card/weather-card.styled';
-import SpinnerIcon from '../../../assets/images/lodiang.svg';
 import Plus from '../../../assets/icons/plus.svg';
 import SearchIcon from '../../../assets/images/search.svg';
 
 const WeatherCardControl: FC = () => {
-  const { handleAddSearch, handleOnSubmit, isActive, isLoading } =
-    useWeatherCardControl();
+  const { handleAddSearch, handleOnSubmit, isActive } = useWeatherCardControl();
 
   return (
     <WeatherCardWrapper>
       {isActive ? (
-        <>
-          <AddWeatherCityWrapper>
-            {!isLoading ? (
-              <SpinnerWrapper>
-                <Spinner>
-                  <img src={SpinnerIcon} />
-                </Spinner>
-              </SpinnerWrapper>
-            ) : (
-              <SearchInput>
-                <Form onSubmit={handleOnSubmit}>
-                  <Text type="text" name="search" id="search" />
+        <AddWeatherCityWrapper>
+          {/* <SpinnerWrapper>*/}
+          {/*   <Spinner>*/}
+          {/*     <img src={SpinnerIcon} />*/}
+          {/*   </Spinner>*/}
+          {/* </SpinnerWrapper>*/}
 
-                  <button type="submit">
-                    <SearchIconWrapper src={SearchIcon} />
-                  </button>
-                </Form>
-              </SearchInput>
-            )}
-          </AddWeatherCityWrapper>
-        </>
+          <SearchInput>
+            <Form onSubmit={handleOnSubmit}>
+              <Text type="text" name="search" id="search" />
+
+              <button type="submit">
+                <SearchIconWrapper src={SearchIcon} />
+              </button>
+            </Form>
+          </SearchInput>
+        </AddWeatherCityWrapper>
       ) : (
         <AddNewButton>
           <AddNewWeather>
