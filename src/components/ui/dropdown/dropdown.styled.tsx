@@ -42,12 +42,12 @@ export const BurgerContentLink = styled.a`
   cursor: pointer;
 `;
 export const CrossWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  //display: flex;
+  //justify-content: center;
+  //align-items: center;
 `;
 export const CrossIcon = styled.img`
-  width: 24px;
-  height: 24px;
-  cursor: pointer;
+  //width: 24px;
+  //height: 24px;
+  //cursor: pointer;
 `;

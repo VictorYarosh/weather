@@ -28,5 +28,6 @@ export const LogoName = styled.a`
   }
   @media (max-width: 375px) {
     margin: 35px 0;
+    font-size: 10px;
   }
 `;

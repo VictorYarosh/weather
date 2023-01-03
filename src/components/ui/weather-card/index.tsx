@@ -17,12 +17,13 @@ import {
   TemperatureDescription,
   Title,
   TitleDescription,
-  TemperatureNumber
+  TemperatureNumber,
+  CrossWrapper,
+  CrossIcon
 } from './weather-card.styled';
 
 import { WeatherCardProps } from './types';
 import useWeatherCard from './use-weather-card';
-import DropdownMenu from '../dropdown';
 import {
   Spinner,
   SpinnerWrapper
@@ -33,9 +34,10 @@ import IconWater from '../../../assets/images/water.svg';
 import IconTemperature from '../../../assets/images/temperature.svg';
 import IconWindy from '../../../assets/images/windy.svg';
 import SpinnerIcon from '../../../assets/images/lodiang.svg';
+import Cross from '../../../assets/images/cross.png';
 
 const WeatherCard: FC<WeatherCardProps> = ({ city, index }) => {
-  const { dateBuilder, data, isLoading } = useWeatherCard({
+  const { dateBuilder, handleDeleteCard, data, isLoading } = useWeatherCard({
     city,
     index
   });
@@ -50,7 +52,10 @@ const WeatherCard: FC<WeatherCardProps> = ({ city, index }) => {
         </SpinnerWrapper>
       ) : (
         <>
-          <DropdownMenu index={index} />
+          {/*<DropdownMenu index={index} />*/}
+          <CrossWrapper>
+            <CrossIcon src={Cross} onClick={handleDeleteCard} />
+          </CrossWrapper>
           <WeatherHeadCard>
             <WeatherImg
               src={`http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`}
