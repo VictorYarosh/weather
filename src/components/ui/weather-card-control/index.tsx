@@ -30,7 +30,12 @@ const WeatherCardControl: FC = () => {
 
           <SearchInput>
             <Form onSubmit={handleOnSubmit}>
-              <Text type="text" name="search" id="search" />
+              <Text
+                type="text"
+                name="search"
+                id="search"
+                placeholder="Search..."
+              />
 
               <button type="submit">
                 <SearchIconWrapper src={SearchIcon} />

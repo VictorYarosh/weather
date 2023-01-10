@@ -19,17 +19,17 @@ export const SearchInput = styled.div`
     height: 30px;
     margin: 5px 3px;
     border: none;
-    background: rgba(255, 255, 255, 0.19);
     color: white;
     border-radius: 10px;
     padding: 0 5px;
+    background: hsl(262, 80%, 25%, 0.3);
   }
   button {
     border: 1px;
     height: 32px;
     width: 10%;
     cursor: pointer;
-    background: rgba(255, 255, 255, 0.19);
+    background: hsl(262, 80%, 25%, 0.3);
     border-radius: 10px;
   }
 `;
