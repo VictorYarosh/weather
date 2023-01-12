@@ -16,7 +16,8 @@ import Plus from '../../../assets/icons/plus.svg';
 import SearchIcon from '../../../assets/images/search.svg';
 
 const WeatherCardControl: FC = () => {
-  const { handleAddSearch, handleOnSubmit, isActive } = useWeatherCardControl();
+  const { handleAddSearch, handleOnSubmit, isActive, animate } =
+    useWeatherCardControl();
 
   return (
     <WeatherCardWrapper>
@@ -37,7 +38,10 @@ const WeatherCardControl: FC = () => {
                 placeholder="Search..."
               />
 
-              <button type="submit">
+              <button
+                type="submit"
+                className={`${animate ? 'animate-shake' : 'animate-none'}`}
+              >
                 <SearchIconWrapper src={SearchIcon} />
               </button>
             </Form>
