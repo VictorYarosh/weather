@@ -1,14 +1,13 @@
 import { useContext, useState } from 'react';
 
 import axios from 'axios';
-import { CardsContext } from '../../complex/weather/cards-context';
 import { api } from '../../../const';
+import { CardsContext } from '../../complex/weather/cards-context';
 
 const useWeatherCardControl = () => {
   const [isActive, setIsActive] = useState(false);
   const [loadingCity, setLoadingCity] = useState(true);
   const { cities, setCities } = useContext(CardsContext);
-  const [animate, setAnimate] = useState(false);
 
   const handleAddSearch = () => {
     setIsActive(true);
@@ -29,14 +28,6 @@ const useWeatherCardControl = () => {
     addWeather().catch((error) => {
       console.error(error);
     });
-
-    if (values.search === '') {
-      setAnimate(true);
-
-      setTimeout(() => {
-        setAnimate(false);
-      }, 500);
-    }
   };
 
   return {
@@ -44,8 +35,7 @@ const useWeatherCardControl = () => {
     handleOnSubmit,
 
     loadingCity,
-    isActive,
-    animate
+    isActive
   };
 };
 export default useWeatherCardControl;
