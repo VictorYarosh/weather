@@ -19,8 +19,10 @@ const useWeatherCardControl = () => {
         await axios.get(
           `${api.base}weather?q=${values.search},ua&units=metric&APPID=${api.key}`
         );
-        setCities([...cities, values.search]);
-        setIsActive(false);
+        if (values.search) {
+          setCities([...cities, values.search]);
+          setIsActive(false);
+        }
       } catch (error) {
         console.error(error);
       }
