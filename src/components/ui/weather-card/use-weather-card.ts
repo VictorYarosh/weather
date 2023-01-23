@@ -31,8 +31,8 @@ const useWeatherCard = ({ city, index }: WeatherCardProps) => {
 
   const handleDeleteCard = () => {
     setCities(
-      cities.filter(function (value, index, array) {
-        return index === 0;
+      cities.filter(function (city, index) {
+        return index;
       })
     );
   };
