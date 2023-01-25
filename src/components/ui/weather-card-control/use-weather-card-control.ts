@@ -9,13 +9,13 @@ const useWeatherCardControl = () => {
   const [loadingCity, setLoadingCity] = useState(true);
   const { cities, setCities } = useContext(CardsContext);
 
-  const handleAddSearch = async () => {
+  const handleAddSearch = () => {
     setIsActive(true);
   };
 
-  const handleOnSubmit = ({ values }: any) => {
+  const handleOnSubmit = async ({ values }: any) => {
     try {
-      axios.get(
+      await axios.get(
         `${api.base}weather?q=${values.search},ua&units=metric&APPID=${api.key}`
       );
       if (values.search) {
