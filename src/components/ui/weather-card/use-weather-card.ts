@@ -30,11 +30,12 @@ const useWeatherCard = ({ city, index }: WeatherCardProps) => {
   }, []);
 
   const handleDeleteCard = () => {
-    setCities(
-      cities.filter(function (city, index) {
-        return index;
-      })
-    );
+    const removeCityIndex = index;
+
+    const filteredCities = cities.filter((city, index) => {
+      return index !== removeCityIndex;
+    });
+    setCities(filteredCities);
   };
 
   return { dateBuilder, handleDeleteCard, data, isLoading };
