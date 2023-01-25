@@ -9,27 +9,22 @@ const useWeatherCardControl = () => {
   const [loadingCity, setLoadingCity] = useState(true);
   const { cities, setCities } = useContext(CardsContext);
 
-  const handleAddSearch = () => {
+  const handleAddSearch = async () => {
     setIsActive(true);
   };
 
   const handleOnSubmit = ({ values }: any) => {
-    const addWeather = async () => {
-      try {
-        await axios.get(
-          `${api.base}weather?q=${values.search},ua&units=metric&APPID=${api.key}`
-        );
-        if (values.search) {
-          setCities([...cities, values.search]);
-          setIsActive(false);
-        }
-      } catch (error) {
-        console.error(error);
+    try {
+      axios.get(
+        `${api.base}weather?q=${values.search},ua&units=metric&APPID=${api.key}`
+      );
+      if (values.search) {
+        setCities([...cities, values.search]);
+        setIsActive(false);
       }
-    };
-    addWeather().catch((error) => {
+    } catch (error) {
       console.error(error);
-    });
+    }
   };
 
   return {
