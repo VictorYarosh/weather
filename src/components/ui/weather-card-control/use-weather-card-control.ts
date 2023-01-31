@@ -1,19 +1,30 @@
 import { useContext, useState } from 'react';
+
+import axios from 'axios';
+import { api } from '../../../const';
 import { CardsContext } from '../../complex/weather/cards-context';
 
 const useWeatherCardControl = () => {
-  const [loadingCity, setLoadingCity] = useState(false);
   const [isActive, setIsActive] = useState(false);
-  const [isLoading, setLoading] = useState(true);
-  const { setCities, cities } = useContext(CardsContext);
+  const [loadingCity, setLoadingCity] = useState(true);
+  const { cities, setCities } = useContext(CardsContext);
 
   const handleAddSearch = () => {
     setIsActive(true);
   };
 
-  const handleOnSubmit = ({ values }: any) => {
-    setCities([...cities, values.search]);
-    setIsActive(false);
+  const handleOnSubmit = async ({ values }: any) => {
+    try {
+      await axios.get(
+        `${api.base}weather?q=${values.search},ua&units=metric&APPID=${api.key}`
+      );
+      if (values.search) {
+        setCities([...cities, values.search]);
+        setIsActive(false);
+      }
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return {
@@ -21,8 +32,7 @@ const useWeatherCardControl = () => {
     handleOnSubmit,
 
     loadingCity,
-    isActive,
-    isLoading
+    isActive
   };
 };
 export default useWeatherCardControl;

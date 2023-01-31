@@ -1,15 +1,18 @@
 import React, { useState } from 'react';
 
+import { CardsContext } from './cards-context';
 import { WeatherWrapper } from './weather.styled';
+
 import useWeather from './use-weather';
 import WeatherCard from '../../ui/weather-card';
 import WeatherCardControl from '../../ui/weather-card-control';
+
 import {
   Spinner,
   SpinnerWrapper
 } from '../../ui/weather-card-control/weather-card-control.styled';
+
 import SpinnerIcon from '../../../assets/images/lodiang.svg';
-import { CardsContext } from './cards-context';
 
 export const Weather = () => {
   const [cities, setCities] = useState<string[]>(['Kyiv']);
