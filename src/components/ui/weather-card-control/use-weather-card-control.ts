@@ -6,7 +6,7 @@ import { CardsContext } from '../../complex/weather/cards-context';
 
 const useWeatherCardControl = () => {
   const [isActive, setIsActive] = useState(false);
-  const [loadingCity, setLoadingCity] = useState(true);
+  const [loadingCity] = useState(true);
   const { cities, setCities } = useContext(CardsContext);
 
   const handleAddSearch = () => {
