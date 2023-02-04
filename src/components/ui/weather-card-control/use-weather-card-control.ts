@@ -1,8 +1,8 @@
 import { useContext, useState } from 'react';
 
 import axios from 'axios';
-import { api } from '../../../const';
 import { CardsContext } from '../../complex/weather/cards-context';
+import { api } from '../../../const';
 
 const useWeatherCardControl = () => {
   const [isActive, setIsActive] = useState(false);

@@ -11,8 +11,8 @@ import {
 } from './dropdown.styled';
 
 import useDropdownMenu from './use-dropdown';
-import Cross from '../../../assets/images/cross.png';
 import { DropdownMenuProps } from './types';
+import Cross from '../../../assets/images/cross.png';
 
 const DropdownMenu: FC<DropdownMenuProps> = ({ index }) => {
   const { handleToggleDropdown, handleDeleteCard, dropdownActive } =
