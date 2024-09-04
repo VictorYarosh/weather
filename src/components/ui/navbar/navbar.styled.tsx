@@ -13,7 +13,7 @@ export const Links = styled.ul`
   display: flex;
   list-style: none;
 
-  @media (max-width: 425px) {
+  @media (max-width: 460px) {
     margin-top: 20px;
     font-size: 15px;
   }
@@ -25,7 +25,7 @@ export const LinksPage = styled.li`
   line-height: 36px;
   cursor: pointer;
 
-  @media (max-width: 425px) {
+  @media (max-width: 460px) {
     padding: 10px;
     font-size: 12px;
   }
