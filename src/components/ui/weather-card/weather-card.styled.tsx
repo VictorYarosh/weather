@@ -50,7 +50,7 @@ export const TitleDescription = styled.p`
   @media (max-width: 768px) {
     font-size: 14px;
   }
-  @media (max-width: 425px) {
+  @media (max-width: 460px) {
     font-size: 12px;
     line-height: 18px;
   }
@@ -137,7 +137,7 @@ export const WeatherOptionDescription = styled.span`
   font-size: 18px;
   line-height: 24px;
 
-  @media (max-width: 425px) {
+  @media (max-width: 460px) {
     font-size: 12px;
   }
   @media (max-width: 375px) {
